@@ -182,11 +182,11 @@ iframe {
     align-items: center;
     padding: 15px;
     background: -webkit-gradient(linear, left top, right top, from(#a34ffe), to(#5934FC));
-    background: -webkit-linear-gradient(left, #A34FFE, #5934FC);
+    background: -webkit-linear-gradient(left, #1518db, #5934FC);
     background: -moz-linear-gradient(left, #A34FFE, #5934FC);
-    background: -o-linear-gradient(left, #A34FFE, #5934FC);
+    background: -o-linear-gradient(left, #f5e838, #5934FC);
     background-color: linear-gradient(to right, #A34FFE, #5934FC);
-    background: #a34ffe url(../../../Content/Front-theme/bg-1.png);
+    background: #f7fa38 url(../../../Content/Front-theme/bg-1.png);
     background-size: contain;
 }
 
@@ -412,8 +412,8 @@ input.input100 {
 
     .login100-form-btn:hover {
         color: #FFF;
-        background-color: #218838;
-        border-color: #1E7E34;
+        background-color: #d3258b;
+        border-color: #ce2d98;
     }
 
 
