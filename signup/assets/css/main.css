@@ -138,14 +138,14 @@ iframe {
   font-family: Poppins-Regular;
   font-size: 13px;
   line-height: 1.4;
-  color: #00ad5f;
+  color: #042315;
 }
 
 .txt3 {
   font-family: Poppins-Regular;
   font-size: 15px;
   line-height: 1.4;
-  color: #00ad5f;
+  color: #062417;
   text-transform: uppercase;
 }
 
@@ -183,7 +183,7 @@ iframe {
     padding: 15px;
     background: -webkit-gradient(linear, left top, right top, from(#a34ffe), to(#5934FC));
     background: -webkit-linear-gradient(left, #1518db, #5934FC);
-    background: -moz-linear-gradient(left, #A34FFE, #5934FC);
+    background: -moz-linear-gradient(left, #d3d03e, #5934FC);
     background: -o-linear-gradient(left, #f5e838, #5934FC);
     background-color: linear-gradient(to right, #A34FFE, #5934FC);
     background: #f7fa38 url(../../../Content/Front-theme/bg-1.png);
