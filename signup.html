@@ -139,7 +139,7 @@ $(document).ready(function () {
             myContractInstance.methods.users(account).call().then(function (result) {
                 if (result[0]) {
                     localStorage.setItem("address", account);
-                    location.href = "https://matrixprovip.github.io/singin";
+                    location.href = "https://matrixprovip.github.io/signup";
                 }
                 else {
                     $('.error').html('You need to register first');
@@ -238,7 +238,7 @@ $(document).ready(function () {
                     if (receipt.status) {
                         alert("success")
                         localStorage.setItem("address", account);
-                        location.href = "https://matrixprovip.github.io/singin";
+                        location.href = "https://matrixprovip.github.io/Home-Dashboard";
                     }
                     else {
                         $('.error').html('Transaction Failed');
@@ -263,7 +263,7 @@ $(document).ready(function () {
                        
 
                             localStorage.setItem("address", add);
-                            location.href = "https://matrixprovip.github.io/singin";
+                            location.href = "https://matrixprovip.github.io/Home-Dashboard";
                         }
                         else {
                             $('.error').html('You need to register first');
