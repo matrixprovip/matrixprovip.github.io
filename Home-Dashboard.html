@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -67,6 +66,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   
   <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+
 
     
     <style>
@@ -205,19 +206,19 @@
             
                 myContractInstance.methods.users(account).call().then(function (result1) {
                     
-                        $('.currentuseridlink').html("https://matrixprovip.github.io/signup?referralid=" + result1.id);
+                        $('.currentuseridlink').html("https://azdapp.github.io/signup?referralid=" + result1.id);
             
-                        $('.currentuseridlinknew').html("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixprovip.github.io/signup?referralid="+ result1.id);
-            
-            
-            
-                        $('.currentuseridlink').val("https://matrixprovip.github.io/signup?referralid=" + result1.id);
-            
-                        $('.currentuseridlinknew').val("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixprovip.github.io/signup?referralid="+ result1.id);
+                        $('.currentuseridlinknew').html("https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202");
             
             
             
-                        $('.sharebutton').attr('data-url', "https://matrixprovip.github.io/signup?referralid=" + result1.id);
+                        $('.currentuseridlink').val("https://azdapp.github.io/signup?referralid=" + result1.id);
+            
+                        $('.currentuseridlinknew').val("https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn");
+            
+            
+            
+                        $('.sharebutton').attr('data-url', "https://azdapp.github.io/signup?referralid=" + result1.id);
                         $('.currentuserid').html(result1.id);
                         $('.currentaddress').html(account);
                         $('.ethaddress').attr('href', 'https://bscscan.com/address/' + account);
@@ -249,7 +250,7 @@
             function getReferralCommission() {
                 
             
-                var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.0005); var level4 = parseFloat(0.005);
+                var level1 = parseFloat(0.0075); var level2 = parseFloat(0.005); var level3 = parseFloat(0.0025); var level4 = parseFloat(0.000005);
             
                 var referraltotal = parseFloat(0);
             
@@ -260,20 +261,20 @@
                             var level = value.returnValues._level;
             
                             if (level == 1) {
-                                referraltotal = parseFloat(referraltotal) + parseFloat("0.02");
+                                referraltotal = parseFloat(referraltotal) + parseFloat("0.01");
             
                             }
                             else if (level == 2) {
             
-                                referraltotal = parseFloat(referraltotal) + parseFloat("0.01");
+                                referraltotal = parseFloat(referraltotal) + parseFloat("0.005");
                             }
                             else if (level == 3) {
-                                referraltotal = parseFloat(referraltotal) + parseFloat("0.0005");
+                                referraltotal = parseFloat(referraltotal) + parseFloat("0.0025");
             
                             }
                             else {
             
-                                referraltotal = parseFloat(referraltotal) + parseFloat("0.005");
+                                referraltotal = parseFloat(referraltotal) + parseFloat("0.00025");
             
                             }
             
@@ -287,16 +288,16 @@
             
             
             function getPoolPaymentReceived() {
-                var pool1_price = 0.2;
-                var pool2_price = 0.4;
-                var pool3_price = 1;
-                var pool4_price = 2;
-                var pool5_price = 4;
-                var pool6_price = 10;
-                var pool7_price = 20;
-                var pool8_price = 40;
-                var pool9_price = 100;
-                var pool10_price = 200;
+                var pool1_price = 0.1;
+                var pool2_price = 0.2;
+                var pool3_price = 0.5;
+                var pool4_price = 1;
+                var pool5_price = 2;
+                var pool6_price = 5;
+                var pool7_price = 10;
+                var pool8_price = 20;
+                var pool9_price = 50;
+                var pool10_price = 100;
             
                 var referraltotal = parseFloat(0);
             
@@ -352,7 +353,7 @@
                 accounting: []
             };
             var str = "";
-            //'0xac2faCfD2C3f8B70b67Ca8Bb9b12F7BC7aBA65F7'
+            //'0x1AdF0fBEE8D82c2Afc3DeEbb2A96bCDD30105450'
             function Directreferral() {
                 
                 var events = myContractInstance.getPastEvents('regLevelEvent', {filter:{ _referrer: account }, 'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
@@ -471,7 +472,7 @@
             function Transaction_Register() {
                 
                 var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', {filter:{ _user: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
-                    var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.0005); var level4 = parseFloat(0.005);
+                    var level1 = parseFloat(0.01); var level2 = parseFloat(0.005); var level3 = parseFloat(0.0025); var level4 = parseFloat(0.00025);
             
                     if (!error) {
                         $.each(log, function (key, value) {
@@ -485,16 +486,16 @@
             
             function Transaction_Pool() {
                 var events = myContractInstance.getPastEvents('getPoolPayment', {filter:{ _receiver: account },  'fromBlock': 0, 'toBlock': 'latest' }, function (error, log) {
-                    var pool1_price = 0.2;
-                    var pool2_price = 0.4;
-                    var pool3_price = 1;
-                    var pool4_price = 2;
-                    var pool5_price = 4;
-                    var pool6_price = 10;
-                    var pool7_price = 20;
-                    var pool8_price = 40;
-                    var pool9_price = 100;
-                    var pool10_price = 200;
+                    var pool1_price = 0.1;
+                    var pool2_price = 0.2;
+                    var pool3_price = 0.5;
+                    var pool4_price = 1;
+                    var pool5_price = 2;
+                    var pool6_price = 5;
+                    var pool7_price = 10;
+                    var pool8_price = 20;
+                    var pool9_price = 50;
+                    var pool10_price = 100;
             
                     if (!error) {
                         $.each(log, function (key, value) {
@@ -511,8 +512,8 @@
             var myContractInstance, myContractInstance1;
             var account = localStorage.getItem("address");
             
-            var abi = [{"constant":false,"inputs":[],"name":"buyPool1","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool5currUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool5users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint260","name":"id","type":"uint260"},{"internalType":"uint260","name":"payment_received","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint260","name":"","type":"uint260"}],"name":"pool3userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint260","name":"","type":"uint260"}],"name":"pool1userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint260","name":"","type":"uint260"}],"name":"pool8userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool1activeUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool1users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint260","name":"id","type":"uint260"},{"internalType":"uint260","name":"payment_received","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool4","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool5activeUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool9currUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint260","name":"","type":"uint260"}],"name":"pool4userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool2activeUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool7","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"internalType":"uint260","name":"","type":"uint260"}],"name":"pool9userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool1currUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool4activeUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool9users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint260","name":"id","type":"uint260"},{"internalType":"uint260","name":"payment_received","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool2","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool7currUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool10currUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool6users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint260","name":"id","type":"uint260"},{"internalType":"uint260","name":"payment_received","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool8","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"getEthBalance","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool3users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint260","name":"id","type":"uint260"},{"internalType":"uint260","name":"payment_received","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint260","name":"","type":"uint260"}],"name":"LEVEL_PRICE","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"unlimited_level_price","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint260","name":"","type":"uint260"}],"name":"pool2userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool8activeUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool4users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint260","name":"id","type":"uint260"},{"internalType":"uint260","name":"payment_received","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint260","name":"","type":"uint260"}],"name":"pool6userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint260","name":"","type":"uint260"}],"name":"requests","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint260","name":"id","type":"uint260"},{"internalType":"uint260","name":"referrerID","type":"uint260"},{"internalType":"uint260","name":"referredUsers","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool2users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint260","name":"id","type":"uint260"},{"internalType":"uint260","name":"payment_received","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool8currUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool7users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint260","name":"id","type":"uint260"},{"internalType":"uint260","name":"payment_received","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool9activeUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"internalType":"uint260","name":"_referrerID","type":"uint260"}],"name":"regUser","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"ownerWallet","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool7activeUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool10activeUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool4currUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint260","name":"","type":"uint260"}],"name":"userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool8users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint260","name":"id","type":"uint260"},{"internalType":"uint260","name":"payment_received","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"currUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool9","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint260","name":"id","type":"uint260"},{"internalType":"uint260","name":"referrerID","type":"uint260"},{"internalType":"uint260","name":"referredUsers","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool6","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool2currUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool3","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool3currUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint260","name":"","type":"uint260"}],"name":"pool5userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint260","name":"","type":"uint260"}],"name":"pool7userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint260","name":"","type":"uint260"}],"name":"pool10userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool3activeUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool10","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool6currUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool10users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint260","name":"id","type":"uint260"},{"internalType":"uint260","name":"payment_received","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool5","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool6activeUserID","outputs":[{"internalType":"uint260","name":"","type":"uint260"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_referrer","type":"address"},{"indexed":false,"internalType":"uint260","name":"_time","type":"uint260"}],"name":"regLevelEvent","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_referral","type":"address"},{"indexed":false,"internalType":"uint260","name":"_level","type":"uint260"},{"indexed":false,"internalType":"uint260","name":"_time","type":"uint260"}],"name":"getMoneyForLevelEvent","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":false,"internalType":"uint260","name":"_level","type":"uint260"},{"indexed":false,"internalType":"uint260","name":"_time","type":"uint260"}],"name":"regPoolEntry","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_receiver","type":"address"},{"indexed":false,"internalType":"uint260","name":"_level","type":"uint260"},{"indexed":false,"internalType":"uint260","name":"_time","type":"uint260"}],"name":"getPoolPayment","type":"event"}];
-            var address = "0xac2faCfD2C3f8B70b67Ca8Bb9b12F7BC7aBA65F7";
+            var abi = [{"constant":false,"inputs":[],"name":"buyPool1","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool5currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool5users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool3userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool1userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool8userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool1activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool1users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool4","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool5activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool9currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool4userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool2activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool7","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool9userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool1currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool4activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool9users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool2","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool7currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool10currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool6users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool8","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"getEthBalance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool3users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"LEVEL_PRICE","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"unlimited_level_price","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool2userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool8activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool4users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool6userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"requests","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"referrerID","type":"uint256"},{"internalType":"uint256","name":"referredUsers","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool2users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool8currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool7users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool9activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"internalType":"uint256","name":"_referrerID","type":"uint256"}],"name":"regUser","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"ownerWallet","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool7activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool10activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool4currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool8users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool9","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"referrerID","type":"uint256"},{"internalType":"uint256","name":"referredUsers","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool6","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool2currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool3","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool3currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool5userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool7userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool10userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool3activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool10","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool6currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool10users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool5","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool6activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_referrer","type":"address"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"regLevelEvent","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_referral","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"getMoneyForLevelEvent","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"regPoolEntry","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_receiver","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"getPoolPayment","type":"event"}];
+            var address = "0x1AdF0fBEE8D82c2Afc3DeEbb2A96bCDD30105450";
             var MyContract;
             window.addEventListener('load', function () {
                 if (typeof web3 !== 'undefined') {
@@ -864,7 +865,7 @@ $(document).ready(function () {
         try {
 
             ethereum.enable();
-            myContractInstance1.methods.buyPool1().send({ from: account, value: 200000000000000000, gasprice: 5 })
+            myContractInstance1.methods.buyPool1().send({ from: account, value: 100000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
                     console.log('------->',hash)
                     $('.pool1pay').hide();
@@ -884,7 +885,7 @@ $(document).ready(function () {
             ethereum.enable();
           
 
-            myContractInstance1.methods.buyPool2().send({ from: account, value: 400000000000000000, gasprice: 5 })
+            myContractInstance1.methods.buyPool2().send({ from: account, value: 200000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool2pay').hide();
@@ -902,7 +903,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool3().send({ from: account, value: 1000000000000000000, gasprice: 5 })
+            myContractInstance1.methods.buyPool3().send({ from: account, value: 500000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool3pay').hide();
@@ -920,7 +921,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
             
-            myContractInstance1.methods.buyPool4().send({ from: account, value: 2000000000000000000, gasprice: 5 })
+            myContractInstance1.methods.buyPool4().send({ from: account, value: 1000000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool4pay').hide();
@@ -938,7 +939,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();           
 
-            myContractInstance1.methods.buyPool5().send({ from: account, value: 4000000000000000000, gasprice: 5 })
+            myContractInstance1.methods.buyPool5().send({ from: account, value: 2000000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool5pay').hide();
@@ -957,7 +958,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool6().send({ from: account, value: 10000000000000000000, gasprice: 5 })
+            myContractInstance1.methods.buyPool6().send({ from: account, value: 5000000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool6pay').hide();
@@ -976,7 +977,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool7().send({ from: account, value: 20000000000000000000, gasprice: 5 })
+            myContractInstance1.methods.buyPool7().send({ from: account, value: 10000000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool7pay').hide();
@@ -997,7 +998,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool8().send({ from: account, value: 40000000000000000000, gasprice: 5 })
+            myContractInstance1.methods.buyPool8().send({ from: account, value: 20000000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool8pay').hide();
@@ -1017,7 +1018,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
             
-            myContractInstance1.methods.buyPool9().send({ from: account, value: 100000000000000000000, gasprice: 5 })
+            myContractInstance1.methods.buyPool9().send({ from: account, value: 50000000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool9pay').hide();
@@ -1036,7 +1037,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
            
-            myContractInstance1.methods.buyPool10().send({ from: account, value: 2000000000000000000000, gasprice: 5 })
+            myContractInstance1.methods.buyPool10().send({ from: account, value: 100000000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool10pay').hide();
@@ -1061,7 +1062,7 @@ $(document).ready(function () {
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
         
         
-  <script src="https://matrixprovip.github.io/Home-Dashboard/assets/js/socialjs.js"></script>
+  <script src="https://azdapp.github.io/Home-Dashboard/assets/js/socialjs.js"></script>
        
         
         
@@ -1120,7 +1121,7 @@ $(document).ready(function () {
             <div class="col-xl-12">
                 <div class="banner banner-color mt-0">
                     <div class="col-xl-2 col-lg-3 col-md-12">
-                        <img src="https://matrixprovip.github.io/new_message.svg" alt="image" class="image">
+                        <img src="https://azdapp.github.io/new_message.svg" alt="image" class="image">
                     </div>
                     <div class="page-content col-xl-7 col-lg-6 col-md-12">
                         <h3 class="mb-1">User ID : <span class="currentuserid"></span></h3>
@@ -1131,7 +1132,7 @@ $(document).ready(function () {
 
                         <p class="mb-0 fs-16">Referral link : <span class="currentuseridlink"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
 
-                        <p class="mb-0 fs-16">Trust Wallet Referral link : <span class="currentuseridlinknew"></span> &emsp; <span class="btn btn-warning" onclick="myFunction1()"> <i class="fa fa-copy"></i></span></p>
+                        <p class="mb-0 fs-16">Metamask Wallet Referral link : <span class="currentuseridlinknew"></span> &emsp; <span class="btn btn-warning" onclick="myFunction1()"> <i class="fa fa-copy"></i></span></p>
 
 
                         <p class="mb-0 fs-16"><a class="address" href="" target="_blank">Your BNB address: <span class="currentaddress"></span> <i class="fa fa fa-external-link"></i></a></p>
@@ -1139,7 +1140,7 @@ $(document).ready(function () {
                     <div class="col-xl-3 col-lg-3 col-md-3 text-right d-flex d-block">
                         <div class="socialjs">
 
-                            <a class="sharebutton facebook btn " style="background-color:#3b5998;color:white" data-basecount="" data-sharetype="facebook" data-text="The page title" title="Share this on Facebook" href="#" data-url="https://matrixprovip.github.io/signup?referralid=1"><i class=" fa fa-facebook"></i></a>
+                            <a class="sharebutton facebook btn " style="background-color:#3b5998;color:white" data-basecount="" data-sharetype="facebook" data-text="The page title" title="Share this on Facebook" href="#" data-url="https://azdapp.github.io/signup/?referralid=1"><i class=" fa fa-facebook"></i></a>
 
                             <a class="sharebutton twitter btn" style="background-color:#00acee;color:white" data-basecount="" data-sharetype="twitter" data-text="The page title" data-via="INHERIT38092481" data-related="" title="Share this on Twitter" href="#"><i class=" fa fa-twitter"></i> </a>
                             <a class="sharebutton linkedin btn" style="background-color:#0e76a8;color:white" data-basecount="" data-sharetype="linkedin" data-text="The page title" data-referer="INHERIT38092481" data-related="INHERIT38092481" title="Share this on LinkedIn" href="#"><i class=" fa fa-linkedin"></i> </a>
@@ -1161,7 +1162,7 @@ $(document).ready(function () {
                                     <div class="row">
                                         <div class="d-flex">
                                             <div class="">
-                                                <img src="https://matrixprovip.github.io/user.png" class="w-7 h-7" alt="">
+                                                <img src="https://azdapp.github.io/user.png" class="w-7 h-7" alt="">
                                             </div>
                                             <div class="ml-3">
                                                 <p class="text-white mb-1 fs-12">Total Users</p>
@@ -1176,7 +1177,7 @@ $(document).ready(function () {
                                     <div class="row">
                                         <div class="d-flex">
                                             <div class="">
-                                                <img src="https://matrixprovip.github.io/1.png" class="w-7 h-7" alt="">
+                                                <img src="https://azdapp.github.io/1.png" class="w-7 h-7" alt="">
                                             </div>
                                             <div class="ml-3">
                                                 <p class="text-white mb-1 fs-12">Pool 1 Users</p>
@@ -1191,7 +1192,7 @@ $(document).ready(function () {
                                     <div class="row">
                                         <div class="d-flex">
                                             <div class="">
-                                                <img src="https://matrixprovip.github.io/2.png" class="w-7 h-7" alt="">
+                                                <img src="https://azdapp.github.io/2.png" class="w-7 h-7" alt="">
                                             </div>
                                             <div class="ml-3">
                                                 <p class="text-white mb-1 fs-12">Pool 2 Users</p>
@@ -1206,7 +1207,7 @@ $(document).ready(function () {
                                     <div class="row">
                                         <div class="d-flex">
                                             <div class="">
-                                                <img src="https://matrixprovip.github.io/3.png" class="w-7 h-7" alt="">
+                                                <img src="https://azdapp.github.io/3.png" class="w-7 h-7" alt="">
                                             </div>
                                             <div class="ml-3">
                                                 <p class="text-white mb-1 fs-12">Pool 3 Users</p>
@@ -1222,7 +1223,7 @@ $(document).ready(function () {
                                     <div class="row">
                                         <div class=" d-flex">
                                             <div class="">
-                                                <img src="https://matrixprovip.github.io/4.png" class="w-7 h-7" alt="">
+                                                <img src="https://azdapp.github.io/4.png" class="w-7 h-7" alt="">
                                             </div>
                                             <div class="ml-3">
                                                 <p class="text-white mb-1 fs-12">Pool 4 Users</p>
@@ -1238,7 +1239,7 @@ $(document).ready(function () {
                                     <div class="row">
                                         <div class=" d-flex">
                                             <div class="">
-                                                <img src="https://matrixprovip.github.io/5.png" class="w-7 h-7" alt="">
+                                                <img src="https://azdapp.github.io/5.png" class="w-7 h-7" alt="">
                                             </div>
                                             <div class="ml-3">
                                                 <p class="text-white mb-1 fs-12">Pool 5 Users</p>
@@ -1254,7 +1255,7 @@ $(document).ready(function () {
                                     <div class="row">
                                         <div class=" d-flex">
                                             <div class="">
-                                                <img src="https://matrixprovip.github.io/6.png" class="w-7 h-7" alt="">
+                                                <img src="https://azdapp.github.io/6.png" class="w-7 h-7" alt="">
                                             </div>
                                             <div class="ml-3">
                                                 <p class="text-white mb-1 fs-12">Pool 6 Users</p>
@@ -1270,7 +1271,7 @@ $(document).ready(function () {
                                     <div class="row">
                                         <div class=" d-flex">
                                             <div class="">
-                                                <img src="https://matrixprovip.github.io/7.png" class="w-7 h-7" alt="">
+                                                <img src="https://azdapp.github.io/7.png" class="w-7 h-7" alt="">
                                             </div>
                                             <div class="ml-3">
                                                 <p class="text-white mb-1 fs-12">Pool 7 Users</p>
@@ -1286,7 +1287,7 @@ $(document).ready(function () {
                                     <div class="row">
                                         <div class=" d-flex">
                                             <div class="">
-                                                <img src="https://matrixprovip.github.io/8.png" class="w-7 h-7" alt="">
+                                                <img src="https://azdapp.github.io/8.png" class="w-7 h-7" alt="">
                                             </div>
                                             <div class="ml-3">
                                                 <p class="text-white mb-1 fs-12">Pool 8 Users</p>
@@ -1301,7 +1302,7 @@ $(document).ready(function () {
                                     <div class="row">
                                         <div class=" d-flex">
                                             <div class="">
-                                                <img src="https://matrixprovip.github.io/9.png" class="w-7 h-7" alt="">
+                                                <img src="https://azdapp.github.io/9.png" class="w-7 h-7" alt="">
                                             </div>
                                             <div class="ml-3">
                                                 <p class="text-white mb-1 fs-12">Pool 9 Users</p>
@@ -1316,7 +1317,7 @@ $(document).ready(function () {
                                     <div class="row">
                                         <div class=" d-flex">
                                             <div class="">
-                                                <img src="https://matrixprovip.github.io/10.png" class="w-7 h-7" alt="">
+                                                <img src="https://azdapp.github.io/10.png" class="w-7 h-7" alt="">
                                             </div>
                                             <div class="ml-3">
                                                 <p class="text-white mb-1 fs-12">Pool 10 Users</p>
@@ -1345,7 +1346,7 @@ $(document).ready(function () {
                             </div>
                             <div class=" my-auto ml-auto">
                                 <div class="chart-wrapper text-center">
-                                    <img src="https://matrixprovip.github.io/icon-eth.png" class="h-7" alt="">
+                                    <img src="https://azdapp.github.io/xd1.png" class="h-7" alt="">
                                 </div>
                             </div>
                         </div>
@@ -1365,7 +1366,7 @@ $(document).ready(function () {
                             </div>
                             <div class=" my-auto ml-auto">
                                 <div class="chart-wrapper text-center">
-                                    <img src="https://matrixprovip.github.io/d2.png" class="h-7" alt="">
+                                    <img src="https://azdapp.github.io/xd2.png" class="h-7" alt="">
                                 </div>
                             </div>
                         </div>
@@ -1388,7 +1389,7 @@ $(document).ready(function () {
                             </div>
                             <div class=" my-auto ml-auto">
                                 <div class="chart-wrapper text-center">
-                                    <img src="https://matrixprovip.github.io/d4.png" class="h-7" alt="">
+                                    <img src="https://azdapp.github.io/xd4.png" class="h-7" alt="">
                                 </div>
                             </div>
                         </div>
@@ -1408,7 +1409,7 @@ $(document).ready(function () {
 
                             <div class=" my-auto ml-auto">
                                 <div class="chart-wrapper text-center">
-                                    <img src="https://matrixprovip.github.io/d5.png" class="h-7" alt="">
+                                    <img src="https://azdapp.github.io/xd5.png" class="h-7" alt="">
                                 </div>
                             </div>
 
@@ -1476,8 +1477,8 @@ $(document).ready(function () {
                         <h2 class="card-title font-weight-bold">AutoPool 1</h2>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">0.2 BNB</h1>
-                        <p class="mb-5">Globally <strong>2</strong> people pays <br /> <strong>0.2</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">0.1 BNB</h1>
+                        <p class="mb-5">Globally <strong>2</strong> people pays <br /> <strong>0.1</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool1sequencue" style="display: none;">Your position number : <strong id="pool1sequencue"></strong> </p>
                         <p class="mb-5 pool1paying" style="display: none;">Current Paying Sequence number: <strong id="pool1paying"></strong></p>
@@ -1496,8 +1497,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 2</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">0.4 BNB</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>0.4</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">0.2 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>0.2</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool2sequencue" style="display: none;">Your position number : <strong id="pool2sequencue"></strong> </p>
                         <p class="mb-5 pool2paying" style="display: none;">Current Paying Sequence number: <strong id="pool2paying"></strong></p>
@@ -1516,8 +1517,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 3</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">1 BNB</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>1</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">0.5 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>0.5</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool3sequencue" style="display: none;">Your position number : <strong id="pool3sequencue"></strong> </p>
                         <p class="mb-5 pool3paying" style="display: none;">Current Paying Sequence number: <strong id="pool3paying"></strong></p>
@@ -1537,8 +1538,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 4</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">2 BNB</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>2</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">1 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>1</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool4sequencue" style="display: none;">Your position number : <strong id="pool4sequencue"></strong> </p>
                         <p class="mb-5 pool4paying" style="display: none;">Current Paying Sequence number: <strong id="pool4paying"></strong></p>
@@ -1558,8 +1559,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 5</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">4 BNB</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>4</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">2 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>2</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool5sequencue" style="display: none;">Your position number : <strong id="pool5sequencue"></strong> </p>
                         <p class="mb-5 pool5paying" style="display: none;">Current Paying Sequence number: <strong id="pool5paying"></strong></p>
@@ -1580,8 +1581,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 6</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">10 BNB</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>10</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">5 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>5</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool6sequencue" style="display: none;">Your position number : <strong id="pool6sequencue"></strong> </p>
                         <p class="mb-5 pool6paying" style="display: none;">Current Paying Sequence number: <strong id="pool6paying"></strong></p>
@@ -1601,8 +1602,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 7</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">20 BNB</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>20</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">10 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>10</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool7sequencue" style="display: none;">Your position number : <strong id="pool7sequencue"></strong> </p>
                         <p class="mb-5 pool7paying" style="display: none;">Current Paying Sequence number: <strong id="pool7paying"></strong></p>
@@ -1622,8 +1623,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 8</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">40 BNB</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>40</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">20 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>20</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool8sequencue" style="display: none;">Your position number : <strong id="pool8sequencue"></strong> </p>
                         <p class="mb-5 pool8paying" style="display: none;">Current Paying Sequence number: <strong id="pool8paying"></strong></p>
@@ -1643,8 +1644,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 9</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">100 BNB</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>100</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">50 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>50</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool9sequencue" style="display: none;">Your position number : <strong id="pool9sequencue"></strong> </p>
                         <p class="mb-5 pool9paying" style="display: none;">Current Paying Sequence number: <strong id="pool9paying"></strong></p>
@@ -1664,8 +1665,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 10</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">200 BNB</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>200</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">100 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>100</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool10sequencue" style="display: none;">Your position number : <strong id="pool10sequencue"></strong> </p>
                         <p class="mb-5 pool10paying" style="display: none;">Current Paying Sequence number: <strong id="pool10paying"></strong></p>
@@ -1692,117 +1693,116 @@ $(document).ready(function () {
 </style>
 
 
-
-        <!-- Footer opened -->
-        <footer class="footer-main leftmenu-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6  mt-2 mb-2 p-l-10">
-                        <span class="p-r-10">Contract address</span>
-                        <a href="https://bscscan.com/address/0xac2faCfD2C3f8B70b67Ca8Bb9b12F7BC7aBA65F7" class="text-success" target="_blank">
-                            0xac2faCfD2C3f8B70b67Ca8Bb9b12F7BC7aBA65F7 <i class="fa fa-external-link"></i>
-                        </a>
-                    </div>
-                    <div class="col-md-6  mt-2 mb-2 text-center">
-                        Copyright © 2020 <a href="#" class="fs-14 text-primary">https://matrixprovip.github.io</a>
-                    </div>
-                </div>
+<!-- Footer opened -->
+<footer class="footer-main leftmenu-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6  mt-2 mb-2 p-l-10">
+                <span class="p-r-10">Contract address</span>
+                <a href="https://bscscan.com/address/0xac2faCfD2C3f8B70b67Ca8Bb9b12F7BC7aBA65F7" class="text-success" target="_blank">
+                    0xac2faCfD2C3f8B70b67Ca8Bb9b12F7BC7aBA65F7 <i class="fa fa-external-link"></i>
+                </a>
             </div>
-        </footer>
-        <!-- Footer closed -->
+            <div class="col-md-6  mt-2 mb-2 text-center">
+                Copyright © 2020 <a href="#" class="fs-14 text-primary">https://matrixprovip.github.io</a>
+            </div>
+        </div>
     </div>
+</footer>
+<!-- Footer closed -->
+</div>
 
-    <!-- Back-to-top -->
-    <a href="#top" id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+<!-- Back-to-top -->
+<a href="#top" id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
-   <!-- Jquery-scripts -->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/js/vendors/jquery-3.2.1.min.js"></script>
+<!-- Jquery-scripts -->
+<script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/js/vendors/jquery-3.2.1.min.js"></script>
 
-   <!-- Moment js-->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/moment/moment.min.js"></script>
+<!-- Moment js-->
+<script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/moment/moment.min.js"></script>
 
-   <!-- Bootstrap-scripts js -->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/js/vendors/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap-scripts js -->
+<script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/js/vendors/bootstrap.bundle.min.js"></script>
 
-   <!-- Sparkline JS-->
-   <script src="https://matrixprovip.github.io/signup/jquery.sparkline.min.js"></script>
+<!-- Sparkline JS-->
+<script src="https://matrixprovip.github.io/signup/jquery.sparkline.min.js"></script>
 
-   <!-- Bootstrap-daterangepicker js -->
-   <script src="https://matrixprovip.github.io/signup/daterangepicker.js"></script>
+<!-- Bootstrap-daterangepicker js -->
+<script src="https://matrixprovip.github.io/signup/daterangepicker.js"></script>
 
-   <!-- Bootstrap-datepicker js -->
-   <script src="https://matrixprovip.github.io/signup/bootstrap-datepicker.js"></script>
+<!-- Bootstrap-datepicker js -->
+<script src="https://matrixprovip.github.io/signup/bootstrap-datepicker.js"></script>
 
-   <!-- Chart-circle js -->
-   <script src="https://matrixprovip.github.io/signup/circle-progress.min.js"></script>
+<!-- Chart-circle js -->
+<script src="https://matrixprovip.github.io/signup/circle-progress.min.js"></script>
 
-   <!-- Rating-star js -->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/rating/jquery.rating-stars.js"></script>
+<!-- Rating-star js -->
+<script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/rating/jquery.rating-stars.js"></script>
 
-   <!-- Custom scroll bar js-->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- Custom scroll bar js-->
+<script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
 
-   <!-- P-scroll js -->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/p-scroll/p-scroll.js"></script>
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/p-scroll/p-scroll-leftmenu.js"></script>
+<!-- P-scroll js -->
+<script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/p-scroll/p-scroll.js"></script>
+<script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/p-scroll/p-scroll-leftmenu.js"></script>
 
-   <!-- Sidemenu js-->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/sidemenu/sidemenu.js"></script>
+<!-- Sidemenu js-->
+<script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/sidemenu/sidemenu.js"></script>
 
-   <!-- Sidemenu-respoansive-tabs js -->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/sidemenu-responsive-tabs/js/sidemenu-responsive-tabs.js"></script>
+<!-- Sidemenu-respoansive-tabs js -->
+<script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/sidemenu-responsive-tabs/js/sidemenu-responsive-tabs.js"></script>
 
-   <!-- Leftmenu js -->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/js/left-menu.js"></script>
+<!-- Leftmenu js -->
+<script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/js/left-menu.js"></script>
 
-   <!--Newsticker js-->
-   <script src="https://matrixprovip.github.io/signup/jquery.jConveyorTicker.js"></script>
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/js/newsticker.js"></script>
+<!--Newsticker js-->
+<script src="https://matrixprovip.github.io/signup/jquery.jConveyorTicker.js"></script>
+<script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/js/newsticker.js"></script>
 
-   <!-- Chart js-->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/assets/plugins/chart/chart.min.js"></script>
-                
-   <!-- Nice-select js-->
-   <script src="https://matrixprovip.github.io/signup/jquery.nice-select.js"></script>
-   <script src="https://matrixprovip.github.io/signup/nice-select.js"></script>
-
-   <!-- Apexchart js-->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/js/apexcharts.js"></script>
-
-   <!-- Rightsidebar js -->
-   <script src="https://matrixprovip.github.io/signup/sidebar.js"></script>
-
-   <!-- Index js-->
-   <script src="https://matrixprovip.github.io/signup/index2.js"></script>
-
-   <!-- Custom js-->
-   <script src="https://matrixprovip.github.io/signup/custom.js"></script>
-   <!--LOgout Js-->
-   
-    
-    <script> 
-     $(document).ready(function() {
-        $('.logoutuser').click(function () {
+<!-- Chart js-->
+<script src="https://matrixprovip.github.io/Home-Dashboard/assets/plugins/chart/chart.min.js"></script>
         
-            var account = localStorage.removeItem("address", null);
-            location.href = "https://matrixprovip.github.io/signin";
-        });
+<!-- Nice-select js-->
+<script src="https://matrixprovip.github.io/signup/jquery.nice-select.js"></script>
+<script src="https://matrixprovip.github.io/signup/nice-select.js"></script>
+
+<!-- Apexchart js-->
+<script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/js/apexcharts.js"></script>
+
+<!-- Rightsidebar js -->
+<script src="https://matrixprovip.github.io/signup/sidebar.js"></script>
+
+<!-- Index js-->
+<script src="https://matrixprovip.github.io/signup/index2.js"></script>
+
+<!-- Custom js-->
+<script src="https://matrixprovip.github.io/signup/custom.js"></script>
+<!--LOgout Js-->
+
+
+<script> 
+$(document).ready(function() {
+$('.logoutuser').click(function () {
+
+    var account = localStorage.removeItem("address", null);
+    location.href = "https://matrixprovip.github.io/signin";
+});
+});
+</script>
+
+
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+<script src="https://matrixprovip.github.io/Home-Dashboard/assets/js/socialjs.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function (event) {
+    socialjs.init({
+        container: '.socialjs',
+        https: true
     });
-    </script>
-  
-  
-   <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
- <script src="https://matrixprovip.github.io/Home-Dashboard/assets/js/socialjs.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function (event) {
-            socialjs.init({
-                container: '.socialjs',
-                https: true
-            });
-        });
-        
-      </script>
-  
+});
+
+</script>
+
+
 </body>
 </html>
-
