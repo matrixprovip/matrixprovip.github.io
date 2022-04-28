@@ -250,7 +250,7 @@
             function getReferralCommission() {
                 
             
-                var level1 = parseFloat(0.0075); var level2 = parseFloat(0.005); var level3 = parseFloat(0.0025); var level4 = parseFloat(0.000005);
+                var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.0005); var level4 = parseFloat(0.0005);
             
                 var referraltotal = parseFloat(0);
             
@@ -472,7 +472,7 @@
             function Transaction_Register() {
                 
                 var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', {filter:{ _user: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
-                    var level1 = parseFloat(0.01); var level2 = parseFloat(0.005); var level3 = parseFloat(0.0025); var level4 = parseFloat(0.00025);
+                    var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.0005); var level4 = parseFloat(0.0005);
             
                     if (!error) {
                         $.each(log, function (key, value) {
@@ -1518,8 +1518,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 3</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">0.5 BNB</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>0.5</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">1 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>1</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool3sequencue" style="display: none;">Your position number : <strong id="pool3sequencue"></strong> </p>
                         <p class="mb-5 pool3paying" style="display: none;">Current Paying Sequence number: <strong id="pool3paying"></strong></p>
@@ -1539,8 +1539,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 4</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">1 BNB</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>1</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">2 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>2</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool4sequencue" style="display: none;">Your position number : <strong id="pool4sequencue"></strong> </p>
                         <p class="mb-5 pool4paying" style="display: none;">Current Paying Sequence number: <strong id="pool4paying"></strong></p>
@@ -1560,8 +1560,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 5</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">2 BNB</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>2</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">4 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>4</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool5sequencue" style="display: none;">Your position number : <strong id="pool5sequencue"></strong> </p>
                         <p class="mb-5 pool5paying" style="display: none;">Current Paying Sequence number: <strong id="pool5paying"></strong></p>
@@ -1582,8 +1582,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 6</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">5 BNB</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>5</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">10 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>10</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool6sequencue" style="display: none;">Your position number : <strong id="pool6sequencue"></strong> </p>
                         <p class="mb-5 pool6paying" style="display: none;">Current Paying Sequence number: <strong id="pool6paying"></strong></p>
@@ -1603,8 +1603,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 7</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">10 BNB</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>10</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">20 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>20</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool7sequencue" style="display: none;">Your position number : <strong id="pool7sequencue"></strong> </p>
                         <p class="mb-5 pool7paying" style="display: none;">Current Paying Sequence number: <strong id="pool7paying"></strong></p>
@@ -1624,8 +1624,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 8</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">20 BNB</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>20</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">40 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>40</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool8sequencue" style="display: none;">Your position number : <strong id="pool8sequencue"></strong> </p>
                         <p class="mb-5 pool8paying" style="display: none;">Current Paying Sequence number: <strong id="pool8paying"></strong></p>
@@ -1645,8 +1645,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 9</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">50 BNB</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>50</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">100 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>100</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool9sequencue" style="display: none;">Your position number : <strong id="pool9sequencue"></strong> </p>
                         <p class="mb-5 pool9paying" style="display: none;">Current Paying Sequence number: <strong id="pool9paying"></strong></p>
@@ -1666,8 +1666,8 @@ $(document).ready(function () {
                         <h3 class="card-title font-weight-bold">AutoPool 10</h3>
                     </div>
                     <div class="card-body">
-                        <h1 class="pricing-card-title mb-5">100 BNB</h1>
-                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>100</strong> BNB each</p>
+                        <h1 class="pricing-card-title mb-5">200 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>200</strong> BNB each</p>
                         <p class="mb-5">No Referral necessary</p>
                         <p class="mb-5 pool10sequencue" style="display: none;">Your position number : <strong id="pool10sequencue"></strong> </p>
                         <p class="mb-5 pool10paying" style="display: none;">Current Paying Sequence number: <strong id="pool10paying"></strong></p>
