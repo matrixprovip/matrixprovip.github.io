@@ -486,16 +486,16 @@
             
             function Transaction_Pool() {
                 var events = myContractInstance.getPastEvents('getPoolPayment', {filter:{ _receiver: account },  'fromBlock': 0, 'toBlock': 'latest' }, function (error, log) {
-                    var pool1_price = 0.1;
-                    var pool2_price = 0.2;
-                    var pool3_price = 0.5;
-                    var pool4_price = 1;
-                    var pool5_price = 2;
-                    var pool6_price = 5;
-                    var pool7_price = 10;
-                    var pool8_price = 20;
-                    var pool9_price = 50;
-                    var pool10_price = 100;
+                    var pool1_price = 0.2;
+                    var pool2_price = 0.4;
+                    var pool3_price = 1;
+                    var pool4_price = 2;
+                    var pool5_price = 4;
+                    var pool6_price = 10;
+                    var pool7_price = 20;
+                    var pool8_price = 40;
+                    var pool9_price = 100;
+                    var pool10_price = 200;
             
                     if (!error) {
                         $.each(log, function (key, value) {
@@ -866,7 +866,7 @@ $(document).ready(function () {
         try {
 
             ethereum.enable();
-            myContractInstance1.methods.buyPool1().send({ from: account, value: 100000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool1().send({ from: account, value: 200000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
                     console.log('------->',hash)
                     $('.pool1pay').hide();
@@ -886,7 +886,7 @@ $(document).ready(function () {
             ethereum.enable();
           
 
-            myContractInstance1.methods.buyPool2().send({ from: account, value: 200000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool2().send({ from: account, value: 400000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool2pay').hide();
@@ -904,7 +904,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool3().send({ from: account, value: 500000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool3().send({ from: account, value: 1000000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool3pay').hide();
@@ -922,7 +922,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
             
-            myContractInstance1.methods.buyPool4().send({ from: account, value: 1000000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool4().send({ from: account, value: 2000000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool4pay').hide();
@@ -940,7 +940,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();           
 
-            myContractInstance1.methods.buyPool5().send({ from: account, value: 2000000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool5().send({ from: account, value: 4000000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool5pay').hide();
@@ -959,7 +959,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool6().send({ from: account, value: 5000000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool6().send({ from: account, value: 10000000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool6pay').hide();
@@ -978,7 +978,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool7().send({ from: account, value: 10000000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool7().send({ from: account, value: 20000000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool7pay').hide();
@@ -999,7 +999,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool8().send({ from: account, value: 20000000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool8().send({ from: account, value: 40000000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool8pay').hide();
@@ -1019,7 +1019,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
             
-            myContractInstance1.methods.buyPool9().send({ from: account, value: 50000000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool9().send({ from: account, value: 100000000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool9pay').hide();
@@ -1038,7 +1038,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
            
-            myContractInstance1.methods.buyPool10().send({ from: account, value: 100000000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool10().send({ from: account, value: 200000000000000000000, gasprice: 20 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool10pay').hide();
