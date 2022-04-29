@@ -206,19 +206,19 @@
             
                 myContractInstance.methods.users(account).call().then(function (result1) {
                     
-                        $('.currentuseridlink').html("https://matrixprovip.github.io/signup?referralid=" + result1.id);
+                        $('.currentuseridlink').html("https://matrixpro.vip/signup?referralid=" + result1.id);
             
-                        $('.currentuseridlinknew').html("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixprovip.github.io/signup?referralid=" + result1.id);
-            
-            
-            
-                        $('.currentuseridlink').val("/signup?referralid=" + result1.id);
-            
-                        $('.currentuseridlinknew').val("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixprovip.github.io/signup?referralid=" + result1.id);
+                        $('.currentuseridlinknew').html("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
             
             
             
-                        $('.sharebutton').attr('data-url', "https://matrixprovip.github.io/signup?referralid=" + result1.id);
+                        $('.currentuseridlink').val("https://matrixpro.vip/signup?referralid=" + result1.id);
+            
+                        $('.currentuseridlinknew').val("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
+            
+            
+            
+                        $('.sharebutton').attr('data-url', "https://matrixpro.vip/signup?referralid=" + result1.id);
                         $('.currentuserid').html(result1.id);
                         $('.currentaddress').html(account);
                         $('.ethaddress').attr('href', 'https://bscscan.com/address/' + account);
