@@ -248,7 +248,7 @@
      function getReferralCommission() {
          
      
-        var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.007); var level4 = parseFloat(0.005);
+        var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.005); var level4 = parseFloat(0.0005);
             
             var referraltotal = parseFloat(0);
         
@@ -267,12 +267,12 @@
                             referraltotal = parseFloat(referraltotal) + parseFloat("0.01");
                         }
                         else if (level == 3) {
-                            referraltotal = parseFloat(referraltotal) + parseFloat("0.007");
+                            referraltotal = parseFloat(referraltotal) + parseFloat("0.005");
         
                         }
                         else {
         
-                            referraltotal = parseFloat(referraltotal) + parseFloat("0.005");
+                            referraltotal = parseFloat(referraltotal) + parseFloat("0.0005");
         
                         }
         
@@ -470,7 +470,7 @@
      function Transaction_Register() {
          
          var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', {filter:{ _user: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
-             var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.0005); var level4 = parseFloat(0.005);
+             var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.005); var level4 = parseFloat(0.0005);
      
              if (!error) {
                  $.each(log, function (key, value) {
@@ -624,15 +624,7 @@
 </div>
 
 <!-- App-content closed -->
-<style>
-    td, .badge {
-        font-size: 15px;
-        font-weight: 500;
-        text-align:center
-    }
-    th{text-align:center}
-    
-</style>
+
 <script>
     $(document).ready(function () {
         
