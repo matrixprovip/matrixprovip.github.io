@@ -6,35 +6,35 @@
     <title>MATRIX PRO Signup </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="https://matrixprovip.github.io/matrixlogo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/matrixlogo.png">
 
    <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700" rel="stylesheet">
     <!--Font icons-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="https://matrixprovip.github.io/signup/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://matrixprovip.github.io/signup/assets/css/style.min.css">
-    <link rel="stylesheet" type="text/css" href="https://matrixprovip.github.io/flag-icon.min.css">
-    <link rel="stylesheet" type="text/css" href="https://matrixprovip.github.io/signup/assets/css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://matrixprovip.github.io/signup/assets/css/flipclock.css">
-    <link rel="stylesheet" type="text/css" href="https://matrixprovip.github.io/signup/assets/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="/signup/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/signup/assets/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="/signup/assets/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/signup/assets/css/flipclock.css">
+    <link rel="stylesheet" type="text/css" href="/signup/assets/css/swiper.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- END VENDOR CSS-->
     <!-- END CRYPTO CSS-->
     <!-- BEGIN Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="https://matrixprovip.github.io/signup/assets/css/template-counter.css">
+    <link rel="stylesheet" type="text/css" href="/signup/assets/css/template-counter.css">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="https://matrixprovip.github.io/signup/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/signup/assets/css/style.css">
     <!-- END Custom CSS-->
 
 
-    <link rel="stylesheet" type="text/css" href="https://matrixprovip.github.io/signup/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/signup/assets/css/font-awesome.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="https://matrixprovip.github.io/signup/assets/css/icon-font.min.css">
-    <link rel="stylesheet" type="text/css" href="https://matrixprovip.github.io/signup/assets/css//util.css">
-    <link rel="stylesheet" type="text/css" href="https://matrixprovip.github.io/signup/assets/css//main.css">
+    <link rel="stylesheet" type="text/css" href="/signup/assets/css/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="/signup/assets/css//util.css">
+    <link rel="stylesheet" type="text/css" href="/signup/assets/css//main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!--===============================================================================================-->
@@ -65,7 +65,7 @@
     background: -moz-linear-gradient(left, #A34FFE, #5934FC);
     background: -o-linear-gradient(left, #A34FFE, #5934FC);
     background-color: linear-gradient(to right, #A34FFE, #5934FC);
-    background: #a34ffe url(https://matrixprovip.github.io/assets/img/bg.png);
+    background: #a34ffe url(/assets/img/bg.png);
     background-size: cover;
 }
 .login100-form {
@@ -139,7 +139,7 @@ $(document).ready(function () {
             myContractInstance.methods.users(account).call().then(function (result) {
                 if (result[0]) {
                     localStorage.setItem("address", account);
-                    location.href = "https://matrixprovip.github.io/signup";
+                    location.href = "/signup";
                 }
                 else {
                     $('.error').html('You need to register first');
@@ -168,7 +168,7 @@ $(document).ready(function () {
                 if (result1.status == "0x1") {
                     alert("success")
                     localStorage.setItem("address", account);
-                    location.href = "https://matrixprovip.github.io/singin";
+                    location.href = "/singin";
                 }
                 else {
                     $('.error').html('Transaction Failed');
@@ -238,7 +238,7 @@ $(document).ready(function () {
                     if (receipt.status) {
                         alert("success")
                         localStorage.setItem("address", account);
-                        location.href = "https://matrixprovip.github.io/Home-Dashboard";
+                        location.href = "/Home-Dashboard";
                     }
                     else {
                         $('.error').html('Transaction Failed');
@@ -263,7 +263,7 @@ $(document).ready(function () {
                        
 
                             localStorage.setItem("address", add);
-                            location.href = "https://matrixprovip.github.io/Home-Dashboard";
+                            location.href = "/Home-Dashboard";
                         }
                         else {
                             $('.error').html('You need to register first');
@@ -291,7 +291,7 @@ $(document).ready(function () {
     </script>
 
     <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-    <script src="https://matrixprovip.github.io/Home-Dashboard/assets/js/socialjs.js"></script>
+    <script src="/Home-Dashboard/assets/js/socialjs.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function (event) {
             socialjs.init({
@@ -318,7 +318,7 @@ $(document).ready(function () {
                             <div class="ttttt"></div>
                         </span>
                         <div class="w-100">
-                            <img src="https://matrixprovip.github.io/wallet.png" class="w-100 p-b-34" />
+                            <img src="/wallet.png" class="w-100 p-b-34" />
                         </div>
                         
                         <p class="text-center text-azure m-b-5" style="color: #d4d8d8;">
@@ -353,19 +353,19 @@ $(document).ready(function () {
                             
                 
                 <div class="purchase-token-btn text-center" style="margin-bottom:20px;margin-top:20px;">
-                    <a href="https://matrixprovip.github.io/Referral.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  Referral</a>
+                    <a href="/Referral.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  Referral</a>
                 </div>
                 
                 <div class="purchase-token-btn text-center" style="margin-bottom:20px;margin-top:20px;">
-                    <a href="https://matrixprovip.github.io/poolflow1.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  Poolflow1</a>
+                    <a href="/poolflow1.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  Poolflow1</a>
                 </div>
                 
                 <div class="purchase-token-btn text-center" style="margin-bottom:20px;margin-top:20px;">
-                    <a href="https://matrixprovip.github.io/Profit-table.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  Profit-table</a>
+                    <a href="/Profit-table.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  Profit-table</a>
                 </div>
 
                 <div class="purchase-token-btn text-center" style="margin-bottom:20px;margin-top:20px;">
-                    <a href="https://matrixprovip.github.io/AutoPool.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  AutoPool</a>
+                    <a href="/AutoPool.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  AutoPool</a>
                 </div>
                             
                             
@@ -397,7 +397,7 @@ $(document).ready(function () {
                         <div style="text-align: center;font-size: 30px;font-weight: 800;">
                             MATRIX PRO
                         </div>
-                        <a href="https://matrixprovip.github.io/matrixlogo.png">  <img src="https://matrixprovip.github.io/matrixlogo.png" class="w-100" />
+                        <a href="/matrixlogo.png">  <img src="/matrixlogo.png" class="w-100" />
                      
                         </a>
                     </div>
@@ -415,67 +415,67 @@ $(document).ready(function () {
     <div id="dropDownSelect1"></div>
 
 <!-- Jquery-scripts -->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/js/vendors/jquery-3.2.1.min.js"></script>
+   <script src="/Home-Dashboard/Content/assets/js/vendors/jquery-3.2.1.min.js"></script>
 
    <!-- Moment js-->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/moment/moment.min.js"></script>
+   <script src="/Home-Dashboard/Content/assets/plugins/moment/moment.min.js"></script>
 
    <!-- Bootstrap-scripts js -->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/js/vendors/bootstrap.bundle.min.js"></script>
+   <script src="/Home-Dashboard/Content/assets/js/vendors/bootstrap.bundle.min.js"></script>
 
    <!-- Sparkline JS-->
-   <script src="https://matrixprovip.github.io/signup/jquery.sparkline.min.js"></script>
+   <script src="/signup/jquery.sparkline.min.js"></script>
 
    <!-- Bootstrap-daterangepicker js -->
-   <script src="https://matrixprovip.github.io/signup/daterangepicker.js"></script>
+   <script src="/signup/daterangepicker.js"></script>
 
    <!-- Bootstrap-datepicker js -->
-   <script src="https://matrixprovip.github.io/signup/bootstrap-datepicker.js"></script>
+   <script src="/signup/bootstrap-datepicker.js"></script>
 
    <!-- Chart-circle js -->
-   <script src="https://matrixprovip.github.io/signup/circle-progress.min.js"></script>
+   <script src="/signup/circle-progress.min.js"></script>
 
    <!-- Rating-star js -->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/rating/jquery.rating-stars.js"></script>
+   <script src="/Home-Dashboard/Content/assets/plugins/rating/jquery.rating-stars.js"></script>
 
    <!-- Custom scroll bar js-->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="/Home-Dashboard/Content/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
 
    <!-- P-scroll js -->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/p-scroll/p-scroll.js"></script>
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/p-scroll/p-scroll-leftmenu.js"></script>
+   <script src="/Home-Dashboard/Content/assets/plugins/p-scroll/p-scroll.js"></script>
+   <script src="/Home-Dashboard/Content/assets/plugins/p-scroll/p-scroll-leftmenu.js"></script>
 
    <!-- Sidemenu js-->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/sidemenu/sidemenu.js"></script>
+   <script src="/Home-Dashboard/Content/assets/plugins/sidemenu/sidemenu.js"></script>
 
    <!-- Sidemenu-respoansive-tabs js -->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/plugins/sidemenu-responsive-tabs/js/sidemenu-responsive-tabs.js"></script>
+   <script src="/Home-Dashboard/Content/assets/plugins/sidemenu-responsive-tabs/js/sidemenu-responsive-tabs.js"></script>
 
    <!-- Leftmenu js -->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/js/left-menu.js"></script>
+   <script src="/Home-Dashboard/Content/assets/js/left-menu.js"></script>
 
    <!--Newsticker js-->
-   <script src="https://matrixprovip.github.io/signup/jquery.jConveyorTicker.js"></script>
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/js/newsticker.js"></script>
+   <script src="/signup/jquery.jConveyorTicker.js"></script>
+   <script src="/Home-Dashboard/Content/assets/js/newsticker.js"></script>
 
    <!-- Chart js-->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/assets/plugins/chart/chart.min.js"></script>
+   <script src="/Home-Dashboard/assets/plugins/chart/chart.min.js"></script>
                 
    <!-- Nice-select js-->
-   <script src="https://matrixprovip.github.io/signup/jquery.nice-select.js"></script>
+   <script src="/signup/jquery.nice-select.js"></script>
    <script src="https://dapp.github.io/signup/nice-select.js"></script>
 
    <!-- Apexchart js-->
-   <script src="https://matrixprovip.github.io/Home-Dashboard/Content/assets/js/apexcharts.js"></script>
+   <script src="/Home-Dashboard/Content/assets/js/apexcharts.js"></script>
 
    <!-- Rightsidebar js -->
-   <script src="https://matrixprovip.github.io/signup/sidebar.js"></script>
+   <script src="/signup/sidebar.js"></script>
 
    <!-- Index js-->
-   <script src="https://matrixprovip.github.io/signup/index2.js"></script>
+   <script src="/signup/index2.js"></script>
 
    <!-- Custom js-->
-   <script src="https://matrixprovip.github.io/signup/custom.js"></script>
+   <script src="/signup/custom.js"></script>
    <!--LOgout Js-->
    
     
@@ -484,7 +484,7 @@ $(document).ready(function () {
         $('.logoutuser').click(function () {
         
             var account = localStorage.removeItem("address", null);
-            location.href = "https://matrixprovip.github.io/signin";
+            location.href = "/signin";
         });
     });
     </script>
