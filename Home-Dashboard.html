@@ -250,7 +250,7 @@
             function getReferralCommission() {
                 
             
-                var level1 = parseFloat(0.0075); var level2 = parseFloat(0.005); var level3 = parseFloat(0.0025); var level4 = parseFloat(0.000005);
+                var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.007); var level4 = parseFloat(0.005);
             
                 var referraltotal = parseFloat(0);
             
@@ -261,20 +261,20 @@
                             var level = value.returnValues._level;
             
                             if (level == 1) {
-                                referraltotal = parseFloat(referraltotal) + parseFloat("0.01");
+                                referraltotal = parseFloat(referraltotal) + parseFloat("0.02");
             
                             }
                             else if (level == 2) {
             
-                                referraltotal = parseFloat(referraltotal) + parseFloat("0.005");
+                                referraltotal = parseFloat(referraltotal) + parseFloat("0.01");
                             }
                             else if (level == 3) {
-                                referraltotal = parseFloat(referraltotal) + parseFloat("0.0025");
+                                referraltotal = parseFloat(referraltotal) + parseFloat("0.007");
             
                             }
                             else {
             
-                                referraltotal = parseFloat(referraltotal) + parseFloat("0.00025");
+                                referraltotal = parseFloat(referraltotal) + parseFloat("0.005");
             
                             }
             
@@ -472,7 +472,7 @@
             function Transaction_Register() {
                 
                 var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', {filter:{ _user: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
-                    var level1 = parseFloat(0.0075); var level2 = parseFloat(0.005); var level3 = parseFloat(0.0025); var level4 = parseFloat(0.000005);
+                    var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.007); var level4 = parseFloat(0.005);
             
                     if (!error) {
                         $.each(log, function (key, value) {
@@ -931,7 +931,7 @@ $(document).ready(function () {
         try {
 
             ethereum.enable();
-            myContractInstance1.methods.buyPool1().send({ from: account, value: 200000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool1().send({ from: account, value: 200000000000000000, gasprice: 5 })
                 .on('transactionHash', function (hash) {
                     console.log('------->',hash)
                     $('.pool1pay').hide();
@@ -951,7 +951,7 @@ $(document).ready(function () {
             ethereum.enable();
           
 
-            myContractInstance1.methods.buyPool2().send({ from: account, value: 400000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool2().send({ from: account, value: 400000000000000000, gasprice: 5 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool2pay').hide();
@@ -987,7 +987,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
             
-            myContractInstance1.methods.buyPool4().send({ from: account, value: 2000000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool4().send({ from: account, value: 2000000000000000000, gasprice: 5 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool4pay').hide();
@@ -1005,7 +1005,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();           
 
-            myContractInstance1.methods.buyPool5().send({ from: account, value: 4000000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool5().send({ from: account, value: 4000000000000000000, gasprice: 5 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool5pay').hide();
@@ -1024,7 +1024,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool6().send({ from: account, value: 10000000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool6().send({ from: account, value: 10000000000000000000, gasprice: 5 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool6pay').hide();
@@ -1043,7 +1043,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool7().send({ from: account, value: 20000000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool7().send({ from: account, value: 20000000000000000000, gasprice: 5 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool7pay').hide();
@@ -1064,7 +1064,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
 
-            myContractInstance1.methods.buyPool8().send({ from: account, value: 40000000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool8().send({ from: account, value: 40000000000000000000, gasprice: 5 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool8pay').hide();
@@ -1084,7 +1084,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
             
-            myContractInstance1.methods.buyPool9().send({ from: account, value: 100000000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool9().send({ from: account, value: 100000000000000000000, gasprice: 5 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool9pay').hide();
@@ -1103,7 +1103,7 @@ $(document).ready(function () {
         try {
             ethereum.enable();
            
-            myContractInstance1.methods.buyPool10().send({ from: account, value: 200000000000000000000, gasprice: 20 })
+            myContractInstance1.methods.buyPool10().send({ from: account, value: 200000000000000000000, gasprice: 5 })
                 .on('transactionHash', function (hash) {
 
                     $('.pool10pay').hide();
