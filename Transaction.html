@@ -205,19 +205,19 @@
      
          myContractInstance.methods.users(account).call().then(function (result1) {
                     
-                    $('.currentuseridlink').html("/signup?referralid=" + result1.id);
+                    $('.currentuseridlink').html("https://matrixpro.vip/signup?referralid=" + result1.id);
         
                     $('.currentuseridlinknew').html("https://link.trustwallet.com/open_url?coin_id=60&url=/signup?referralid="+ result1.id);
         
         
         
-                    $('.currentuseridlink').val("/signup?referralid=" + result1.id);
+                    $('.currentuseridlink').val("https://matrixpro.vip/signup?referralid=" + result1.id);
         
                     $('.currentuseridlinknew').val("https://link.trustwallet.com/open_url?coin_id=60&url=/signup?referralid="+ result1.id);
         
         
         
-                    $('.sharebutton').attr('data-url', "/signup?referralid=" + result1.id);
+                    $('.sharebutton').attr('data-url', "https://matrixpro.vip/signup?referralid=" + result1.id);
                     $('.currentuserid').html(result1.id);
                     $('.currentaddress').html(account);
                     $('.ethaddress').attr('href', 'https://bscscan.com/address/' + account);
@@ -248,36 +248,36 @@
      function getReferralCommission() {
          
      
-         var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.0005); var level4 = parseFloat(0.005);
-     
-         var referraltotal = parseFloat(0);
-     
-         var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', { filter: { _user: account }, 'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
-             
-             if (!error) {
-                 $.each(log, function (key, value) {
-                     var level = value.returnValues._level;
-     
-                     if (level == 1) {
-                         referraltotal = parseFloat(referraltotal) + parseFloat("0.02");
-     
-                     }
-                     else if (level == 2) {
-     
-                         referraltotal = parseFloat(referraltotal) + parseFloat("0.01");
-                     }
-                     else if (level == 3) {
-                         referraltotal = parseFloat(referraltotal) + parseFloat("0.0005");
-     
-                     }
-                     else {
-     
-                         referraltotal = parseFloat(referraltotal) + parseFloat("0.005");
-     
-                     }
-     
-                     $('.totalreferral').html(Math.round(1000000 * (referraltotal)) / 1000000);
-                 });
+        var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.007); var level4 = parseFloat(0.005);
+            
+            var referraltotal = parseFloat(0);
+        
+            var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', { filter: { _user: account }, 'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
+                
+                if (!error) {
+                    $.each(log, function (key, value) {
+                        var level = value.returnValues._level;
+        
+                        if (level == 1) {
+                            referraltotal = parseFloat(referraltotal) + parseFloat("0.02");
+        
+                        }
+                        else if (level == 2) {
+        
+                            referraltotal = parseFloat(referraltotal) + parseFloat("0.01");
+                        }
+                        else if (level == 3) {
+                            referraltotal = parseFloat(referraltotal) + parseFloat("0.007");
+        
+                        }
+                        else {
+        
+                            referraltotal = parseFloat(referraltotal) + parseFloat("0.005");
+        
+                        }
+        
+                        $('.totalreferral').html(Math.round(1000000 * (referraltotal)) / 1000000);
+                    });
                 
              }
          });
