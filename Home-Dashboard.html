@@ -206,19 +206,19 @@
             
                 myContractInstance.methods.users(account).call().then(function (result1) {
                     
-                        $('.currentuseridlink').html("/signup?referralid=" + result1.id);
+                        $('.currentuseridlink').html("https://matrixpro.vip/signup/signup?referralid=" + result1.id);
             
-                        $('.currentuseridlinknew').html("https://link.trustwallet.com/open_url?coin_id=60&url=/signup?referralid=" + result1.id);
-            
-            
-            
-                        $('.currentuseridlink').val("/signup?referralid=" + result1.id);
-            
-                        $('.currentuseridlinknew').val("https://link.trustwallet.com/open_url?coin_id=60&url=/signup?referralid=" + result1.id);
+                        $('.currentuseridlinknew').html("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup/signup?referralid=" + result1.id);
             
             
             
-                        $('.sharebutton').attr('data-url', "/signup?referralid=" + result1.id);
+                        $('.currentuseridlink').val("https://matrixpro.vip/signup/signup?referralid=" + result1.id);
+            
+                        $('.currentuseridlinknew').val("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup/signup?referralid=" + result1.id);
+            
+            
+            
+                        $('.sharebutton').attr('data-url', "https://matrixpro.vip/signup/signup?referralid=" + result1.id);
                         $('.currentuserid').html(result1.id);
                         $('.currentaddress').html(account);
                         $('.ethaddress').attr('href', 'https://bscscan.com/address/' + account);
@@ -1209,7 +1209,7 @@ $(document).ready(function () {
                             <a class="sharebutton facebook btn " style="background-color:#0851ee;color:white" data-basecount="" data-sharetype="facebook" data-text="The page title" title="Share this on Facebook" href="#" data-url="#"><i class=" fa fa-facebook"></i></a>
 
                             <a class="sharebutton twitter btn" style="background-color:#00ee77;color:white" data-basecount="" data-sharetype="twitter" data-text="The page title" data-via="INHERIT38092481" data-related="" title="Share this on Twitter" href="https://matrixpro.vip/signup/?referralid="><i class=" fa fa-twitter"></i> </a>
-                            <a class="sharebutton linkedin btn" style="background-color:#c8e00f;color:white" data-basecount="" data-sharetype="linkedin" data-text="The page title" data-referer="INHERIT38092481" data-related="INHERIT38092481" title="Share this on LinkedIn" href="#"><i class=" fa fa-linkedin"></i> </a>
+                            <a class="sharebutton linkedin btn" style="background-color:#c8e00f;color:white" data-basecount="" data-sharetype="linkedin" data-text="The page title" data-referer="" data-related="" title="Share this on LinkedIn" href="#"><i class=" fa fa-linkedin"></i> </a>
 
                             <a class="sharebutton telegram btn" style="background-color:#cc4100;color:white" data-basecount="" data-sharetype="telegram" data-text="The page title" title="Share on telegram" href="#"><i class="fa fa-telegram"></i> </a>
                         </div>  </div>
