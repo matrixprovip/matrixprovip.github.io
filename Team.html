@@ -527,7 +527,7 @@
     
             if (web3.currentProvider.isTrust) {
     
-                const infura = 'https://mainnet.infura.io/v3/a380edd901454cf6ba4b4cefe4c8f7be';
+                const infura = ' ';
                 const web3 = new Web3(new Web3.providers.HttpProvider(infura));
                 MyContract = new web3.eth.Contract(abi, address);
                 myContractInstance = MyContract;
@@ -539,7 +539,7 @@
         } else {
            // const Web3 = require('web3');
     
-            const infura = 'https://mainnet.infura.io/v3/a380edd901454cf6ba4b4cefe4c8f7be';
+            const infura = ' ';
             const web3 = new Web3(new Web3.providers.HttpProvider(infura));
             MyContract = new web3.eth.Contract(abi, address);
             myContractInstance = MyContract;
