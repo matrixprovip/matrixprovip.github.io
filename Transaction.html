@@ -248,41 +248,41 @@
      
      
      function getReferralCommission() {
-         
-     
-        var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.005); var level4 = parseFloat(0.0005);
-            
-            var referraltotal = parseFloat(0);
+    
+
+    var level1 = parseFloat(0.015); var level2 = parseFloat(0.01); var level3 = parseFloat(0.005); var level4 = parseFloat(0.00001);
+
+    var referraltotal = parseFloat(0);
+
+    var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', { filter: { _user: account }, 'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
         
-            var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', { filter: { _user: account }, 'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
-                
-                if (!error) {
-                    $.each(log, function (key, value) {
-                        var level = value.returnValues._level;
-        
-                        if (level == 1) {
-                            referraltotal = parseFloat(referraltotal) + parseFloat("0.02");
-        
-                        }
-                        else if (level == 2) {
-        
-                            referraltotal = parseFloat(referraltotal) + parseFloat("0.01");
-                        }
-                        else if (level == 3) {
-                            referraltotal = parseFloat(referraltotal) + parseFloat("0.005");
-        
-                        }
-                        else {
-        
-                            referraltotal = parseFloat(referraltotal) + parseFloat("0.0005");
-        
-                        }
-        
-                        $('.totalreferral').html(Math.round(1000000 * (referraltotal)) / 1000000);
-                    });
-                
-             }
-         });
+        if (!error) {
+            $.each(log, function (key, value) {
+                var level = value.returnValues._level;
+
+                if (level == 1) {
+                    referraltotal = parseFloat(referraltotal) + parseFloat("0.02");
+
+                }
+                else if (level == 2) {
+
+                    referraltotal = parseFloat(referraltotal) + parseFloat("0.01");
+                }
+                else if (level == 3) {
+                    referraltotal = parseFloat(referraltotal) + parseFloat("0.005");
+
+                }
+                else {
+
+                    referraltotal = parseFloat(referraltotal) + parseFloat("0.0005");
+
+                }
+
+                $('.totalreferral').html(Math.round(1000000 * (referraltotal)) / 1000000);
+            });
+           
+        }
+    });
      
      }
      
@@ -472,7 +472,7 @@
      function Transaction_Register() {
          
          var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', {filter:{ _user: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
-             var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.005); var level4 = parseFloat(0.0005);
+            var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.005); var level4 = parseFloat(0.0005);
      
              if (!error) {
                  $.each(log, function (key, value) {
