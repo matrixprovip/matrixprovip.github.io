@@ -8,7 +8,7 @@
 .resp-vtabs li.active .side_menu_img {
 	    opacity: 1;
 }
-@media (min-width: 768px) {
+@media (min-width: auto) {
 	.app.sidenav-toggled.sidenav-toggled1 .app-content {
 		margin-left: 0;
 	}
@@ -17,7 +17,7 @@
 	}
 	
 }
-@media (max-width: 767px) {
+@media (max-width: auto) {
 	.app {
 		overflow-x: hidden;
 	}
