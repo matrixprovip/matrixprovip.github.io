@@ -1,4 +1,528 @@
-/*! jssocials - v1.5.0 - 2017-04-30
-* http://js-socials.com
-* Copyright (c) 2017 Artem Tabalin; Licensed MIT */
-!function(a,b,c){function d(a,c){var d=b(a);d.data(f,this),this._$element=d,this.shares=[],this._init(c),this._render()}var e="JSSocials",f=e,g=function(a,c){return b.isFunction(a)?a.apply(c,b.makeArray(arguments).slice(2)):a},h=/(\.(jpeg|png|gif|bmp|svg)$|^data:image\/(jpeg|png|gif|bmp|svg\+xml);base64)/i,i=/(&?[a-zA-Z0-9]+=)?\{([a-zA-Z0-9]+)\}/g,j={G:1e9,M:1e6,K:1e3},k={};d.prototype={url:"",text:"",shareIn:"blank",showLabel:function(a){return this.showCount===!1?a>this.smallScreenWidth:a>=this.largeScreenWidth},showCount:function(a){return a<=this.smallScreenWidth?"inside":!0},smallScreenWidth:640,largeScreenWidth:1024,resizeTimeout:200,elementClass:"jssocials",sharesClass:"jssocials-shares",shareClass:"jssocials-share",shareButtonClass:"jssocials-share-button",shareLinkClass:"jssocials-share-link",shareLogoClass:"jssocials-share-logo",shareLabelClass:"jssocials-share-label",shareLinkCountClass:"jssocials-share-link-count",shareCountBoxClass:"jssocials-share-count-box",shareCountClass:"jssocials-share-count",shareZeroCountClass:"jssocials-share-no-count",_init:function(a){this._initDefaults(),b.extend(this,a),this._initShares(),this._attachWindowResizeCallback()},_initDefaults:function(){this.url=a.location.href,this.text=b.trim(b("meta[name=description]").attr("content")||b("title").text())},_initShares:function(){this.shares=b.map(this.shares,b.proxy(function(a){"string"==typeof a&&(a={share:a});var c=a.share&&k[a.share];if(!c&&!a.renderer)throw Error("Share '"+a.share+"' is not found");return b.extend({url:this.url,text:this.text},c,a)},this))},_attachWindowResizeCallback:function(){b(a).on("resize",b.proxy(this._windowResizeHandler,this))},_detachWindowResizeCallback:function(){b(a).off("resize",this._windowResizeHandler)},_windowResizeHandler:function(){(b.isFunction(this.showLabel)||b.isFunction(this.showCount))&&(a.clearTimeout(this._resizeTimer),this._resizeTimer=setTimeout(b.proxy(this.refresh,this),this.resizeTimeout))},_render:function(){this._clear(),this._defineOptionsByScreen(),this._$element.addClass(this.elementClass),this._$shares=b("<div>").addClass(this.sharesClass).appendTo(this._$element),this._renderShares()},_defineOptionsByScreen:function(){this._screenWidth=b(a).width(),this._showLabel=g(this.showLabel,this,this._screenWidth),this._showCount=g(this.showCount,this,this._screenWidth)},_renderShares:function(){b.each(this.shares,b.proxy(function(a,b){this._renderShare(b)},this))},_renderShare:function(a){var c;c=b.isFunction(a.renderer)?b(a.renderer()):this._createShare(a),c.addClass(this.shareClass).addClass(a.share?"jssocials-share-"+a.share:"").addClass(a.css).appendTo(this._$shares)},_createShare:function(a){var c=b("<div>"),d=this._createShareLink(a).appendTo(c);if(this._showCount){var e="inside"===this._showCount,f=e?d:b("<div>").addClass(this.shareCountBoxClass).appendTo(c);f.addClass(e?this.shareLinkCountClass:this.shareCountBoxClass),this._renderShareCount(a,f)}return c},_createShareLink:function(a){var c=this._getShareStrategy(a),d=c.call(a,{shareUrl:this._getShareUrl(a)});return d.addClass(this.shareLinkClass).append(this._createShareLogo(a)),this._showLabel&&d.append(this._createShareLabel(a)),b.each(this.on||{},function(c,e){b.isFunction(e)&&d.on(c,b.proxy(e,a))}),d},_getShareStrategy:function(a){var b=m[a.shareIn||this.shareIn];if(!b)throw Error("Share strategy '"+this.shareIn+"' not found");return b},_getShareUrl:function(a){var b=g(a.shareUrl,a);return this._formatShareUrl(b,a)},_createShareLogo:function(a){var c=a.logo,d=h.test(c)?b("<img>").attr("src",a.logo):b("<i>").addClass(c);return d.addClass(this.shareLogoClass),d},_createShareLabel:function(a){return b("<span>").addClass(this.shareLabelClass).text(a.label)},_renderShareCount:function(a,c){var d=b("<span>").addClass(this.shareCountClass);c.addClass(this.shareZeroCountClass).append(d),this._loadCount(a).done(b.proxy(function(a){a&&(c.removeClass(this.shareZeroCountClass),d.text(a))},this))},_loadCount:function(a){var c=b.Deferred(),d=this._getCountUrl(a);if(!d)return c.resolve(0).promise();var e=b.proxy(function(b){c.resolve(this._getCountValue(b,a))},this);return b.getJSON(d).done(e).fail(function(){b.get(d).done(e).fail(function(){c.resolve(0)})}),c.promise()},_getCountUrl:function(a){var b=g(a.countUrl,a);return this._formatShareUrl(b,a)},_getCountValue:function(a,c){var d=(b.isFunction(c.getCount)?c.getCount(a):a)||0;return"string"==typeof d?d:this._formatNumber(d)},_formatNumber:function(a){return b.each(j,function(b,c){return a>=c?(a=parseFloat((a/c).toFixed(2))+b,!1):void 0}),a},_formatShareUrl:function(b,c){return b.replace(i,function(b,d,e){var f=c[e]||"";return f?(d||"")+a.encodeURIComponent(f):""})},_clear:function(){a.clearTimeout(this._resizeTimer),this._$element.empty()},_passOptionToShares:function(a,c){var d=this.shares;b.each(["url","text"],function(e,f){f===a&&b.each(d,function(b,d){d[a]=c})})},_normalizeShare:function(a){return b.isNumeric(a)?this.shares[a]:"string"==typeof a?b.grep(this.shares,function(b){return b.share===a})[0]:a},refresh:function(){this._render()},destroy:function(){this._clear(),this._detachWindowResizeCallback(),this._$element.removeClass(this.elementClass).removeData(f)},option:function(a,b){return 1===arguments.length?this[a]:(this[a]=b,this._passOptionToShares(a,b),void this.refresh())},shareOption:function(a,b,c){return a=this._normalizeShare(a),2===arguments.length?a[b]:(a[b]=c,void this.refresh())}},b.fn.jsSocials=function(a){var e=b.makeArray(arguments),g=e.slice(1),h=this;return this.each(function(){var e,i=b(this),j=i.data(f);if(j)if("string"==typeof a){if(e=j[a].apply(j,g),e!==c&&e!==j)return h=e,!1}else j._detachWindowResizeCallback(),j._init(a),j._render();else new d(i,a)}),h};var l=function(a){var c;b.isPlainObject(a)?c=d.prototype:(c=k[a],a=arguments[1]||{}),b.extend(c,a)},m={popup:function(c){return b("<a>").attr("href","#").on("click",function(){return a.open(c.shareUrl,null,"width=600, height=400, location=0, menubar=0, resizeable=0, scrollbars=0, status=0, titlebar=0, toolbar=0"),!1})},blank:function(a){return b("<a>").attr({target:"_blank",href:a.shareUrl})},self:function(a){return b("<a>").attr({target:"_self",href:a.shareUrl})}};a.jsSocials={Socials:d,shares:k,shareStrategies:m,setDefaults:l}}(window,jQuery),function(a,b,c){b.extend(c.shares,{email:{label:"E-mail",logo:"fa fa-at",shareUrl:"mailto:{to}?subject={text}&body={url}",countUrl:"",shareIn:"self"},twitter:{label:"Tweet",logo:"fa fa-twitter",shareUrl:"https://twitter.com/share?url={url}&text={text}&via={via}&hashtags={hashtags}",countUrl:""},facebook:{label:"Like",logo:"fa fa-facebook",shareUrl:"https://facebook.com/sharer/sharer.php?u={url}",countUrl:"https://graph.facebook.com/?id={url}",getCount:function(a){return a.share&&a.share.share_count||0}},vkontakte:{label:"Like",logo:"fa fa-vk",shareUrl:"https://vk.com/share.php?url={url}&title={title}&description={text}",countUrl:"https://vk.com/share.php?act=count&index=1&url={url}",getCount:function(a){return parseInt(a.slice(15,-2).split(", ")[1])}},googleplus:{label:"+1",logo:"fa fa-google",shareUrl:"https://plus.google.com/share?url={url}",countUrl:""},linkedin:{label:"Share",logo:"fa fa-linkedin",shareUrl:"https://www.linkedin.com/shareArticle?mini=true&url={url}",countUrl:"https://www.linkedin.com/countserv/count/share?format=jsonp&url={url}&callback=?",getCount:function(a){return a.count}},pinterest:{label:"Pin it",logo:"fa fa-pinterest",shareUrl:"https://pinterest.com/pin/create/bookmarklet/?media={media}&url={url}&description={text}",countUrl:"https://api.pinterest.com/v1/urls/count.json?&url={url}&callback=?",getCount:function(a){return a.count}},stumbleupon:{label:"Share",logo:"fa fa-stumbleupon",shareUrl:"http://www.stumbleupon.com/submit?url={url}&title={title}",countUrl:"https://cors-anywhere.herokuapp.com/https://www.stumbleupon.com/services/1.01/badge.getinfo?url={url}",getCount:function(a){return a.result&&a.result.views}},telegram:{label:"Telegram",logo:"fa fa-telegram",shareUrl:"tg://msg?text={url} {text}",countUrl:"",shareIn:"self"},whatsapp:{label:"WhatsApp",logo:"fa fa-whatsapp",shareUrl:"whatsapp://send?text={url} {text}",countUrl:"",shareIn:"self"},line:{label:"LINE",logo:"fa fa-comment",shareUrl:"http://line.me/R/msg/text/?{text} {url}",countUrl:""},viber:{label:"Viber",logo:"fa fa-volume-control-phone",shareUrl:"viber://forward?text={url} {text}",countUrl:"",shareIn:"self"},pocket:{label:"Pocket",logo:"fa fa-get-pocket",shareUrl:"https://getpocket.com/save?url={url}&title={title}",countUrl:""},messenger:{label:"Share",logo:"fa fa-commenting",shareUrl:"fb-messenger://share?link={url}",countUrl:"",shareIn:"self"},rss:{label:"RSS",logo:"fa fa-rss",shareUrl:"/feeds/",countUrl:"",shareIn:"blank"}})}(window,jQuery,window.jsSocials);
+/*! socialjs - v2.2.0 - 2018-10-19
+* https://www.andreasnorman.com/socialjs/
+* Copyright (c) 2018 ; Licensed  */
+(function (root, factory) {
+	if (typeof define === 'function' && define.amd) {
+		define([], factory(root));
+	} else if (typeof exports === 'object') {
+		module.exports = factory(root);
+	} else {
+		root.socialjs = factory(root);
+	}
+})(typeof global !== 'undefined' ? global : this.window || this.global, function (root) {
+
+	'use strict';
+
+	//
+	// Variables
+	//
+
+	var socialjs = {}; // Object for public APIs
+	var supports = !!document.querySelector && !!root.addEventListener; // Feature test
+	var settings;
+	var el;
+
+  var totalCount = 0;
+  var twitterCount = 0;
+  var facebookCount = 0;
+  var linkedinCount = 0;
+  var googleplusCount = 0;
+  var pinterestCount = 0;
+  var redditCount = 0;
+
+	// Default settings
+	var defaults = {
+		container: '.socialjs',
+		fetchCounts: false,
+		shortCount: true,
+		https: false,
+		urls: {
+			GooglePlus: 'backend/GooglePlusCall.php',
+			Pinterest: 'backend/PinterestCall.php',
+			Facebook: 'http://graph.facebook.com/',
+			Linkedin: 'http://www.linkedin.com/countserv/count/share',
+            Reddit: 'http://www.reddit.com/api/info.json',
+            telegram: 'https://t.me/share/url'
+		},
+		onInit: function () {},
+		OnAttachEvents: function () {},
+		onDestroy: function () {},
+		onClick: function () {}
+	};
+
+	//
+	// Methods
+	//
+
+	var attachEvents = function () {
+    var sharebuttons = el.querySelectorAll('.sharebutton');
+
+    forEach(sharebuttons, function (shareButton, value) {
+      if (shareButton.getAttribute('data-sharetype') === 'twitter') {
+        attachTwitter(shareButton);
+        if (settings.fetchCounts) {
+          fetchTwitterCount(shareButton);
+        }
+      } else if (shareButton.getAttribute('data-sharetype') === 'facebook') {
+        attachFacebook(shareButton);
+        if (settings.fetchCounts) {
+          fetchFacebookCount(shareButton);
+        }
+      } else if (shareButton.getAttribute('data-sharetype') === 'linkedin') {
+        attachLinkedIn(shareButton);
+        if (settings.fetchCounts) {
+          fetchLinkedInCount(shareButton);
+        }
+      } else if (shareButton.getAttribute('data-sharetype') === 'googleplus') {
+        attachGooglePlus(shareButton);
+        if (settings.fetchCounts) {
+          fetchGooglePlusCount(shareButton);
+        }
+      } else if (shareButton.getAttribute('data-sharetype') === 'reddit') {
+        attachReddit(shareButton);
+        if (settings.fetchCounts) {
+          fetchRedditCount(shareButton);
+        }
+      }
+      else if (shareButton.getAttribute('data-sharetype') === 'telegram') {
+          attachTelegram(shareButton);
+        
+      }
+    });
+		hook('OnAttachEvents');
+	};
+
+	/*
+	This no longer works due to the face that Twitter removed this feature. It will remain here for historic reasons only.
+	See: https://blog.twitter.com/2015/hard-decisions-for-a-sustainable-platform
+	*/
+	var fetchTwitterCount = function (element) {
+		/*
+		http://cdn.api.twitter.com/1/urls/count.json?url=http://{URL}
+		{
+		"count": intgr/(number)
+		"url":"http:\/\/{URL}\/"
+		}
+		*/
+		var count = getDataAttribute(element, 'basecount');
+		element.querySelector('.count').innerHTML = shortCountNumber(count);
+		totalCount = totalCount + count;
+		twitterCount = count;
+	};
+
+  /*
+  http://graph.facebook.com/?id=http://{URL}
+  {
+  "id": "http://{URL}",
+  "shares": intgr/(number)
+  }
+  */
+  var fetchFacebookCount = function (element) {
+    var jsonURL = settings.urls.Facebook + '?id=' + getUrl(element);
+    var request = new XMLHttpRequest();
+    request.open('GET', jsonURL, true);
+
+    request.onload = function () {
+			if (request.status >= 200 && request.status < 400) {
+        var count = 0;
+        var response = JSON.parse(request.response);
+
+        if (typeof response.shares !== 'undefined') {
+          count = parseInt(getDataAttribute(element, 'basecount')) + parseInt(response.shares, 10);
+          element.querySelector('.count').innerHTML = shortCountNumber(count);
+          totalCount = totalCount + count;
+          facebookCount = count;
+        } else {
+          count = parseInt(getDataAttribute(element, 'basecount'));
+          element.querySelector('.count').innerHTML = shortCountNumber(count);
+          totalCount = totalCount + count;
+          facebookCount = count;
+        }
+			}
+		};
+		request.onerror = function () {
+			// There was a connection error of some sort
+		};
+		request.send();
+  };
+
+
+  /*
+  http://www.linkedin.com/countserv/count/share?url=http://{URL&format=json
+  {
+  "count": intgr/(number),
+  "fCnt": "intgr/(number)",
+  "fCntPlusOne":"intgr/(number) + 1", // increased by one
+  "url":"http:\/\/{URL}"
+  }
+  */
+  var fetchLinkedInCount = function (element) {
+		var jsonURL = settings.urls.Linkedin + '?url=' + getUrl(element);
+		jsonp(jsonURL, function(data) {
+			 var count = parseInt(getDataAttribute(element, 'basecount')) + parseInt(data.count, 10);
+			 element.querySelector('.count').innerHTML = shortCountNumber(count);
+			 totalCount = totalCount + count;
+			 linkedinCount = count;
+		});
+  };
+
+  var fetchRedditCount = function (element) {
+    var jsonURL = settings.urls.Reddit + '?url=' + getUrl(element);
+		var request = new XMLHttpRequest();
+		request.open('GET', jsonURL, true);
+
+    request.onload = function () {
+			if (request.status >= 200 && request.status < 400) {
+				var response = JSON.parse(request.response);
+				// Success!
+				var count = 0;
+				if( !Array.isArray(response.data.children) ||  !response.data.children.length ) {
+					count = parseInt(getDataAttribute(element, 'basecount'));
+					element.querySelector('.count').innerHTML = shortCountNumber(count);
+					totalCount = totalCount + count;
+					redditCount = count;
+				} else {
+					count = parseInt(getDataAttribute(element, 'basecount')) + parseInt(response.data.children[0].data.score, 10);
+					element.querySelector('.count').innerHTML = shortCountNumber(count);
+					totalCount = totalCount + count;
+					redditCount = count;
+				}
+			}
+		};
+		request.onerror = function () {
+			// There was a connection error of some sort
+		};
+		request.send();
+  };
+
+  var fetchPinterestCount = function (element) {
+    var jsonURL = settings.Pinterest + '?url=' + getUrl(element);
+		var request = new XMLHttpRequest();
+		request.open('GET', jsonURL, true);
+
+    request.onload = function () {
+			if (request.status >= 200 && request.status < 400) {
+				var response = JSON.parse(request.response);
+				// Success!
+        var count = parseInt(getDataAttribute(element, 'basecount')) + parseInt(response, 10);
+        element.querySelector('.count').innerHTML = shortCountNumber(count);
+        totalCount = totalCount + count;
+        pinterestCount = count;
+			}
+		};
+		request.onerror = function () {
+			// There was a connection error of some sort
+		};
+		request.send();
+  };
+
+	var fetchGooglePlusCount = function (element) {
+		var jsonURL = settings.urls.GooglePlus + '?url=' + getUrl(element);
+		var request = new XMLHttpRequest();
+		request.open('GET', jsonURL, true);
+
+    request.onload = function () {
+			if (request.status >= 200 && request.status < 400) {
+				var response = JSON.parse(request.response);
+				// Success!
+        var count = parseInt(getDataAttribute(element, 'basecount')) + parseInt(response, 10);
+        element.querySelector('.count').innerHTML = shortCountNumber(count);
+        totalCount = totalCount + count;
+        googleplusCount = count;
+			}
+		};
+		request.onerror = function () {
+			// There was a connection error of some sort
+		};
+		request.send();
+	};
+
+	var attachFacebook = function (button) {
+		button.addEventListener('click', function (e) {
+			e.preventDefault();
+			hook('onClick');
+			var url = getUrl(button);
+			var fullurl = 'u=' + encodeURIComponent(url);
+			var encodedUrl = encodeURIComponent(url);
+			window.facebook = window.facebook || {};
+			window.facebook.shareWin = window.open('https://www.facebook.com/sharer/sharer.php?' + fullurl, '', getWindowSizePosition());
+			return false;
+		});
+	};
+
+	var attachLinkedIn = function (button) {
+		button.addEventListener('click', function (e) {
+			e.preventDefault();
+			hook('onClick');
+			var original_referer = (button.hasAttribute('data-referer') ? button.getAttribute('data-referer') : '');
+			var url = getUrl(button);
+			var fullurl = 'original_referer=' + encodeURIComponent(original_referer) + '&url=' + encodeURIComponent(url);
+			var encodedUrl = encodeURIComponent(url);
+			window.GooglePlus = window.GooglePlus || {};
+			window.GooglePlus.shareWin = window.open('https://www.linkedin.com/cws/share?' + fullurl + '&isFramed=true', '', getWindowSizePosition());
+			return false;
+		});
+	};
+
+	var attachReddit = function (button) {
+		button.addEventListener('click', function (e) {
+			e.preventDefault();
+			hook('onClick');
+			var url = getUrl(button);
+			var fullurl = 'url=' + encodeURIComponent(url);
+			var encodedUrl = encodeURIComponent(url);
+			window.Reddit = window.Reddit || {};
+			window.Reddit.shareWin = window.open('https://www.reddit.com/submit?' + fullurl, '', getWindowSizePosition());
+			return false;
+		});
+    };
+
+    var attachTelegram = function (button) {
+
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            hook('onClick');
+            var url = getUrl(button);
+            var fullurl = 'text=' + encodeURIComponent(url);
+            var encodedUrl = encodeURIComponent(url);
+            window.Reddit = window.Reddit || {};
+            window.Reddit.shareWin = window.open('https://t.me/share/url?' + fullurl, '', getWindowSizePosition());
+            return false;
+        });
+    };
+
+	var attachGooglePlus = function (button) {
+        button.addEventListener('click', function (e) {
+
+			e.preventDefault();
+			hook('onClick');
+			var text = (button.hasAttribute('data-text') ? button.getAttribute('data-text') : '');
+			var url = getUrl(button);
+			var fullurl = 'text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
+			var encodedUrl = encodeURIComponent(url);
+			window.GooglePlus = window.GooglePlus || {};
+			window.GooglePlus.shareWin = window.open('https://plus.google.com/share?' + fullurl, '', getWindowSizePosition());
+			return false;
+		});
+	};
+
+	var attachTwitter = function (button) {
+		button.addEventListener('click', function (e) {
+			e.preventDefault();
+			hook('onClick');
+			var text = (button.hasAttribute('data-text') ? button.getAttribute('data-text') : '');
+			var url = getUrl(button);
+			var via = (button.hasAttribute('data-via') ? button.getAttribute('data-via') : '');
+			var related = (button.hasAttribute('related') ? button.getAttribute('related') : '');
+			var fullurl = 'text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url) + '&via=' + via + '&related=' + related;
+			var encodedUrl = encodeURIComponent(url);
+			window.Twitter = window.Twitter || {};
+			window.Twitter.shareWin = window.open('https://twitter.com/intent/tweet?' + fullurl, '', getWindowSizePosition());
+			return false;
+		});
+	};
+
+  var shortCountNumber = function (num) {
+    if (settings.shortCount) {
+      if (num >= 1e6){
+        num = parseInt((num / 1e6).toFixed(2), 10) + 'M';
+      } else if (num >= 1e3){
+        num = parseInt((num / 1e3).toFixed(1), 10) + 'k';
+      }
+    }
+    return num;
+  };
+
+	var getUrl = function (element) {
+		var attributeValue = element.getAttribute('data-url');
+		if (typeof attributeValue !== 'undefined' && attributeValue !== null && attributeValue !== '') {
+      return attributeValue;
+    } else {
+			return window.location.href;
+    }
+	};
+
+  var getDataAttribute = function (element, attributeName) {
+    var attributeValue = element.getAttribute('data-' + attributeName);
+    if (typeof attributeValue !== 'undefined') {
+      return attributeValue;
+    } else {
+      return '';
+    }
+  };
+
+	var handleError = function () {
+
+	};
+
+	var jsonp = function (url, callback) {
+		var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
+		window[callbackName] = function(data) {
+			delete window[callbackName];
+			document.body.removeChild(script);
+			callback(data);
+		};
+
+		var script = document.createElement('script');
+		script.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
+		document.body.appendChild(script);
+	};
+
+  var getWindowSizePosition = function () {
+    var D = 550,
+      A = 335,
+      C = screen.height,
+      B = screen.width,
+      H = Math.round((B / 2) - (D / 2)),
+      G = 0,
+      F = document;
+    if (C > A) {
+      G = Math.round((C / 2) - (A / 2));
+    }
+    return 'left=' + H + ',top=' + G + ',width=' + D + ',height=' + A + ',personalbar=0,toolbar=0,scrollbars=1,resizable=1';
+  };
+
+	var hasClass = function (element, classname) {
+		if (typeof element.classList !== 'undefined' && element.classList.contains(classname)) {
+			return true;
+		} else {
+			return false;
+		}
+	};
+
+	/**
+	 * Callback hooks.
+	 * Usage: In the defaults object specify a callback function:
+	 * hookName: function() {}
+	 * Then somewhere in the plugin trigger the callback:
+	 * hook('hookName');
+	 */
+	var hook = function (hookName) {
+		if (settings[hookName] !== undefined) {
+			// Call the user defined function.
+			// Scope is set to the jQuery element we are operating on.
+			settings[hookName].call(el);
+		}
+	};
+
+	/**
+	 * Merge defaults with user options
+	 * @private
+	 * @param {Object} defaults Default settings
+	 * @param {Object} options User options
+	 * @returns {Object} Merged values of defaults and options
+	 */
+	var extend = function (defaults, options) {
+		var extended = {};
+		forEach(defaults, function (value, prop) {
+			extended[prop] = defaults[prop];
+		});
+		forEach(options, function (value, prop) {
+			extended[prop] = options[prop];
+		});
+		return extended;
+	};
+
+	/**
+	 * A simple forEach() implementation for Arrays, Objects and NodeLists
+	 * @private
+	 * @param {Array|Object|NodeList} collection Collection of items to iterate
+	 * @param {Function} callback Callback function for each iteration
+	 * @param {Array|Object|NodeList} scope Object/NodeList/Array that forEach is iterating over (aka `this`)
+	 */
+	var forEach = function (collection, callback, scope) {
+		if (Object.prototype.toString.call(collection) === '[object Object]') {
+			for (var prop in collection) {
+				if (Object.prototype.hasOwnProperty.call(collection, prop)) {
+					callback.call(scope, collection[prop], prop, collection);
+				}
+			}
+		} else {
+			for (var i = 0, len = collection.length; i < len; i++) {
+				callback.call(scope, collection[i], i, collection);
+			}
+		}
+	};
+
+	/**
+	 * Destroy the current initialization.
+	 * @public
+	 */
+	socialjs.destroy = function () {
+
+		// If plugin isn't already initialized, stop
+		if (!settings) {
+			return;
+		}
+
+		// Remove init class for conditional CSS
+		document.documentElement.classList.remove(settings.initClass);
+
+		// @todo Undo any other init functions...
+
+		// Remove event listeners
+		document.removeEventListener('click', eventHandler, false);
+
+		// Reset variables
+		settings = null;
+		hook('onDestroy');
+	};
+
+	/**
+	 * Initialize Plugin
+	 * @public
+	 * @param {Object} options User settings
+	 */
+	socialjs.init = function (options) {
+		// feature test
+		if (!supports) {
+			return;
+		}
+
+		if(options.https === true) {
+			defaults.urls.Facebook = 'https://graph.facebook.com/';
+			defaults.urls.Linkedin = 'https://www.linkedin.com/countserv/count/share';
+			defaults.urls.Reddit = 'https://www.reddit.com/api/info.json';
+		}
+
+		if (document.location.hostname === 'localhost') {
+			console.warn('SocialJS will not work properly when run on localhost. The URL must be accessible from the outside.');
+		}
+
+		// Destroy any existing initializations
+		socialjs.destroy();
+
+		// Merge user options with defaults
+		settings = extend(defaults, options || {});
+
+		el = document.querySelector(settings.container);
+
+		attachEvents();
+
+		hook('onInit');
+	};
+
+	//
+	// Public APIs
+	//
+
+	socialjs.getCount = {
+		Total: function () {
+			return totalCount;
+		},
+		Facebook: function () {
+			return facebookCount;
+		},
+		Linkedin: function () {
+			return linkedinCount;
+		},
+		GooglePlus: function () {
+			return googleplusCount;
+		},
+		Reddit: function () {
+			return redditCount;
+		}
+	};
+
+	return socialjs;
+});
