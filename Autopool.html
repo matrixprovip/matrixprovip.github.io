@@ -176,22 +176,22 @@ $(document).ready(function () {
     // get variable values
     myContractInstance.methods.pool1currUserID().call().then(function (result) {
         $('.Pool1count').html(result);
-        $('.pool1_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
+        
     });
 
     myContractInstance.methods.pool2currUserID().call().then(function (result) {
         $('.Pool2count').html(result);
-        $('.pool2_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
+        
     });
 
     myContractInstance.methods.pool3currUserID().call().then(function (result) {
         $('.Pool3count').html(result);
-        $('.pool3_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
+        
     });
 
     myContractInstance.methods.pool4currUserID().call().then(function (result) {
         $('.Pool4count').html(result);
-        $('.pool4_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
+        
     });
 
 
