@@ -1489,45 +1489,98 @@ $(document).ready(function () {
     });
 </script>
 
+
 <script>
-    function myFunction() {
-        /* Get the text field */
-        var copyText = document.getElementById("myInput");
-      
-        /* Select the text field */
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+function myFuntion(){
+     var copytext = document.getElementById('myInput').value;
+     if(!document.getElementById('myInput').value){
+      Swal.fire(
+  'Link Alert',
+  'Check User ID.',
+  'error'
+)
+     }else{
+if(!/^(0x){1}[0-9a-fA-F]{40}$/i.test(account)){
+    Swal.fire(
+  'Referral Alert',
+  'Your Link is not valid.',
+  'error'
+)
+}else{    
+  document.getElementById('myInput').value = 'https://matrixpro.vip/signup?referralid=' + document.getElementById('myInput').value;
+}
+}
+}
+function copyToClipboard(id) {
+    var text = document.getElementById(id).value; //getting the text from that particular Row
+    //window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+    if (window.clipboardData && window.clipboardData.setData) {
+        // IE specific code path to prevent textarea being shown while dialog is visible.
+        return clipboardData.setData("Text", text);
 
-        /* Copy the text inside the text field */
-        document.execCommand("copy");
-
-        /* Alert the copied text */
-        alert(copyText.value);
+    } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+        var textarea = document.createElement("textarea");
+        textarea.textContent = text;
+        textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+        } catch (ex) {
+            console.warn("Copy to clipboard failed.", ex);
+            return false;
+        } finally {
+            document.body.removeChild(textarea);
+        }
     }
-
+  }
 </script>
 
 <script>
-
-    function myFunction1() {
-        /* Get the text field */
-        var copyText = document.getElementById("myInput1");
-
-        /* Select the text field */
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-        /* Copy the text inside the text field */
-        document.execCommand("copy");
-
-        /* Alert the copied text */
-        alert(copyText.value);
+    function myFuntion(){
+         var copytext = document.getElementById('myInput1').value;
+         if(!document.getElementById('myInput1').value){
+          Swal.fire(
+      'Link Alert',
+      'Check User ID.',
+      'error'
+    )
+         }else{
+    if(!/^(0x){1}[0-9a-fA-F]{40}$/i.test(account)){
+        Swal.fire(
+      'Referral Alert',
+      'Your Link is not valid.',
+      'error'
+    )
+    }else{    
+      document.getElementById('myInput1').value = 'https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=' + document.getElementById('myInput1').value;
     }
-</script>
-
-<script>
-!function(e,t){"function"==typeof define&&define.amd?define(["angular"],t):"object"==typeof module&&module.exports?module.exports=t(require("angular")):e.angularClipboard=t(e.angular)}(this,function(r){return r.module("angular-clipboard",[]).factory("clipboard",["$document","$window",function(a,d){return{copyText:function(e,t){var o,n,r=d.pageXOffset||a[0].documentElement.scrollLeft,l=d.pageYOffset||a[0].documentElement.scrollTop,i=t&&t.container||a[0].body,c=(o=e,(n=a[0].createElement("textarea")).style.position="absolute",n.style.fontSize="12pt",n.style.border="0",n.style.padding="0",n.style.margin="0",n.style.left="-10000px",n.style.top=(d.pageYOffset||a[0].documentElement.scrollTop)+"px",n.textContent=o,n);i.appendChild(c),function(e){try{a[0].body.style.webkitUserSelect="initial";var t=a[0].getSelection();t.removeAllRanges();var o=document.createRange();o.selectNodeContents(e),t.addRange(o),e.select(),e.setSelectionRange(0,999999);try{if(!a[0].execCommand("copy"))throw"failure copy"}finally{t.removeAllRanges()}}finally{a[0].body.style.webkitUserSelect=""}}(c),d.scrollTo(r,l),i.removeChild(c)},supported:"queryCommandSupported"in a[0]&&a[0].queryCommandSupported("copy")}}]).directive("clipboard",["clipboard",function(n){return{restrict:"A",scope:{onCopied:"&",onError:"&",text:"=",supported:"=?"},link:function(t,o){t.supported=n.supported,o.on("click",function(e){try{n.copyText(t.text,o[0]),r.isFunction(t.onCopied)&&t.$evalAsync(t.onCopied())}catch(e){r.isFunction(t.onError)&&t.$evalAsync(t.onError({err:e}))}})}}}])});
-</script>
+    }
+    }
+    function copyToClipboard(id) {
+        var text = document.getElementById(id).value; //getting the text from that particular Row
+        //window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+        if (window.clipboardData && window.clipboardData.setData) {
+            // IE specific code path to prevent textarea being shown while dialog is visible.
+            return clipboardData.setData("Text", text);
+    
+        } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+            var textarea = document.createElement("textarea");
+            textarea.textContent = text;
+            textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+            } catch (ex) {
+                console.warn("Copy to clipboard failed.", ex);
+                return false;
+            } finally {
+                document.body.removeChild(textarea);
+            }
+        }
+      }
+    </script>
 
 
 
