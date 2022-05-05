@@ -570,6 +570,7 @@ $(document).ready(function () {
                         $('.currentuserid').html(result1.id);
                         $('.currentaddress').html(account);
                         $('.ethaddress').attr('href', 'https://bscscan.com/address/' + account);
+                        
                     
                 });
             
@@ -1571,7 +1572,10 @@ function copyToClipboard(id) {
                         <h3 class="mb-1">User ID : <span class="currentuserid"></span></h3>
 
                         <input class="currentuseridlink" type="text" id="myInput" style="opacity:0; height:0px;" />
-                        <input class="currentuseridlinknew" type="text" id="myInput1" style="opacity:0; height:0px;"/>
+                        <a href="javascript:copyToClipboard('myInput')" style="opacity:0; height:0px; text-decoration: underline;">Copy</a>
+          
+                        <input class="currentuseridlinknew" type="text" id="myInput1" style="opacity:0; height:0px;" />
+                        <a href="javascript:copyToClipboard('myInput1')" style="opacity:0; height:0px; text-decoration: underline;">Copy</a>
 
 
                         <p class="mb-0 fs-16">Referral link : <span class="currentuseridlink"></span> &emsp;&emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
