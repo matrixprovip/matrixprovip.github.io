@@ -491,7 +491,7 @@
              if (!error) {
                  $.each(log, function (key, value) {
                      
-                     $('.autopool_table').append('<tr><td><a href="https://bscscan.com/tx/' + value.transactionHash + '" target="_blank">' + value.transactionHash + '</a></td><td style=color:green>' + value.returnValues._referral + '</td><td>' + value.returnValues._level + '</td><td>' + (value.returnValues._level == 1 ? level1 : value.returnValues._level == 2 ? level2 : value.returnValues._level == 3 ? level3 : level4) + ' ETH</td></tr>');
+                     $('.autopool_table').append('<tr><td><a href="https://bscscan.com/tx/' + value.transactionHash + '" target="_blank">' + value.transactionHash + '</a></td><td style=color:green>' + value.returnValues._referral + '</td><td>' + value.returnValues._level + '</td><td>' + (value.returnValues._level == 1 ? level1 : value.returnValues._level == 2 ? level2 : value.returnValues._level == 3 ? level3 : level4) + ' </td></tr>');
                  });
              }
          });
