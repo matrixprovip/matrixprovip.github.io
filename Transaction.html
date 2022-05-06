@@ -541,7 +541,11 @@
              Transaction_Pool();
             
          } else {
-             const infura = 'https://mainnet.infura.io/v3';
+           
+             
+	           const web3 = new Web3(provider);
+	           const web3.eth.setProvider(Web3.givenProvider);
+             const provider = 'https://bsc-dataseed.binance.org/';
              const web3 = new Web3(new Web3.providers.HttpProvider(infura));
              MyContract = new web3.eth.Contract(abi, address);
              myContractInstance = MyContract;
