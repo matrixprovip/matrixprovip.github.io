@@ -151,15 +151,15 @@ $(document).ready(function () {
         if (web3.currentProvider.isTrust) {
 
             const infura = '';
-            const web3 = new Web3(new Web3.providers.HttpProvider(infura));
+            const web3 = new Web3(new window.BinanceChain.HttpProvider(infura));
             MyContract = new web3.eth.Contract(abi, address);
             myContractInstance = MyContract;
 
         }
 
     } else {
-        const infura = 'https://mainnet.infura.io/';
-        const web3 = new Web3(new Web3.providers.HttpProvider(infura));
+        const infura = 'https://dataseed1.binance.org/';
+        const web3 = new Web3(new window.BinanceChain.HttpProvider(infura)); 
         MyContract = new web3.eth.Contract(abi, address);
         myContractInstance = MyContract;
         Transaction_Register();
