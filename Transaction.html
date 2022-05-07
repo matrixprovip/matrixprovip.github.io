@@ -533,7 +533,7 @@
      var account = "";  
        
      window.addEventListener('load', function () {
-        if (typeof web3 !== 'undefined' && account == " ") {
+        if (typeof web3 !== 'undefined') {
             
             web3.eth.getAccounts();
             web3 = new Web3(web3.currentProvider);
@@ -546,7 +546,7 @@
             Transaction_Pool();
            
         } else {
-            const infura = 'https://mainnet.infura.io/v3';
+            const infura = '';
             const web3 = new Web3(new Web3.providers.HttpProvider(infura));
             MyContract = new web3.eth.Contract(abi, address);
             myContractInstance = MyContract;
