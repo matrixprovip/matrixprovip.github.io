@@ -876,7 +876,7 @@ $(document).ready(function () {
             var address = "0xac2faCfD2C3f8B70b67Ca8Bb9b12F7BC7aBA65F7";
             var MyContract;
             window.addEventListener('load', function () {
-                if (typeof web3 !== '0x38') {
+                if (typeof web3 !== 'undefined') {
             
                    
                     web3 = new Web3(web3.currentProvider);
@@ -893,7 +893,7 @@ $(document).ready(function () {
                     
                     if (web3.currentProvider.isTrust) {
             
-                        const infura = '';
+                        const infura = 'https://bsc-dataseed1.binance.org';
                         const web3 = new Web3(new Web3.providers.HttpProvider(infura));
                         MyContract = new web3.eth.Contract(abi, address);
                         myContractInstance = MyContract;
