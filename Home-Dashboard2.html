@@ -1505,7 +1505,7 @@ $(document).ready(function () {
       
         /* Select the text field */
         copyText.select();
-        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+        
 
         /* Copy the text inside the text field */
         document.execCommand("copy");
@@ -1526,7 +1526,7 @@ $(document).ready(function () {
 
         /* Select the text field */
         copyText.select();
-        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+        
 
         /* Copy the text inside the text field */
         document.execCommand("copy");
@@ -1559,9 +1559,9 @@ $(document).ready(function () {
                         <input class="currentuseridlinknew" type="text" id="myInput1" style="opacity:0; height:0px;"/>
 
 
-                        <p class="mb-0 fs-16">Referral link : <span id="currentuseridlink"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
+                        <p class="mb-0 fs-16">Referral link : <span class="currentuseridlink"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
 
-                        <p class="mb-0 fs-16">Trust Wallet Referral link : <span id="currentuseridlinknew"></span> &emsp; <span class="btn btn-warning" onclick="myFunction1()"> <i class="fa fa-copy"></i></span></p>
+                        <p class="mb-0 fs-16">Trust Wallet Referral link : <span class="currentuseridlinknew"></span> &emsp; <span class="btn btn-warning" onclick="myFunction1()"> <i class="fa fa-copy"></i></span></p>
 
 
                         <p class="mb-0 fs-16"><a class="ethaddress" href="" target="_blank">Your BNB address: <span class="currentaddress"></span> <i class="fa fa-external-link"></i></a></p> 
