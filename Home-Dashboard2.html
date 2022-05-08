@@ -1479,58 +1479,6 @@ $(document).ready(function () {
 });
 </script>
 
-<style>
-    .buttons-collection,
-    .buttons-pdf,
-    .buttons-copy {
-        display: none;
-    }
-
-    /* .table-striped>tbody>tr:nth-of-type(odd) {
-        --bs-table-accent-bg: #2a3a7169;
-        color: #fff;
-    } */
-    .table-striped>tbody>tr:nth-of-type(odd) {
-        --bs-table-accent-bg: #f8c3014f;
-        color: #fff;
-    }
-
-    .breadcrumb-item {
-        color: #fff;
-
-    }
-
-
-    .header-profile-user {
-
-        height: 40px;
-        width: 40px;
-    }
-
-    #datatable_length {
-
-        color: #fff;
-    }
-
-    #datatable_filter {
-
-        color: #fff;
-    }
-
-    #datatable_info {
-        color: #fff;
-
-    }
-
-    #sidebar-menu {
-        background-color: #030017;
-    }
-
-    .simplebar-content-wrapper {
-
-        background-color: #030017;
-    }
-</style>
 
 
 
@@ -1611,9 +1559,9 @@ $(document).ready(function () {
                         <input class="currentuseridlinknew" type="text" id="myInput1" style="opacity:0; height:0px;"/>
 
 
-                        <p class="mb-0 fs-16">Referral link : <span class="currentuseridlink"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
+                        <p class="mb-0 fs-16">Referral link : <span id="currentuseridlink"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
 
-                        <p class="mb-0 fs-16">Trust Wallet Referral link : <span class="currentuseridlinknew"></span> &emsp; <span class="btn btn-warning" onclick="myFunction1()"> <i class="fa fa-copy"></i></span></p>
+                        <p class="mb-0 fs-16">Trust Wallet Referral link : <span id="currentuseridlinknew"></span> &emsp; <span class="btn btn-warning" onclick="myFunction1()"> <i class="fa fa-copy"></i></span></p>
 
 
                         <p class="mb-0 fs-16"><a class="ethaddress" href="" target="_blank">Your BNB address: <span class="currentaddress"></span> <i class="fa fa-external-link"></i></a></p> 
