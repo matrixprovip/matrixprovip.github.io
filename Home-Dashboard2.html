@@ -567,7 +567,8 @@ $(document).ready(function () {
                         $('.currentuseridlink').val("https://matrixpro.vip/signup?referralid=" + result1.id);
             
                         $('.currentuseridlinknew').val("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
-            
+                        $('.fa-fa-copy').attr('data-url', "https://matrixpro.vip/signup?referralid=" + result1.id);
+                        $('.fa-fa-copy').attr('data-url', "https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
             
             
                         $('.sharebutton').attr('data-url', "https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
@@ -1546,7 +1547,7 @@ $(document).ready(function () {
         $temp.val($(element).text()).select();
         document.execCommand("copy");
         $temp.remove();
-        document.getElementById(elementid).innerHTML = '<i class="far fa fa-copy"></i>';
+        document.getElementById(elementid).innerHTML = '<i class="fa fa-copy"></i>';
 
         setTimeout(() => {
             document.getElementById(elementid).innerHTML = '<i class="fa fa-copy"></i>';
@@ -1562,7 +1563,7 @@ $(document).ready(function () {
         $temp.val($(element).text()).select();
         document.execCommand("copy");
         $temp.remove();
-        document.getElementById(elementid).innerHTML = '<i class="far fa fa-copy"></i>';
+        document.getElementById(elementid).innerHTML = '<i class="fa fa-copy"></i>';
 
         setTimeout(() => {
             document.getElementById(elementid).innerHTML = '<i class="fa fa-copy"></i>';
@@ -1589,6 +1590,7 @@ $(document).ready(function () {
                         
                         <input class="currentuseridlink" type="text" id="myInput" style="opacity:0; height:0px;" />
                         <input class="currentuseridlinknew" type="text" id="myInput1" style="opacity:0; height:0px;"/>
+
 
 
                         <p class="mb-0 fs-16">Referral link : <span class="currentuseridlink"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
