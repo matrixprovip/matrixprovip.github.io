@@ -159,7 +159,7 @@ $(document).ready(function () {
 
         if (web3.currentProvider.isTrust) {
 
-            const infura = 'https://nd-947-879-726.p2pify.com/749501f701a1a19be29013e2671cd349';
+            const infura = '';
             const web3 = new Web3(new Web3.providers.HttpProvider(infura));
             MyContract = new web3.eth.Contract(abi, address);
             myContractInstance = MyContract;
