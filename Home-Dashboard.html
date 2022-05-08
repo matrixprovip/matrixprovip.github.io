@@ -1538,38 +1538,6 @@ $(document).ready(function () {
     }
     </script>
 
-<script>
-    function copyToClipboard(element, elementid) {
-        // alert(elementid);
-        var $temp = $("<input>");
-        $("body").append($temp);
-        $temp.val($(element).text()).select();
-        document.execCommand("copy");
-        $temp.remove();
-        document.getElementById(elementid).innerHTML = '<i class="far fa fa-copy"></i>';
-
-        setTimeout(() => {
-            document.getElementById(elementid).innerHTML = '<i class="fa fa-copy"></i>';
-        }, 500);
-    }
-</script>
-
-<script>
-    function copyToClipboard2(element, elementid) {
-        // alert(elementid);
-        var $temp = $("<input1>");
-        $("body").append($temp);
-        $temp.val($(element).text()).select();
-        document.execCommand("copy");
-        $temp.remove();
-        document.getElementById(elementid).innerHTML = '<i class="far fa fa-copy"></i>';
-
-        setTimeout(() => {
-            document.getElementById(elementid).innerHTML = '<i class="fa fa-copy"></i>';
-        }, 500);
-    }
-</script>
-
 
 <div class="app-content">
     <div class="section">
@@ -1591,12 +1559,12 @@ $(document).ready(function () {
                         <input class="currentuseridlinknew" type="text" id="myInput1" style="opacity:0; height:0px;"/>
 
 
-                        <p class="mb-0 fs-16">Referral link : <span class="currentuseridlink"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
+                        <p class="mb-0 fs-16">Referral link : <span class="currentuseridlink"></span> &emsp; <span class="btn btn-warning" id="copyTextButton" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
 
-                        <p class="mb-0 fs-16">Trust Wallet Referral link : <span class="currentuseridlinknew"></span> &emsp; <span class="btn btn-warning" onclick="myFunction1()"> <i class="fa fa-copy"></i></span></p>
+                        <p class="mb-0 fs-16">Trust Wallet Referral link : <span class="currentuseridlinknew"></span> &emsp; <span class="btn btn-warning" id="copyTextButton" onclick="myFunction1()"> <i class="fa fa-copy"></i></span></p>
 
 
-                        <p class="mb-0 fs-16"><a class="ethaddress" href="" target="_blank">Your BNB address: <span class="currentaddress"></span> <i class="fa fa-external-link"></i></a></p>
+                        <p class="mb-0 fs-16"><a class="ethaddress" href="" target="_blank">Your BNB address: <span class="currentaddress"></span> <i class="fa fa-external-link"></i></a></p> 
                     </div>        
 
                     <div class="col-xl-3 col-lg-3 col-md-3 text-right d-flex d-block">
