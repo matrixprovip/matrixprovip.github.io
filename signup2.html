@@ -139,7 +139,7 @@ $(document).ready(function () {
             myContractInstance.methods.users(account).call().then(function (result) {
                 if (result[0]) {
                     localStorage.setItem("address", account);
-                    location.href = "/signup";
+                    location.href = "/signup2";
                 }
                 else {
                     $('.error').html('You need to register first');
@@ -168,7 +168,7 @@ $(document).ready(function () {
                 if (result1.status == "0x1") {
                     alert("success")
                     localStorage.setItem("address", account);
-                    location.href = "/singin";
+                    location.href = "/singin2";
                 }
                 else {
                     $('.error').html('Transaction Failed');
@@ -238,7 +238,7 @@ $(document).ready(function () {
                     if (receipt.status) {
                         alert("success")
                         localStorage.setItem("address", account);
-                        location.href = "/Home-Dashboard";
+                        location.href = "/Home-Dashboard2";
                     }
                     else {
                         $('.error').html('Transaction Failed');
@@ -263,7 +263,7 @@ $(document).ready(function () {
                        
 
                             localStorage.setItem("address", add);
-                            location.href = "/Home-Dashboard";
+                            location.href = "/Home-Dashboard2";
                         }
                         else {
                             $('.error').html('You need to register first');
@@ -334,7 +334,7 @@ $(document).ready(function () {
                         <p class="error m-b-10 alert alert-danger" style="display:none">
 
                         </p>
-                        <p class="m-b-15 text-right text-white">Allready have account ? <a href="/signin" class="text-white"> Sign in</a></p>
+                        <p class="m-b-15 text-right text-white">Allready have account ? <a href="/signin2" class="text-white"> Sign in</a></p>
                         <div class="container-login100-form-btn">
                             <button class="login100-form-btn" id="lgmbtnsup">
                                 Sign up
@@ -463,7 +463,7 @@ $(document).ready(function () {
                 
    <!-- Nice-select js-->
    <script src="/signup/jquery.nice-select.js"></script>
-   <script src="https://dapp.github.io/signup/nice-select.js"></script>
+   <script src="/signup/nice-select.js"></script>
 
    <!-- Apexchart js-->
    <script src="/Home-Dashboard/Content/assets/js/apexcharts.js"></script>

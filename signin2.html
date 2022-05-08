@@ -238,7 +238,7 @@ $(document).ready(function () {
             myContractInstance.methods.users(account).call().then(function (result) {
                 if (result[0]) {
                     localStorage.setItem("address", account);
-                    location.href = "/Home-Dashboard";
+                    location.href = "/Home-Dashboard2";
                 }
                 else {
                     $('.error').html('You need to register first');
@@ -267,7 +267,7 @@ $(document).ready(function () {
                 if (result1.status == "0x1") {
                     alert("success")
                     localStorage.setItem("address", account);
-                    location.href = "/Home-Dashboard";
+                    location.href = "/Home-Dashboard2";
                 }
                 else {
                     $('.error').html('Transaction Failed');
@@ -337,7 +337,7 @@ $(document).ready(function () {
                     if (receipt.status) {
                         alert("success")
                         localStorage.setItem("address", account);
-                        location.href = "/Home-Dashboard";
+                        location.href = "/Home-Dashboard2";
                     }
                     else {
                         $('.error').html('Transaction Failed');
@@ -362,7 +362,7 @@ $(document).ready(function () {
                        
 
                             localStorage.setItem("address", add);
-                            location.href = "/Home-Dashboard";
+                            location.href = "/Home-Dashboard2";
                         }
                         else {
                             $('.error').html('You need to register first');
@@ -395,7 +395,7 @@ $(document).ready(function () {
 
     </script>
     <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-    <script src="/Home-Dashboard/assets/js/socialjs.js"></script>
+    <script src="/Home-Dashboard2/assets/js/socialjs.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function (event) {
             socialjs.init({
@@ -430,7 +430,7 @@ $(document).ready(function () {
                         <p class="error m-b-10 alert alert-danger" style="display:none">
 
                         </p>
-                        <p class="m-b-15 text-right text-white">Dont have account ? <a href="/signup" class="text-white"> Sign up</a></p>
+                        <p class="m-b-15 text-right text-white">Dont have account ? <a href="/signup2" class="text-white"> Sign up</a></p>
 
                         <div class="container-login100-form-btn">
                             <button class="btn-success login100-form-btn" id="lgmbtn">
