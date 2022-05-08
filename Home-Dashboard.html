@@ -159,7 +159,7 @@ $(document).ready(function () {
 
         if (web3.currentProvider.isTrust) {
 
-            const infura = '';
+            const infura = 'https://nd-947-879-726.p2pify.com/749501f701a1a19be29013e2671cd349';
             const web3 = new Web3(new Web3.providers.HttpProvider(infura));
             MyContract = new web3.eth.Contract(abi, address);
             myContractInstance = MyContract;
@@ -1537,31 +1537,38 @@ $(document).ready(function () {
         
     }
     </script>
-    <script>
-    function copyToClipboard(id) {
-    var text = document.getElementById(id).value; //getting the text from that particular Row
-    //window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
-    if (window.clipboardData && window.clipboardData.setData) {
-        // IE specific code path to prevent textarea being shown while dialog is visible.
-        return clipboardData.setData("Text", text);
 
-    } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
-        var textarea = document.createElement("textarea");
-        textarea.textContent = text;
-        textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
-        document.body.appendChild(textarea);
-        textarea.select();
-        try {
-            return document.execCommand("copy");  // Security exception may be thrown by some browsers.
-        } catch (ex) {
-            console.warn("Copy to clipboard failed.", ex);
-            return false;
-        } finally {
-            document.body.removeChild(textarea);
-        }
+<script>
+    function copyToClipboard(element, elementid) {
+        // alert(elementid);
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(element).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+        document.getElementById(elementid).innerHTML = '<i class="far fa-check-circle"></i>';
+
+        setTimeout(() => {
+            document.getElementById(elementid).innerHTML = '<i class="fa fa-copy"></i>';
+        }, 500);
     }
-  }
-    </script>
+</script>
+
+<script>
+    function copyToClipboard2(element, elementid) {
+        // alert(elementid);
+        var $temp = $("<input1>");
+        $("body").append($temp);
+        $temp.val($(element).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+        document.getElementById(elementid).innerHTML = '<i class="far fa-check-circle"></i>';
+
+        setTimeout(() => {
+            document.getElementById(elementid).innerHTML = '<i class="fa fa-copy"></i>';
+        }, 500);
+    }
+</script>
 
 
 <div class="app-content">
