@@ -1,0 +1,856 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MATRIX PRO Signup </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/matrixlogo.png">
+      <!--Google Fonts-->
+   <!--Google Fonts-->
+   <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700" rel="stylesheet">
+   <!--Font icons-->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+   <!-- BEGIN VENDOR CSS-->
+   <link rel="stylesheet" type="text/css" href="/signup/assets/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="/signup/assets/css/style.min.css">
+   <link rel="stylesheet" type="text/css" href="/flag-icon.min.css">
+   <link rel="stylesheet" type="text/css" href="/signup/assets/css/animate.min.css">
+   <link rel="stylesheet" type="text/css" href="/signup/assets/css/flipclock.css">
+   <link rel="stylesheet" type="text/css" href="/signup/assets/css/swiper.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <!-- END VENDOR CSS-->
+   <!-- END CRYPTO CSS-->
+   <!-- BEGIN Page Level CSS-->
+   <link rel="stylesheet" type="text/css" href="/signup/assets/css/template-counter.css">
+   <!-- END Page Level CSS-->
+   <!-- BEGIN Custom CSS-->
+   <link rel="stylesheet" type="text/css" href="/signup/assets/css/style.css">
+   <!-- END Custom CSS-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+   <!--===============================================================================================-->
+
+
+   <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>       
+    
+
+      
+                                                                                     
+                                                                                     
+                                                             
+                                                             
+
+</head>
+<body 
+    <!-- Preloader | Comment below code if you don't want preloader-->
+    <div id="loader-wrapper">
+        <svg viewbox=" 0 0 512 512" id="loader">
+            <linearGradient id="loaderLinearColors" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="5%" stop-color="#28bcfd"></stop>
+                <stop offset="100%" stop-color="#1d78ff"></stop>
+            </linearGradient>
+            <g>
+                <circle cx="256" cy="256" r="150" fill="none" stroke="url(#loaderLinearColors)" />
+            </g>
+            <g>
+                <circle cx="256" cy="256" r="125" fill="none" stroke="url(#loaderLinearColors)" />
+            </g>
+            <g>
+                <circle cx="256" cy="256" r="100" fill="none" stroke="url(#loaderLinearColors)" />
+            </g>
+            <g>
+                <circle cx="256" cy="256" r="75" fill="none" stroke="url(#loaderLinearColors)" />
+            </g>
+            <circle cx="256" cy="256" r="60" fill="url(#loaderImage)" stroke="none" stroke-width="0" />
+            <!-- Change the preloader logo here -->
+            <defs>
+                <pattern id="loaderImage" height="100%" width="100%" patternContentUnits="objectBoundingBox">
+
+                  
+                </pattern>
+            </defs>
+        </svg>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!--/ Preloader --><nav class="vertical-social">
+        <ul>
+            
+            <li><a href="https://twitter.com/INHERIT38092481" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="https://t.me/matrixprovip" target="_blank"><i class="fa fa-telegram" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.facebook.com/ProfessionalMatrix" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        </ul>
+    </nav>
+    <!-- /////////////////////////////////// HEADER /////////////////////////////////////-->
+    <!-- Header Start-->
+    <header class="page-header">
+       
+    </header>
+    <!-- /Header End-->
+    <!-- //////////////////////////////////// CONTAINER ////////////////////////////////////-->
+    <div class="content-wrapper">
+        <div class="content-body">
+            <main>
+                <!-- Header: Counter -->
+                <section class="head-area" id="head-area" data-midnight="white">
+                    <div class="bg-banner"></div>
+                    <div class="head-content container-fluid d-flex align-items-center">
+                        <div class="container">
+                            <div class="banner-wrapper">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-12 col-md-12 move-first animated text-center" data-animation="zoomIn" data-animation-delay="2s">
+                                        <img src="/matrixlogo.png" class="crypto-logo-img img-fluid" alt=""><!--rounded mx-auto d-block pulse2-->
+                                    </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="p-1 text-dark text-center">
+                                            <h5 class="sub-title animated text-white" data-animation="fadeInUpShorter" data-animation-delay="2.2s">REAL ONE LINE GLOBAL AUTOPOOL</h5>
+                                            <h6 class="sub-title animated text-white" data-animation="fadeInUpShorter" data-animation-delay="2.2s">Super fast way to make 600+ BNB with global one line autopool</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="banner-content align-items-center">
+                                            <div class="animated" data-animation="fadeInUpShorter" data-animation-delay="2.3s">
+                                                <div class="purchase-token-btn text-center m-b-10">
+                                                    <a href="/signup" class="btn btn-lg btn-gradient-orange btn-round btn-glow">Register</a>
+                                                    <a href="/signin" class="btn btn-lg btn-gradient-orange btn-round btn-glow ml-4">Log in</a>
+                                                </div>
+                                                <div class="animated text-center" data-animation="fadeInUpShorter" data-animation-delay="1.3s">
+                                                    
+                                                        <img src="/wallet.png" class="m-l-auto m-r-auto m-t-10 " style="width:150px;margin-bottom: -25px;margin-top: 13px;" />
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-ripple-animation d-none d-md-block">
+                        <div class="left-bottom-ripples">
+                            <div class="ripples"></div>
+                        </div>
+                        <div class="top-right-ripples">
+                            <div class="ripples"></div>
+                        </div>
+                    </div>
+                </section>
+                <!--/ Header: Counter -->
+                <!-- Exchange Listing Area -->
+                <section class="exchange-listing" id="exchange-listing">
+                    <!-- Exchange Listing Area Starts -->
+                    <div class="container-fluid bg-color">
+                        <div class="container">
+                            <div class="row listing list-unstyled">
+                              
+                                <div class="col text-center animated" data-animation="fadeInUpShorter" data-animation-delay="0.3s">
+                                    <h2>0.3 <br />BNB</h2>
+                                    
+                                </div>
+                                <div class="col text-center animated" data-animation="fadeInUpShorter" data-animation-delay="0.4s">
+                                    <h2>10 <br /> Autopool</h2>
+                                    
+                                </div>
+                                <div class="col text-center animated" data-animation="fadeInUpShorter" data-animation-delay="0.5s">
+                                    <h2>10<br /> Levels</h2>
+                                    
+                                </div>
+                                <div class="col text-center animated" data-animation="fadeInUpShorter" data-animation-delay="0.6s">
+                                    <h2>600+  <br /> BNB Earning</h2>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Exchange Listing Area Ends -->
+                </section>
+                <!--/ Exchange Listing Area -->
+                <!-- About -->
+                <section class="about section-padding" id="about">
+                    <div class="container-fluid">
+                        <div class="container">
+                            <div class="heading text-center">
+                                <h6 class="sub-title animated" data-animation="fadeInUpShorter" data-animation-delay="0.2s">About MATRIX PRO BSC</h6>
+                                <h2 class="title animated" data-animation="fadeInUpShorter" data-animation-delay="0.3s">How to start<strong> one line globle autopull new smart contract ?</strong></h2>
+                                <div class="separator animated" data-animation="fadeInUpShorter" data-animation-delay="0.3s">
+                                    <span class="large"></span>
+                                    <span class="medium"></span>
+                                    <span class="small"></span>
+                                </div>
+                                
+                            </div>
+                            <div class="content-area">
+                                <div class="row pb-5">
+                                    <div class="col-md-12 col-lg-6 animated" data-animation="fadeInLeftShorter" data-animation-delay="0.5s">
+                                        <h4 class="title">Let’s Start Unstoppable <span style="color:goldenrod">MATRIX PRO BSC</span></h4>
+                                        <!--<h6 class="pt-4 pb-2">Cryptocurrency exchanges or digital currency exchanges (DCE) are businesses that allow customers to trade cryptocurrencies or digital currencies for other assets.</h6>-->
+                                        <p>MATRIX PRO BSC Startup Amount : 0.1 BNB</p>
+                                        <h4 class="title">Instant P2P multi payments</h4>
+                                        <p>Startup Amount instantly distributed according to smart contract protocols up to 10th levels above the joined users according to Line of sponsors.</p>
+                                        <h4 class="title">Superfast & passive marketing plan</h4>
+                                        <p>Level 1 : 20% i.e.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.02 BNB </p>
+                                        <p>Level 2 : 10% i.e.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.01 BNB</p>
+                                        <p>Level 3 : 5% i.e.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.005 BNB</p>
+                                        <p>Level 4 to 10 : 5% i.e &nbsp;&nbsp;&nbsp;&nbsp;0.005 BNB </p>
+
+                                    </div>
+                                    <div class="col-md-12 col-lg-6 animated" data-animation="fadeInRightShorter" data-animation-delay="0.5s">
+                                        <div class="position-relative what-is-crypto-img text-center">
+                                            <img class="img-fluid" src="/ab4.png" alt="What is BSC ?">
+                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-area">
+                                <div class="row pb-5">
+                                    <div class="col-md-12 col-lg-6 animated" data-animation="fadeInRightShorter" data-animation-delay="0.5s">
+                                        <div class="position-relative what-is-crypto-img float-xl-right">
+                                            <img class="img-fluid" src="/ab5.png" alt="What is BSC ?">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-6 animated" data-animation="fadeInLeftShorter" data-animation-delay="0.5s">
+                                        <h4 class="title">Zero Risk | <span style="color:green">Highest Profit Guarantees</span></h4>
+                                        <!--<h6 class="pt-4 pb-2">Cryptocurrency exchanges or digital currency exchanges (DCE) are businesses that allow customers to trade cryptocurrencies or digital currencies for other assets.</h6>-->
+                                        <p>Referral Bonus is highest and available up to 10 Levels.</p>
+                                        <p>Open source | Decentralized | Transparent Smart Contract deployed on Binance Blockchain Network. </p>
+                                        <p>All transactions validation by EVM : Binance Virtual Mining Machines globally.</p>
+                                        <h4 class="title" style="color:red">Scam Impossible :</h4>
+                                        <p>The aim of smart contracts is to provide security. a computerized transaction protocol that executes the terms of a contract.It is impossible to change the algorithm or delete the contract.</p>
+                                        <p>Hence its UNSTOPPABLBLE & FREE</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-area">
+                                <div class="row pb-5">
+                                    <div class="col-md-12 col-lg-6 animated" data-animation="fadeInLeftShorter" data-animation-delay="0.5s">
+                                        <h4 class="title">Global One Line Autopool</h4>
+                                        <!--<h6 class="pt-4 pb-2">Cryptocurrency exchanges or digital currency exchanges (DCE) are businesses that allow customers to trade cryptocurrencies or digital currencies for other assets.</h6>-->
+                                        <p>Globally One line (Single-line) structure.</p>
+                                        <p>Every new user will be placed under previous joined user according to Autopool Entry amount transaction ’Timestamp.’</p>
+                                        <p>Timestamp : It is recorded by the  Blockchain that gives the received time of the respective transactions.</p>
+                                        <p>One Line : Every new user pays entry amount to previous joined user 100% from user’s wallet to user’s wallet. (Pee to peer )</p>
+                                        <p>Real Global Autopool : One line Autopool structure is irrespective to referral line or sponsors line. Hence this is real One line Global Autopool system gives opportunity to earn passive income by global growth of Unstoppable ‘MATRIX PRO BSC’</p>
+                                        <p>Pool Entry Protocols : Autopool 1 to 10 entry protocols are deployed and written on smart contract code.</p>
+                                        <p>Every New user starts from Autopool 1</p>
+                                        <p>It’s mandatory to enter new Autopool in connective way.</p>
+                                        <p>Autopool one line structure is based on first enter first get paid protocol.</p>
+                                        <p>To enter Autopool 1 : No Direct Referral necessary</p>
+                                        <p>From Autopool 2 to 10 Every Autopool need +0 Direct Referral to eligible for Autopool entry</p>
+
+                                    </div>
+                                    <div class="col-md-12 col-lg-6 animated" data-animation="fadeInRightShorter" data-animation-delay="0.5s">
+                                        <div class="position-relative what-is-crypto-img text-center">
+                                            <img class="img-fluid" src="/ab2.png" alt="What is Crypto?">
+                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-area">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-6 animated" data-animation="fadeInRightShorter" data-animation-delay="0.5s">
+                                        <div class="position-relative what-is-crypto-img float-xl-right">
+                                            <img class="img-fluid" src="/ab3.png" alt="What is BSC ?">
+                                         
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-6 animated" data-animation="fadeInLeftShorter" data-animation-delay="0.5s">
+                                        <h4 class="title"><span style="color:goldenrod">10 Autopool | 29 Users Globally <br />| 600+ BNB Profit</span></h4>
+                                        <!--<h6 class="pt-4 pb-2">Cryptocurrency exchanges or digital currency exchanges (DCE) are businesses that allow customers to trade cryptocurrencies or digital currencies for other assets.</h6>-->
+                                        <p>Globally One line autopool is connected to each other in consecutive way. From 1 to 10 Auopools multiply your 0.2 BNB to 600 BNB i.e.3000X</p>
+                                        <p>1st Autopool needs 2 users globally to push forward and give you profit.</p>
+                                        <p>2nd to 10th Autopool needs 3 Users each pool to push forward and give you profit. i.e. Total 29 Users  Globally.</p>
+                                        <h4 class="title">3000X your Investment :</h4>
+                                        <p>On Completion on 10 Global One Line Auto pools get 600 BNB.</p>
+                                        <p>Amazing ! You started with just 0.3 BNB from 1st Autopool and Earned 600 BNB.</p>
+                                        <p>Earn 600 BNB on every Cycle Out.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--/ About -->
+                <!-- Roadmap -->
+                <section id="roadmap" class="roadmap section-padding bg-color">
+                    <div class="container-fluid">
+                        <div class="container">
+                            <div class="heading text-center">
+                                <h6 class="sub-title animated" data-animation="fadeInUpShorter" data-animation-delay="0.2s">Referral Income</h6>
+                                <h2 class="title animated" data-animation="fadeInUpShorter" data-animation-delay="0.3s"><strong>10 Levels </strong>Referral Income</h2>
+                                <div class="separator animated" data-animation="fadeInUpShorter" data-animation-delay="0.3s">
+                                    <span class="large"></span>
+                                    <span class="medium"></span>
+                                    <span class="small"></span>
+                                </div>
+                                <p class="content-desc animated" data-animation="fadeInUpShorter" data-animation-delay="0.4s">
+                                    MATRIX PRO BSC is having 10 Global AutoPools.One line Autopool structure is irrespective to referral line. Every New user placed under each other and pays to previous user at AutoPool available at serial Number One.Autopool system gives opportunity to earn passive income by global growth of Unstoppable ‘MATRIX PRO   ’
+                                </p>
+                            </div>
+                            <div class="row animated" data-animation="fadeInUpShorter" data-animation-delay="0.6s">
+                                <div class="col-12 text-center">
+                                    <img src="/Referral.png" class="profit-table w-100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--/ Roadmap -->
+                <!-- Contact -->
+                <section id="contact" class="contact section-padding bg-color">
+                    <div class="container-fluid">
+                        <div class="container">
+                            <div class="heading text-center">
+                                <h6 class="sub-title animated" data-animation="fadeInUpShorter" data-animation-delay="0.2s">AutoPool</h6>
+                                <h2 class="title animated" data-animation="fadeInUpShorter" data-animation-delay="0.3s">REAL ONE LINE GLOBAL 10 AUTOPOOLS</h2>
+                                <div class="separator animated" data-animation="fadeInUpShorter" data-animation-delay="0.3s">
+                                    <span class="large"></span>
+                                    <span class="medium"></span>
+                                    <span class="small"></span>
+                                </div>
+                                <p class="content-desc animated" data-animation="fadeInUpShorter" data-animation-delay="0.4s">Globally One line autopool is connected to each other in consecutive way. From 1 to 10 Auopools multiply your 0.2 BNB to 600 BNB i.e.3000X</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-xl-8 mx-auto text-center">
+                                    <img src="/poolflow1.png" class="poolflow-height w-100" />
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+          
+                <section id="roadmap" class="roadmap section-padding bg-color">
+                    <div class="container-fluid">
+                        <div class="container">
+                            <div class="heading text-center">
+                                <h6 class="sub-title animated" data-animation="fadeInUpShorter" data-animation-delay="0.2s">AutoPool</h6>
+                                <h2 class="title animated" data-animation="fadeInUpShorter" data-animation-delay="0.3s"><strong>How AutoPool Works ? </strong></h2>
+                                <div class="separator animated" data-animation="fadeInUpShorter" data-animation-delay="0.3s">
+                                    <span class="large"></span>
+                                    <span class="medium"></span>
+                                    <span class="small"></span>
+                                </div>
+                                <p class="content-desc animated" data-animation="fadeInUpShorter" data-animation-delay="0.4s">
+                                    MATRIX PRO BSC is having 10 Global AutoPools.One line Autopool structure is irrespective to referral line. Every New user placed under each other and pays to previous user at AutoPool available at serial Number One.Autopool system gives opportunity to earn passive income by global growth of Unstoppable ‘MATRIX PRO’
+                                </p>
+                            </div>
+                            <div class="row animated" data-animation="fadeInUpShorter" data-animation-delay="0.6s">
+                                <div class="col-12">
+                                    <div class="roadmap-container">
+                                        <div class="swiper-container">
+                                            <div class="swiper-wrapper timeline">
+                                                
+                                                <div class="swiper-slide active">
+                                                    <div class="roadmap-info">
+                                                        <div class="timestamp active">
+                                                            <span class="date border-bottom">Globel autopool 1</span>
+                                                            <span class="p-2">Entry 0.2 <img src="/icon-eth.png"></span>
+                                                            <span>Profit 0.4 <img src="/icon-eth.png"></span>
+                                                            <img src="/pool1.png" class="pool-size">
+                                                        </div>
+                                                        <div class="status active">
+                                                            <span>2 Globel joint user pays you 0.2 BNB each</span>
+                                                            <span class="live">2 X 0.2 BNB = 0.4 BNB</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide active">
+                                                    <div class="roadmap-info">
+                                                        <div class="timestamp active">
+                                                            <span class="date border-bottom">Globel autopool 2</span>
+                                                            <span class="p-2">Entry 0.4 <img src="/icon-eth.png"></span>
+                                                            <span>Profit 1.2 <img src="/icon-eth.png"></span>
+                                                            <img src="/pool12.png" class="pool-size">
+                                                        </div>
+                                                        <div class="status active">
+                                                            <span>3 Globel joint user pays you 0.4 BNB each</span>
+                                                            <span class="live">3 X 0.4 BNB = 1.2 BNB</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide active">
+                                                    <div class="roadmap-info">
+                                                        <div class="timestamp active">
+                                                            <span class="date border-bottom">Globel autopool 3</span>
+                                                            <span class="p-2">Entry 1 <img src="/icon-eth.png"></span>
+                                                            <span>Profit 3 <img src="/icon-eth.png"></span>
+                                                            <img src="/pool12.png" class="pool-size">
+                                                        </div>
+                                                        <div class="status active">
+                                                            <span>3 Globel joint user pays you 1 BNB each</span>
+                                                            <span class="live">3 X 1 BNB = 3 BNB</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide active">
+                                                    <div class="roadmap-info">
+                                                        <div class="timestamp active">
+                                                            <span class="date border-bottom">Globel autopool 4</span>
+                                                            <span class="p-2">Entry 2 <img src="/icon-eth.png"></span>
+                                                            <span>Profit 3 <img src="/icon-eth.png"></span>
+                                                            <img src="/pool12.png" class="pool-size">
+                                                        </div>
+                                                        <div class="status active">
+                                                            <span>3 Globel joint user pays you 2 BNB each</span>
+                                                            <span class="live">3 X 2 BNB = 6 BNB</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide active">
+                                                    <div class="roadmap-info">
+                                                        <div class="timestamp active">
+                                                            <span class="date border-bottom">Globel autopool 5</span>
+                                                            <span class="p-2">Entry 4 <img src="/icon-eth.png"></span>
+                                                            <span>Profit 6 <img src="/icon-eth.png"></span>
+                                                            <img src="/pool12.png" class="pool-size">
+                                                        </div>
+                                                        <div class="status active">
+                                                            <span>3 Globel joint user pays you 4 BNB each</span>
+                                                            <span class="live">3 X 4 BNB = 12 BNB</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide active">
+                                                    <div class="roadmap-info">
+                                                        <div class="timestamp active">
+                                                            <span class="date border-bottom">Globel autopool 6</span>
+                                                            <span class="p-2">Entry 10 <img src="/icon-eth.png"></span>
+                                                            <span>Profit 15 <img src="/icon-eth.png"></span>
+                                                            <img src="/pool12.png" class="pool-size">
+                                                        </div>
+                                                        <div class="status active">
+                                                            <span>3 Globel joint user pays you 10 BNB each</span>
+                                                            <span class="live">3 X 10 BNB = 30 BNB</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide active">
+                                                    <div class="roadmap-info">
+                                                        <div class="timestamp active">
+                                                            <span class="date border-bottom">Globel autopool 7</span>
+                                                            <span class="p-2">Entry  20<img src="/icon-eth.png"></span>
+                                                            <span>Profit 60 <img src="/icon-eth.png"></span>
+                                                            <img src="/pool12.png" class="pool-size">
+                                                        </div>
+                                                        <div class="status active">
+                                                            <span>3 Globel joint user pays you 20 BNB each</span>
+                                                            <span class="live">3 X 20 BNB = 60 BNB</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide active">
+                                                    <div class="roadmap-info">
+                                                        <div class="timestamp active">
+                                                            <span class="date border-bottom">Globel autopool 8</span>
+                                                            <span class="p-2">Entry 40 <img src="/icon-eth.png"></span>
+                                                            <span>Profit 120 <img src="/icon-eth.png"></span>
+                                                            <img src="/pool12.png" class="pool-size">
+                                                        </div>
+                                                        <div class="status active">
+                                                            <span>3 Globel joint user pays you 40 BNB each</span>
+                                                            <span class="live">3 X 40 BNB = 120 BNB</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide active">
+                                                    <div class="roadmap-info">
+                                                        <div class="timestamp active">
+                                                            <span class="date border-bottom">Globel autopool 9</span>
+                                                            <span class="p-2">Entry 100 <img src="/icon-eth.png"></span>
+                                                            <span>Profit 300 <img src="/icon-eth.png"></span>
+                                                            <img src="/pool12.png" class="pool-size">
+                                                        </div>
+                                                        <div class="status active">
+                                                            <span>3 Globel joint user pays you 100 BNB each</span>
+                                                            <span class="live">3 X 100 BNB = 3000 BNB</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide active">
+                                                    <div class="roadmap-info">
+                                                        <div class="timestamp active">
+                                                            <span class="date border-bottom">Globel autopool 10</span>
+                                                            <span class="p-2">Entry 200 <img src="/icon-eth.png"></span>
+                                                            <span>Profit 600 <img src="/icon-eth.png"></span>
+                                                            <img src="/pool12.png" class="pool-size">
+                                                        </div>
+                                                        <div class="status active">
+                                                            <span>3 Globel joint user pays you 200 BNB each</span>
+                                                            <span class="live">3 X 200 BNB = 600 BNB</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="swiper-control">
+                                            <span class="prev-slide"></span>
+                                            <span class="next-slide"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--/ Roadmap -->
+                <!-- Whitepaper -->
+                <section id="whitepaper" class="whitepaper section-padding">
+                    <div class="container-fluid">
+                        <div class="container">
+                            <div class="heading text-center">
+                                <h6 class="sub-title animated" data-animation="fadeInUpShorter" data-animation-delay="0.2s">Magic in Numbers</h6>
+                                <h2 class="title animated" data-animation="fadeInUpShorter" data-animation-delay="0.3s"><strong>What,</strong> How and Who Pays ?</h2>
+                                <div class="separator animated" data-animation="fadeInUpShorter" data-animation-delay="0.3s">
+                                    <span class="large"></span>
+                                    <span class="medium"></span>
+                                    <span class="small"></span>
+                                </div>
+                                <p class="content-desc animated" data-animation="fadeInUpShorter" data-animation-delay="0.4s">
+                                    MATRIX PRO BSC One Line Global AutoPool is Superfast Way to Multiply BNB. Below Table shows How it works ?
+                                </p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12 text-center">
+                                    <img src="/Profit-table.png" class="profit-table w-100">
+                                </div>
+                
+             
+                <!-- FAQ -->
+                <section id="faq" class="faq section-padding bg-color">
+                    <div class="container-fluid">
+                        <div class="container">
+                            <div class="heading text-center">
+                                <h6 class="sub-title animated" data-animation="fadeInUpShorter" data-animation-delay="0.2s">FAQ</h6>
+                                <h2 class="title animated" data-animation="fadeInUpShorter" data-animation-delay="0.3s">Frequently Asked <strong>Questions</strong></h2>
+                                <div class="separator animated" data-animation="fadeInUpShorter" data-animation-delay="0.3s">
+                                    <span class="large"></span>
+                                    <span class="medium"></span>
+                                    <span class="small"></span>
+                                </div>
+                                <p class="content-desc animated" data-animation="fadeInUpShorter" data-animation-delay="0.4s">
+                                    Originally the term "FAQ" referred to the Frequently Asked Question itself, and the
+                                    <br />compilation of questions and answers was known as a "FAQ list" or some similar expression.
+                                </p>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+                                            <div id="general-accordion" class="collapse-icon accordion-icon-rotate">
+
+                                                <div class="card animated" data-animation="fadeInUpShorter" data-animation-delay="0.1s">
+                                                    <div class="card-header" id="headingOne">
+                                                        <h5 class="mb-0">
+                                                            <a class="btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                                <span class="icon"></span>
+                                                                What Happen with My Registrar Fees ?
+                                                            </a>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#general-accordion">
+                                                        <div class="card-body">
+                                                            Registration Fees 0.1 BNB is instantly paid 10 levels above you.<br />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card animated" data-animation="fadeInUpShorter" data-animation-delay="0.2s">
+                                                    <div class="card-header" id="headingTwo">
+                                                        <h5 class="mb-0">
+                                                            <a class="btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                                <span class="icon"></span>
+                                                                What is affiliate program ?
+                                                            </a>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#general-accordion">
+                                                        <div class="card-body">
+                                                            Affiliate program is designed on Registration Fees.<br />
+                                                            Level 1 to level 10 Referral paid Instantly to respective Person directly to binance smart chain Wallet.
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card animated" data-animation="fadeInUpShorter" data-animation-delay="0.3s">
+                                                    <div class="card-header" id="headingThree">
+                                                        <h5 class="mb-0">
+                                                            <a class="btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                                <span class="icon"></span>
+                                                                What is Global One Line Autopool ?
+                                                            </a>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#general-accordion">
+                                                        <div class="card-body">
+                                                            Global One Line Autopool is one Global network based on first enter first Join Basis.
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card animated" data-animation="fadeInUpShorter" data-animation-delay="0.4s">
+                                                    <div class="card-header" id="headingFour">
+                                                        <h5 class="mb-0">
+                                                            <a class="btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                                <span class="icon"></span>
+                                                                How many Autopools are in the system ?
+                                                            </a>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#general-accordion">
+                                                        <div class="card-body">
+                                                            Total 10 Global Autopools in the system.
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card animated" data-animation="fadeInUpShorter" data-animation-delay="0.4s">
+                                                    <div class="card-header" id="headingFive">
+                                                        <h5 class="mb-0">
+                                                            <a class="btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFour">
+                                                                <span class="icon"></span>
+                                                                Can I enter any Autopool Directly ?
+                                                            </a>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#general-accordion">
+                                                        <div class="card-body">
+                                                            Yes, You can enter at any Autopool after registration.Just check required direct referral conditions. Maximum you need 9 directs to eligible for Autopool 10.
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="card animated" data-animation="fadeInUpShorter" data-animation-delay="0.4s">
+                                                    <div class="card-header" id="headingSix">
+                                                        <h5 class="mb-0">
+                                                            <a class="btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseFour">
+                                                                <span class="icon"></span>
+                                                                What happen is I not Enter at Next Autopool ?
+                                                            </a>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#general-accordion">
+                                                        <div class="card-body">
+                                                            Your account remain active in the system forever, and you will get Referral Income from entire team.  you may enter next Autopool anytime you wants.
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="card animated" data-animation="fadeInUpShorter" data-animation-delay="0.4s">
+                                                    <div class="card-header" id="headingSeven">
+                                                        <h5 class="mb-0">
+                                                            <a class="btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseFour">
+                                                                <span class="icon"></span>
+                                                                What is Maximum Profit after 10th Autopool ?
+                                                            </a>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#general-accordion">
+                                                        <div class="card-body">
+                                                            Total 600 BNB you will get after 10th Autopool.
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="card animated" data-animation="fadeInUpShorter" data-animation-delay="0.4s">
+                                                    <div class="card-header" id="headingEight">
+                                                        <h5 class="mb-0">
+                                                            <a class="btn-link collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseFour">
+                                                                <span class="icon"></span>
+                                                                Autopool Entry is mandatory ?
+                                                            </a>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#general-accordion">
+                                                        <div class="card-body">
+                                                            No, if you want you can continue with next pool.<br />
+                                                            Autopool Entry is manual and user controlled process.<br />
+                                                            As you need to click on Enter Pool button and sign-in entery Amount Transactions.
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card animated" data-animation="fadeInUpShorter" data-animation-delay="0.4s">
+                                                    <div class="card-header" id="headingNine">
+                                                        <h5 class="mb-0">
+                                                            <a class="btn-link collapsed" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseFour">
+                                                                <span class="icon"></span>
+                                                                Is my (BNB) Funds safe ?
+                                                            </a>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#general-accordion">
+                                                        <div class="card-body">
+                                                            YES, YOUR FUND IS SAFE as it's always Stored on Decentralized Binance Wallets like Imtoken Wallet, TRUST WALLET or METAMASK
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card animated" data-animation="fadeInUpShorter" data-animation-delay="0.4s">
+                                                    <div class="card-header" id="headingTen">
+                                                        <h5 class="mb-0">
+                                                            <a class="btn-link collapsed" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseFour">
+                                                                <span class="icon"></span>
+                                                                Is it possible to earn Passively here at MATRIX PRO BSC ?
+                                                            </a>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#general-accordion">
+                                                        <div class="card-body">
+                                                            Yes, Definitely. As MATRIX PRO BSC is Global One Line Autopool Decentralized Open Source Smart Contract System. Every New User who Joins after you falls under you in one (Uni/Mono) line.<br />
+                                                            Personal Invitation or Recruitment gives you additional Opportunity to earn Referral Income upto 10 levels.<br />
+
+                                                            In addition to this Autopool gives you Opportunity to multiply 0.2 BNB to X3000 TIMES i.e.
+                                                            0.2 BNB to 600 BNB multiple times again and again.
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card animated" data-animation="fadeInUpShorter" data-animation-delay="0.4s">
+                                                    <div class="card-header" id="headingEleven">
+                                                        <h5 class="mb-0">
+                                                            <a class="btn-link collapsed" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseFour">
+                                                                <span class="icon"></span>
+                                                                I don't have Referral link, can I register with MATRIX PRO BSC ?
+                                                            </a>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#general-accordion">
+                                                        <div class="card-body">
+                                                            Yes. You will be Register under Systems Referral link.
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card animated" data-animation="fadeInUpShorter" data-animation-delay="0.4s">
+                                                    <div class="card-header" id="headingtweleve">
+                                                        <h5 class="mb-0">
+                                                            <a class="btn-link collapsed" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseFour">
+                                                                <span class="icon"></span>
+                                                                My 10th Autopool is complete and I received 600 BNB. What's next now ?
+                                                            </a>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="collapseTwelve" class="collapse" aria-labelledby="headingtweleve" data-parent="#general-accordion">
+                                                        <div class="card-body">
+                                                            Hey, Congratulations ! <br />
+                                                            You already made 3000X your investment.
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                             
+                                            </div>
+                                        </div>
+                                       </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                
+    
+        
+
+        <!-- Exchange Listing Area Ends -->
+    </section>
+    <!--/ Exchange Listing Area -->
+    <footer class="footer static-bottom footer-dark footer-custom-class" data-midnight="white">
+        <div class="container">
+            <div class="footer-wrapper mx-auto text-center">
+
+                <div class="col-lg-12 col-md-12">
+                    <div class="p-1 text-dark text-center">
+                        <h5 class="sub-title animated text-white" data-animation="fadeInUpShorter" data-animation-delay="2.2s">REAL ONE LINE GLOBAL AUTOPOOL</h5>
+                        <h6 class="sub-title animated text-white" data-animation="fadeInUpShorter" data-animation-delay="2.2s">Super fast way to make 600+ BNB with global one line autopool</h6>
+                    </div>
+                </div>
+                <div class="purchase-token-btn text-center" style="margin-bottom:20px">
+                    <a href="/signup" class="btn btn-lg btn-gradient-orange btn-round btn-glow">Register</a>
+                </div>
+                <ul class="social-buttons list-unstyled mb-5">
+
+                    <li class="animated" data-animation="fadeInUpShorter" data-animation-delay="0.5s"><a href="https://www.facebook.com/ProfessionalMatrix" target="_blank" title="Facebook" class="btn btn-outline-facebook rounded-circle"><i class="ti-facebook"></i></a></li>
+                    <li class="animated" data-animation="fadeInUpShorter" data-animation-delay="0.6s"><a href="https://twitter.com/INHERIT38092481" target="_blank" title="Twitter" class="btn btn-outline-twitter rounded-circle"><i class="ti-twitter-alt"></i></a></li>
+                    <li class="animated" data-animation="fadeInUpShorter" data-animation-delay="0.6s"><a href="https://t.me/matrixprovip" target="_blank" title="Telegram" class="btn btn-outline-telegram rounded-circle"><i class="fa fa-telegram  "></i></a></li>
+                    <li class="animated" data-animation="fadeInUpShorter" data-animation-delay="0.7s"><a href="https://www.linkedin.com/in/professionalmatrix2022" target="_blank" title="Linkedin" class="btn btn-outline-linkedin rounded-circle"><i class="ti-facebook"></i></a></li>
+                    <!--<li class="animated" data-animation="fadeInUpShorter" data-animation-delay="0.7s"><a href="#" title="LinkedIn" class="btn btn-outline-linkedin rounded-circle"><i class="ti-linkedin"></i></a></li>
+        <li class="animated" data-animation="fadeInUpShorter" data-animation-delay="0.8s"><a href="#" title="GitHub" class="btn btn-outline-github rounded-circle"><i class="ti-github"></i></a></li>
+        <li class="animated" data-animation="fadeInUpShorter" data-animation-delay="0.9s"><a href="#" title="Pintrest" class="btn btn-outline-pinterest rounded-circle"><i class="ti-pinterest"></i></a></li>-->
+                </ul>
+                <span class="copyright animated" data-animation="fadeInUpShorter" data-animation-delay="1.0s">Copyright &copy; 2022, Professional Matrix</span>
+
+                <div class="purchase-token-btn text-center" style="margin-bottom:20px;margin-top:20px;">
+                    <a href="/Referral.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  Referral</a>
+                </div>
+                
+                <div class="purchase-token-btn text-center" style="margin-bottom:20px;margin-top:20px;">
+                    <a href="/poolflow1.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  Poolflow1</a>
+                </div>
+                
+                <div class="purchase-token-btn text-center" style="margin-bottom:20px;margin-top:20px;">
+                    <a href="/Profit-table.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  Profit-table</a>
+                </div>
+
+                <div class="purchase-token-btn text-center" style="margin-bottom:20px;margin-top:20px;">
+                    <a href="/AutoPool.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  AutoPool</a>
+                </div>
+                
+                <div class="w-full text-center mt-3">
+                    
+                
+
+                    <p class="text-white">Contract address</p>
+                    <a href="https://bscscan.com/address/0xac2faCfD2C3f8B70b67Ca8Bb9b12F7BC7aBA65F7" style="word-break: break-all;" class="txt3" target="_blank">
+                        0xac2faCfD2C3f8B70b67Ca8Bb9b12F7BC7aBA65F7 <i class="fa fa-external-link"></i>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+
+ <!-- BEGIN VENDOR JS-->
+ <script src="/vendors.min.js"></script>
+ <!-- BEGIN VENDOR JS-->
+ <!-- BEGIN PAGE VENDOR JS-->
+ <script src="/flipclock.min.js"></script>
+ <script src="/swiper.min.js"></script>
+ <script src="/jquery.waypoints.min.js"></script>
+ <!-- END PAGE VENDOR JS-->
+ <!-- BEGIN THEME JS-->
+ <script src="/theme.js"></script>
+ 
+ <!-- END CRYPTO JS-->
+ <!-- BEGIN PAGE LEVEL JS-->
+ <!-- END PAGE LEVEL JS-->
+                                 </script>
+ 
+ <!-- END CRYPTO JS-->
+ <!-- BEGIN PAGE LEVEL JS-->
+ <!-- END PAGE LEVEL JS-->
+                                                                                
+
+    <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+    <script src="/socialjs.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            socialjs.init({
+                container: '.socialjs',
+                https: true
+            });
+        });
+        
+      </script>
+</body>
+</html>
