@@ -1541,7 +1541,7 @@ $(document).ready(function () {
 <script>
     function copyToClipboard(element, elementid) {
         // alert(elementid);
-        var $temp = $("<input>");
+        var $temp = $("<myInput>");
         $("body").append($temp);
         $temp.val($(element).text()).select();
         document.execCommand("copy");
@@ -1557,7 +1557,7 @@ $(document).ready(function () {
 <script>
     function copyToClipboard2(element, elementid) {
         // alert(elementid);
-        var $temp = $("<input1>");
+        var $temp = $("<myInput1>");
         $("body").append($temp);
         $temp.val($(element).text()).select();
         document.execCommand("copy");
