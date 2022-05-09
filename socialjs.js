@@ -240,9 +240,8 @@
         button.addEventListener('click', function (e) {
             e.preventDefault();
             hook('onClick');
-            var original_referer = (button.hasAttribute('data-referer') ? button.getAttribute('data-referer') : '');
             var url = getUrl(button);
-            var fullurl = 'mini=true&ro=true&title=' + '&url=' + encodeURIComponent(url);
+            var fullurl = 'text' + '&url=' + encodeURIComponent(url);
             var encodedUrl = encodeURIComponent(url);
             window.linkedin = window.linkedin || {}; 
             window.linkedin.shareWin = window.open('http://www.linkedin.com/shareArticle?' + fullurl + '', '', getWindowSizePosition());
