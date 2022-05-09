@@ -1152,7 +1152,7 @@ $(document).ready(function () {
 <script>
     function myFunction() {
         /* Get the text field */
-        var copyText = document.getElementById("myInput");
+        var copyText = document.getElementById("myInput").innerHTML = '<i class="fa fa-copy"></i>';;
       
         /* Select the text field */
         copyText.select();
@@ -1167,9 +1167,23 @@ $(document).ready(function () {
 
 </script>
 
+<script>
 
+    function myFunction1() {
+        /* Get the text field */
+        var copyText = document.getElementById("myInput1").innerHTML = '<i class="fa fa-copy"></i>';;
 
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
 
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+    }
+</script>
 <div class="app-content">
     <div class="section">
 
@@ -1187,10 +1201,10 @@ $(document).ready(function () {
 
                         
                         <input class="currentuseridlink" type="text" id="myInput" style="opacity:0; height:0px;" />
-                        <p class="mb-0 fs-16">Referral link : <span  class="currentuseridlinkbutton"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
+                        <p class="mb-0 fs-16">Referral link : <span  class="currentuseridlink"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
 
                         <input class="currentuseridlinknew" type="text" id="myInput1" style="opacity:0; height:0px;"/>
-                        <p class="mb-0 fs-16">Trust Wallet Referral link : <span  class="currentuseridlinknewbutton"></span> &emsp; <span class="btn btn-warning" onclick="myFunction1()"> <i class="fa fa-copy"></i></span></p>
+                        <p class="mb-0 fs-16">Trust Wallet Referral link : <span  class="currentuseridlinknew"></span> &emsp; <span class="btn btn-warning" onclick="myFunction1()"> <i class="fa fa-copy"></i></span></p>
                         
 
 
