@@ -242,10 +242,10 @@
             hook('onClick');
             var original_referer = (button.hasAttribute('data-referer') ? button.getAttribute('data-referer') : '');
             var url = getUrl(button);
-            var fullurl = 'original_referer=' + encodeURIComponent(original_referer) + '&url=' + encodeURIComponent(url);
+            var fullurl = 'mini=true&ro=true&title=' + '&url=' + encodeURIComponent(url);
             var encodedUrl = encodeURIComponent(url);
             window.linkedin = window.linkedin || {}; 
-            window.linkedin.shareWin = window.open('http://www.linkedin.com/shareArticle?' + fullurl + '&summary=true', '&source=', getWindowSizePosition());
+            window.linkedin.shareWin = window.open('http://www.linkedin.com/shareArticle?' + fullurl + '', '', getWindowSizePosition());
             return false;
         }); 
     };
