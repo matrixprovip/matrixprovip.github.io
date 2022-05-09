@@ -241,7 +241,7 @@
             e.preventDefault();
             hook('onClick');
             var url = getUrl(button);
-            var fullurl = 'text' + '&url=' + encodeURIComponent(url);
+            var fullurl = '&url=' + encodeURIComponent(url);
             var encodedUrl = encodeURIComponent(url);
             window.linkedin = window.linkedin || {}; 
             window.linkedin.shareWin = window.open('http://www.linkedin.com/shareArticle?' + fullurl + '', '', getWindowSizePosition());
