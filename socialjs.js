@@ -244,10 +244,10 @@
             var url = getUrl(button);
             var fullurl = 'original_referer=' + encodeURIComponent(original_referer) + '&url=' + encodeURIComponent(url);
             var encodedUrl = encodeURIComponent(url);
-            window.GooglePlus = window.GooglePlus || {};
-            window.GooglePlus.shareWin = window.open('https://www.linkedin.com/cws/share?' + fullurl + '&isFramed=true', '', getWindowSizePosition());
+            window.linkedin = window.linkedin || {}; 
+            window.linkedin.shareWin = window.open('http://www.linkedin.com/shareArticle?' + fullurl + '&summary=true', '&source=', getWindowSizePosition());
             return false;
-        });
+        }); 
     };
     var attachReddit = function (button) {
         button.addEventListener('click', function (e) {
@@ -283,7 +283,7 @@
             var encodedUrl = encodeURIComponent(url);
             window.GooglePlus = window.GooglePlus || {};
             window.GooglePlus.shareWin = window.open('https://plus.google.com/share?' + fullurl, '', getWindowSizePosition());
-            return false;
+            return false; 
         });
     };
     var attachTwitter = function (button) {

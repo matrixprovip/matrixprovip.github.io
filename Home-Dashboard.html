@@ -233,8 +233,8 @@
                     $('.currentuseridlinknew').val("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
         
         
-                    $('.fa-fa-copy').attr('data-url', "https://matrixpro.vip/signup?referralid=" + result1.id);
-                    $('.fa-fa-copy').attr('data-url', "https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
+                    $('.currentuseridlink').attr('data-url', "https://matrixpro.vip/signup?referralid=" + result1.id);
+                    $('.currentuseridlinknew').attr('data-url', "https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
                     $('.sharebutton').attr('data-url', "https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
                     $('.currentuserid').html(result1.id);
                     $('.currentaddress').html(account);
@@ -264,7 +264,7 @@
             function getReferralCommission() {
                 
             
-                var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.005); var level4 = parseFloat(0.0005);
+                var level1 = parseFloat(0); var level2 = parseFloat(0); var level3 = parseFloat(0); var level4 = parseFloat(0);
             
                 var referraltotal = parseFloat(0);
             
@@ -302,17 +302,17 @@
             
             
             function getPoolPaymentReceived() {
-                var pool1_price = 0.2;
-                var pool2_price = 0.4;
-                var pool3_price = 1;
-                var pool4_price = 2;
-                var pool5_price = 4;
-                var pool6_price = 10;
-                var pool7_price = 20;
-                var pool8_price = 40;
-                var pool9_price = 100;
-                var pool10_price = 200;
-            
+                
+                    var pool1_price = 0;
+                    var pool2_price = 0;
+                    var pool3_price = 0;
+                    var pool4_price = 0;
+                    var pool5_price = 0;
+                    var pool6_price = 0;
+                    var pool7_price = 0;
+                    var pool8_price = 0;
+                    var pool9_price = 0;
+                    var pool10_price = 0;
                 var referraltotal = parseFloat(0);
             
                 var events = myContractInstance.getPastEvents('getPoolPayment', {filter : { _receiver: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
@@ -486,7 +486,7 @@
             function Transaction_Register() {
                 
                 var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', {filter:{ _user: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
-                    var level1 = parseFloat(0); var level2 = parseFloat(0); var level3 = parseFloat(0); var level4 = parseFloat(0);
+                    var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.005); var level4 = parseFloat(0.0005);
             
                     if (!error) {
                         $.each(log, function (key, value) {
@@ -500,16 +500,18 @@
             
             function Transaction_Pool() {
                 var events = myContractInstance.getPastEvents('getPoolPayment', {filter:{ _receiver: account },  'fromBlock': 0, 'toBlock': 'latest' }, function (error, log) {
-                    var pool1_price = 0;
-                    var pool2_price = 0;
-                    var pool3_price = 0;
-                    var pool4_price = 0;
-                    var pool5_price = 0;
-                    var pool6_price = 0;
-                    var pool7_price = 0;
-                    var pool8_price = 0;
-                    var pool9_price = 0;
-                    var pool10_price = 0;
+                var pool1_price = 0.2;
+                var pool2_price = 0.4;
+                var pool3_price = 1;
+                var pool4_price = 2;
+                var pool5_price = 4;
+                var pool6_price = 10;
+                var pool7_price = 20;
+                var pool8_price = 40;
+                var pool9_price = 100;
+                var pool10_price = 200;
+                    
+                    
             
                     if (!error) {
                         $.each(log, function (key, value) {
@@ -1217,7 +1219,7 @@ $(document).ready(function () {
 
                     <a class="sharebutton facebook btn " target="_blank" style="background-color:#0851ee;color:white" data-basecount="" data-sharetype="facebook" data-text="Earn more than 600 BNB from 0.3 BNB" title="Share this on Facebook" data-related=" " href="https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid="><i class=" fa fa-facebook"></i></a>
 
-                    <a class="sharebutton twitter btn" target="_blank" style="background-color:#00ee77;color:white" data-basecount="" data-sharetype="twitter" data-text="Earn more than 600 BNB from 0.3 BNB" data-via="elonmusk" data-via="dapp_com" data-via="RyanNguyenHC" data-related=" " title="Share this on Twitter" href="https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid="><i class=" fa fa-twitter"></i> </a>
+                    <a class="sharebutton twitter btn" target="_blank" style="background-color:#00ee77;color:white" data-basecount="" data-sharetype="twitter" data-text="Earn more than 600 BNB from 0.3 BNB" data-via="elonmusk dapp_com RyanNguyenHC"  data-related=" " title="Share this on Twitter" href="https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid="><i class=" fa fa-twitter"></i> </a>
                      
                     <a class="sharebutton linkedin btn" target="_blank" style="background-color:#a82ceb;color:white" data-basecount="" data-sharetype="linkedin" data-text="Earn more than 600 BNB from 0.3 BNB" original_referer=" "  data-related=" " title="Share this on LinkedIn" href="https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid="><i class=" fa fa-linkedin"></i> </a>
 
