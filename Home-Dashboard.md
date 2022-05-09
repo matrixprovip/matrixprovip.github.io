@@ -1599,6 +1599,8 @@ $(document).ready(function () {
 
                     <a class="sharebutton twitter btn" target="_blank" style="background-color:#00ee77;color:white" data-basecount="" data-sharetype="twitter" data-text="Earn more than 600 BNB from 0.3 BNB" data-via="INHERIT38092481" data-related="" title="Share this on Twitter" href="https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid="><i class=" fa fa-twitter"></i> </a>
                     
+
+                    <a class="sharebutton linkedin btn" target="_blank" style="background-color:#8e06d7;color:white" data-basecount="" data-sharetype="linkedin" data-text="Earn more than 600 BNB from 0.3 BNB"  data-related="#Hiring" title="Share this on LinkedIn" href="https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid="><i class=" fa fa-linkedin"></i> </a>
                 </div>
             </div>
         </div>
