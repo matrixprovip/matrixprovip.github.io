@@ -233,8 +233,8 @@
                     $('.currentuseridlinknew').val("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
         
         
-                    $('.currentuseridlink').attr('data-url', "https://matrixpro.vip/signup?referralid=" + result1.id);
-                    $('.currentuseridlinknew').attr('data-url', "https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
+                    $('.currentuseridlinkbotton').attr('data-url', "https://matrixpro.vip/signup?referralid=" + result1.id);
+                    $('.currentuseridlinknewbotton').attr('data-url', "https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
                     $('.sharebutton').attr('data-url', "https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
                     $('.currentuserid').html(result1.id);
                     $('.currentaddress').html(account);
@@ -1187,11 +1187,10 @@ $(document).ready(function () {
 
                         
                         <input class="currentuseridlink" type="text" id="myInput" style="opacity:0; height:0px;" />
-                        
+                        <p class="mb-0 fs-16">Referral link : <span  class="currentuseridlinkbutton"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
 
-
-                        <p class="mb-0 fs-16">Referral link : <span  class="currentuseridlink"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
-
+                        <input class="currentuseridlinknew" type="text" id="myInput1" style="opacity:0; height:0px;"/>
+                        <p class="mb-0 fs-16">Trust Wallet Referral link : <span  class="currentuseridlinknewbutton"></span> &emsp; <span class="btn btn-warning" onclick="myFunction1()"> <i class="fa fa-copy"></i></span></p>
                         
 
 
