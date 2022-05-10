@@ -1205,22 +1205,7 @@ function outFunc() {
 }
 </script>
 
-<script>
-function myFunction1() {
-  var copyText = document.getElementById("myInput1");
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
-  navigator.clipboard.writeText(copyText.value);
-  
-  var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copied: " + copyText.value;
-}
 
-function outFunc() {
-  var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copy to clipboard";
-}
-</script>
 
 
 <div class="app-content">
@@ -1243,7 +1228,7 @@ function outFunc() {
                         
                       
                       
-                        <p><input type="text" class="currentuseridlink" value="Hello World" id="myInput" style="opacity:0; height:0px;">
+                        <p><input type="text" class="currentuseridlink" id="myInput" style="opacity:0; height:0px;">
 
 <div class="tooltip">
 <button onclick="myFunction()" onmouseout="outFunc()">
@@ -1253,15 +1238,7 @@ function outFunc() {
 </div>
 </p>
 <p>
-<input type="text" class="currentuseridlinknew" value="Hello World" id="myInput1" style="opacity:0; height:0px;">
-
-<div class="tooltip">
-<button onclick="myFunction1()" onmouseout="outFunc()">
-  <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
-  Copy Trust Wallet Referral link
-  </button>
-</div>
-</p>              
+            
 
 
                         <p class="mb-0 fs-16"><a class="ethaddress" href=" " target="_blank">Your BNB address: <span class="currentaddress"></span> <i class="fa fa-external-link"></i></a></p> 
