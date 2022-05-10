@@ -1502,18 +1502,18 @@ $(document).ready(function () {
 <script>
     function myFunction() {
         /* Get the text field */
-        var copyText = document.getElementById("myInput");
+        var Text = document.getElementById("myInput");
       
         /* Select the text field */
-        copyText.select();
+        Text.select();
         
-        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+        Text.setSelectionRange(0, 99999); /*For mobile devices*/
 
         /* Copy the text inside the text field */
         document.execCommand("copy");
 
         /* Alert the copied text */
-        alert("Copy Your Link: " + copyText.value);
+        alert("Copy Your Link: " + Text.value);
        
         
     }
@@ -1524,22 +1524,24 @@ $(document).ready(function () {
 
     function myFunction1() {
         /* Get the text field */
-        var copyText = document.getElementById("myInput1");
+        var Text = document.getElementById("myInput1");
 
         /* Select the text field */
-        copyText.select();
+        Text.select();
         
-        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+        Text.setSelectionRange(0, 99999); /*For mobile devices*/
 
         /* Copy the text inside the text field */
         document.execCommand("copy");
 
         /* Alert the copied text */
-        alert("Copy Your Link: " + copyText.value);
+        alert("Copy Your Link: " + Text.value);
         
         
     }
     </script>
+
+
 
 
 <div class="app-content">
