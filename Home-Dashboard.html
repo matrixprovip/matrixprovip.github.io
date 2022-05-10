@@ -1151,38 +1151,38 @@ $(document).ready(function () {
 
 <script>
     function myFunction() {
-        /* Get the text field */
-        var Text = document.getElementById("myInput");
-      
-        /* Select the text field */
-        Text.select();
-        Text.setSelectionRange(0, 99999); /*For mobile devices*/
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
 
-        /* Copy the text inside the text field */
-        document.execCommand("copy");
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
-        /* Alert the copied text */
-        alert("Copied the text: " + Text.value);
-    }
+   /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
 
 </script>
 
 <script>
 
-    function myFunction1() {
-        /* Get the text field */
-        var Text = document.getElementById("myInput1");
+function myFunction1() {
+  /* Get the text field */
+  var copyText = document.getElementById("myInput1");
 
-        /* Select the text field */
-        Text.select();
-        Text.setSelectionRange(0, 99999); /*For mobile devices*/
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
-        /* Copy the text inside the text field */
-        document.execCommand("copy");
+   /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
 
-        /* Alert the copied text */
-        alert("Copied the text: " + Text.value);
-    }
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
 </script>
 <div class="app-content">
     <div class="section">
