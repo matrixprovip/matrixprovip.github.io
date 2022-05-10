@@ -1499,123 +1499,83 @@ $(document).ready(function () {
     });
 </script>
 
-<style>
-    .tooltip {
-      position: relative;
-      display: inline-block;
-    }
-    
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 140px;
-      background-color: #555;
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      padding: 5px;
-      position: absolute;
-      z-index: 1;
-      bottom: 150%;
-      left: 50%;
-      margin-left: -75px;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    
-    .tooltip .tooltiptext::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      margin-left: -5px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: #555 transparent transparent transparent;
-    }
-    
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
-    }
-    </style>
+
     
     
     <script>
-    function myFunction() {
-      var copyText = document.getElementById("myInput");
-      copyText.select();
-      copyText.setSelectionRange(0, 99999);
-      navigator.clipboard.writeText(copyText.value);
-      
-      var tooltip = document.getElementById("myTooltip");
-      tooltip.innerHTML = "Copied: " + copyText.value;
-    }
+        function myFunction() {
+          /* Get the text field */
+          var copyText = document.getElementById("myInput");
+        
+          /* Select the text field */
+          copyText.select();
+          copyText.setSelectionRange(0, 99999); /* For mobile devices */
+        
+          /* Copy the text inside the text field */
+          navigator.clipboard.writeText(copyText.value);
+          
+          /* Alert the copied text */
+          alert("Copied the text: " + copyText.value);
+        }
+        </script>
     
-    function outFunc() {
-      var tooltip = document.getElementById("myTooltip");
-      tooltip.innerHTML = "Copy to clipboard";
-    }
-    </script>
-
-<script>
-    function myFunction1() {
-      var copyText = document.getElementById("myInput1");
-      copyText.select();
-      copyText.setSelectionRange(0, 99999);
-      navigator.clipboard.writeText(copyText.value);
-      
-      var tooltip = document.getElementById("myTooltip1");
-      tooltip.innerHTML = "Copied: " + copyText.value;
-    }
+    <script>
+        function myFunction1() {
+          /* Get the text field */
+          var copyText = document.getElementById("myInput1");
+        
+          /* Select the text field */
+          copyText.select();
+          copyText.setSelectionRange(0, 99999); /* For mobile devices */
+        
+          /* Copy the text inside the text field */
+          navigator.clipboard.writeText(copyText.value);
+          
+          /* Alert the copied text */
+          alert("Copied the text: " + copyText.value);
+        }
+        </script>
     
-    function outFunc() {
-      var tooltip = document.getElementById("myTooltip1");
-      tooltip.innerHTML = "Copy to clipboard";
-    }
-    </script>
-
-
-
-
-
-
-<div class="app-content">
-    <div class="section">
-
-        <!-- Banner opened -->
-        <div class="row"></div>
-            <div class="col-xl-12">
-                <div class="banner banner-color mt-0">
-                    <div class="col-xl-2 col-lg-3 col-md-12">
-                        <img src="/new_message.svg" alt="image" class="image">
-                    </div>
-
-
-                    <div class="page-content col-xl-7 col-lg-6 col-md-12">
-                        <h3 class="mb-1">User ID : <span class="currentuserid"></span></h3>
-
-
-                        <input type="text" value="currentuseridlink"  id="myInput" style="opacity:0; height:0px;" />
-
-                        <p class="mb-0 fs-16">Referral link: <span  class="currentuseridlink">class="tooltip"><button onclick="myFunction()" onmouseout="outFunc()"></button></span> &emsp; <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>Copy Referral link</button></p>
-
+    
+    <div class="app-content">
+        <div class="section">
+    
+            <!-- Banner opened -->
+            <div class="row"></div>
+                <div class="col-xl-12">
+                    <div class="banner banner-color mt-0">
+                        <div class="col-xl-2 col-lg-3 col-md-12">
+                            <img src="/new_message.svg" alt="image" class="image">
+                        </div>
+    
+    
+                        <div class="page-content col-xl-7 col-lg-6 col-md-12">
+                            <h3 class="mb-1">User ID : <span class="currentuserid"></span></h3>
+    
+                            
+                            <input class="currentuseridlink" type="text" id="myInput" style="opacity:0; height:0px;" />
+                            <input class="currentuseridlinknew" type="text" id="myInput1" style="opacity:0; height:0px;"/>
+    
+    
+                            <p class="mb-0 fs-16">Referral link: <span class="currentuseridlink"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
+    
+                            <p class="mb-0 fs-16">Trust Wallet Referral link: <span class="currentuseridlinknew"></span> &emsp; <span class="btn btn-warning" onclick="myFunction1()"> <i class="fa fa-copy"></i></span></p>
+    
+    
+                            <p class="mb-0 fs-16"><a class="ethaddress" href=" " target="_blank">Your BNB address: <span class="currentaddress"></span> <i class="fa fa-external-link"></i></a></p> 
+                        </div>        
+    
+                        <div class="col-xl-3 col-lg-3 col-md-3 text-right d-flex d-block">
+                            <div class="socialjs">
+    
+                        <a class="sharebutton facebook btn " target="_blank" style="background-color:#0851ee;color:white" data-basecount="" data-sharetype="facebook" data-text="Earn more than 600 BNB from 0.3 BNB" title="Share this on Facebook" data-related=" " href="https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid="><i class=" fa fa-facebook"></i></a>
+    
+                        <a class="sharebutton twitter btn" target="_blank" style="background-color:#00ee77;color:white" data-basecount="" data-sharetype="twitter" data-text="Earn more than 600 BNB from 0.3 BNB" data-via="elonmusk" data-via="dapp_com" data-via="RyanNguyenHC" data-related=" " title="Share this on Twitter" href="https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid="><i class=" fa fa-twitter"></i> </a>
                          
-
                         
-                        
-                        <p class="mb-0 fs-16"><a class="ethaddress" href="" target="_blank">Your BNB address: <span class="currentaddress"></span> <i class="fa fa-external-link"></i></a></p> 
-                    </div>        
-
-                    <div class="col-xl-3 col-lg-3 col-md-3 text-right d-flex d-block">
-                        <div class="socialjs">
-
-                    <a class="sharebutton facebook btn " target="_blank" style="background-color:#0851ee;color:white" data-basecount="" data-sharetype="facebook" data-text="Earn more than 600 BNB from 0.3 BNB" title="Share this on Facebook" href="https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid="><i class=" fa fa-facebook"></i></a>
-
-                    <a class="sharebutton twitter btn" target="_blank" style="background-color:#00ee77;color:white" data-basecount="" data-sharetype="twitter" data-text="Earn more than 600 BNB from 0.3 BNB" data-via="INHERIT38092481" data-related="" title="Share this on Twitter" href="https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid="><i class=" fa fa-twitter"></i> </a>
-                    
+                    </div>
                 </div>
             </div>
-        </div>
         <!-- Banner opened -->
         <!-- Banner opened -->
         <!-- row opened -->
