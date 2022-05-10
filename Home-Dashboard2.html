@@ -275,20 +275,20 @@
                             var level = value.returnValues.level;
             
                             if (level == 1) {
-                                referraltotal = parseFloat(referraltotal) + parseFloat("0");
+                                referraltotal = parseFloat(referraltotal) + parseFloat("0.02");
             
                             }
                             else if (level == 2) {
             
-                                referraltotal = parseFloat(referraltotal) + parseFloat("0");
+                                referraltotal = parseFloat(referraltotal) + parseFloat("0.01");
                             }
                             else if (level == 3) {
-                                referraltotal = parseFloat(referraltotal) + parseFloat("0");
+                                referraltotal = parseFloat(referraltotal) + parseFloat("0.005");
             
                             }
                             else {
             
-                                referraltotal = parseFloat(referraltotal) + parseFloat("0");
+                                referraltotal = parseFloat(referraltotal) + parseFloat("00.0005");
             
                             }
             
@@ -486,7 +486,7 @@
             function Transaction_Register() {
                 
                 var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', {filter:{ _user: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
-                    var level1 = parseFloat(0); var level2 = parseFloat(0); var level3 = parseFloat(0); var level4 = parseFloat(0);
+                    var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.005); var level4 = parseFloat(0.0005;
             
                     if (!error) {
                         $.each(log, function (key, value) {
@@ -500,16 +500,16 @@
             
             function Transaction_Pool() {
                 var events = myContractInstance.getPastEvents('getPoolPayment', {filter:{ _receiver: account },  'fromBlock': 0, 'toBlock': 'latest' }, function (error, log) {
-                    var pool1_price = 0;
-                    var pool2_price = 0;
-                    var pool3_price = 0;
-                    var pool4_price = 0;
-                    var pool5_price = 0;
-                    var pool6_price = 0;
-                    var pool7_price = 0;
-                    var pool8_price = 0;
-                    var pool9_price = 0;
-                    var pool10_price = 0;
+                    var pool1_price = 0.2;
+                    var pool2_price = 0.4;
+                    var pool3_price = 1;
+                    var pool4_price = 2;
+                    var pool5_price = 4;
+                    var pool6_price = 10;
+                    var pool7_price = 20;
+                    var pool8_price = 40;
+                    var pool9_price = 100;
+                    var pool10_price = 200;
             
                     if (!error) {
                         $.each(log, function (key, value) {
@@ -1147,65 +1147,39 @@ $(document).ready(function () {
     });
 </script>
 
-  
-  
- <style>
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 140px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 150%;
-  left: 50%;
-  margin-left: -75px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
-</style>
 <script>
-function myFunction() {
-  var copyText = document.getElementById("myInput");
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
-  navigator.clipboard.writeText(copyText.value);
-  
-  var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copied: " + copyText.value;
-}
+    function myFunction() {
+      /* Get the text field */
+      var copyText = document.getElementById("myInput");
+    
+      /* Select the text field */
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    
+      /* Copy the text inside the text field */
+      navigator.clipboard.writeText(copyText.value);
+      
+      /* Alert the copied text */
+      alert("Copied the text: " + copyText.value);
+    }
+    </script>
 
-function outFunc() {
-  var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copy to clipboard";
-}
-</script>
-
-
+<script>
+    function myFunction1() {
+      /* Get the text field */
+      var copyText = document.getElementById("myInput1");
+    
+      /* Select the text field */
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    
+      /* Copy the text inside the text field */
+      navigator.clipboard.writeText(copyText.value);
+      
+      /* Alert the copied text */
+      alert("Copied the text: " + copyText.value);
+    }
+    </script>
 
 
 <div class="app-content">
@@ -1224,21 +1198,13 @@ function outFunc() {
                         <h3 class="mb-1">User ID : <span class="currentuserid"></span></h3>
 
                         
-                        
-                        
-                      
-                      
-                        <p><input type="text" class="currentuseridlink" id="myInput" style="opacity:0; height:0px;">
+                        <input class="currentuseridlink" type="text" id="myInput" style="opacity:0; height:0px;" />
+                        <input class="currentuseridlinknew" type="text" id="myInput1" style="opacity:0; height:0px;"/>
 
-<div class="tooltip">
-<button onclick="myFunction()" onmouseout="outFunc()">
-  <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
-  Copy Referral link
-  </button>
-</div>
-</p>
-<p>
-            
+
+                        <p class="mb-0 fs-16">Referral link: <span class="currentuseridlink"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
+
+                        <p class="mb-0 fs-16">Trust Wallet Referral link: <span class="currentuseridlinknew"></span> &emsp; <span class="btn btn-warning" onclick="myFunction1()"> <i class="fa fa-copy"></i></span></p>
 
 
                         <p class="mb-0 fs-16"><a class="ethaddress" href=" " target="_blank">Your BNB address: <span class="currentaddress"></span> <i class="fa fa-external-link"></i></a></p> 
@@ -1917,5 +1883,3 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 </body>
 </html>
-
-
