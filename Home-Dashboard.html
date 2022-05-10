@@ -275,20 +275,20 @@
                             var level = value.returnValues.level;
             
                             if (level == 1) {
-                                referraltotal = parseFloat(referraltotal) + parseFloat("0");
+                                referraltotal = parseFloat(referraltotal) + parseFloat("0.02");
             
                             }
                             else if (level == 2) {
             
-                                referraltotal = parseFloat(referraltotal) + parseFloat("0");
+                                referraltotal = parseFloat(referraltotal) + parseFloat("0.01");
                             }
                             else if (level == 3) {
-                                referraltotal = parseFloat(referraltotal) + parseFloat("0");
+                                referraltotal = parseFloat(referraltotal) + parseFloat("0.005");
             
                             }
                             else {
             
-                                referraltotal = parseFloat(referraltotal) + parseFloat("0");
+                                referraltotal = parseFloat(referraltotal) + parseFloat("0.0005");
             
                             }
             
@@ -486,7 +486,7 @@
             function Transaction_Register() {
                 
                 var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', {filter:{ _user: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
-                    var level1 = parseFloat(0); var level2 = parseFloat(0); var level3 = parseFloat(0); var level4 = parseFloat(0);
+                    var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.005); var level4 = parseFloat(0.0005);
             
                     if (!error) {
                         $.each(log, function (key, value) {
@@ -500,16 +500,16 @@
             
             function Transaction_Pool() {
                 var events = myContractInstance.getPastEvents('getPoolPayment', {filter:{ _receiver: account },  'fromBlock': 0, 'toBlock': 'latest' }, function (error, log) {
-                    var pool1_price = 0;
-                    var pool2_price = 0;
-                    var pool3_price = 0;
-                    var pool4_price = 0;
-                    var pool5_price = 0;
-                    var pool6_price = 0;
-                    var pool7_price = 0;
-                    var pool8_price = 0;
-                    var pool9_price = 0;
-                    var pool10_price = 0;
+                    var pool1_price = 0.2;
+                    var pool2_price = 0.4;
+                    var pool3_price = 1;
+                    var pool4_price = 2;
+                    var pool5_price = 4;
+                    var pool6_price = 10;
+                    var pool7_price = 20;
+                    var pool8_price = 40;
+                    var pool9_price = 100;
+                    var pool10_price = 200;
             
                     if (!error) {
                         $.each(log, function (key, value) {

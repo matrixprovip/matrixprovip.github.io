@@ -10,7 +10,7 @@
 
         if (account == null) {
             alert("You are not Logged In. Please Login first..!!");
-           location.href = "https://matrixpro.vip/signin";
+           location.href = "https://matrixpro.vip/signin2";
         }
     </script> 
 
@@ -128,10 +128,10 @@
                         <div class="line-animations">
                             <ul class="resp-tabs-list hor_1">
                                 
-                                <li class="resp-tab-active active"><a href="https://matrixpro.vip/Home-Dashboard"><span class="side-menu__icon"></span><img src="/homepage.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Home"></a></li>
-                                <li class="autopool"><a href="https://matrixpro.vip/Autopool"><span class="side-menu__icon"></span><img src="/m2.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Autopool"></a></li>
-                                <li class="trans"><a href="https://matrixpro.vip/Transaction"><span class="side-menu__icon"></span><img src="/m3.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Transations"></a></li>
-                                <li class="team2"><a href="https://matrixpro.vip/Team"><span class="side-menu__icon"></span><img src="/m4.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Team"></a></li>
+                                <li class="resp-tab-active active"><a href="https://matrixpro.vip/Home-Dashboard2"><span class="side-menu__icon"></span><img src="/homepage.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Home"></a></li>
+                                <li class="autopool"><a href="https://matrixpro.vip/Autopool2"><span class="side-menu__icon"></span><img src="/m2.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Autopool"></a></li>
+                                <li class="trans"><a href="https://matrixpro.vip/Transaction2"><span class="side-menu__icon"></span><img src="/m3.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Transations"></a></li>
+                                <li class="team2"><a href="https://matrixpro.vip/Team2"><span class="side-menu__icon"></span><img src="/m4.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Team"></a></li>
                                 <li class="media2"><a href="https://matrixpro.vip/Media"><span class="side-menu__icon"></span><img src="/m5.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Media"></a></li>
                              
                                 <li class="logoutuser"><span class="side-menu__icon"></span><img src="/m6.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Log out"></li>
@@ -486,7 +486,7 @@
             function Transaction_Register() {
                 
                 var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', {filter:{ _user: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
-                    var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.005); var level4 = parseFloat(0.0005;
+                    var level1 = parseFloat(0.02); var level2 = parseFloat(0.01); var level3 = parseFloat(0.005); var level4 = parseFloat(0.0005);
             
                     if (!error) {
                         $.each(log, function (key, value) {
@@ -1865,7 +1865,7 @@ $(document).ready(function() {
 $('.logoutuser').click(function () {
 
     var account = localStorage.removeItem("address", null);
-    location.href = "https://matrixpro.vip/signin";
+    location.href = "https://matrixpro.vip/signin2";
 });
 });
 </script>
