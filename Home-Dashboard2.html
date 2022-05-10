@@ -566,9 +566,9 @@ $(document).ready(function () {
                                     
             
             
-                        $('.currentuseridlink').val("https://matrixpro.vip/signup?referralid=" + result1.id);
+                        $('.currentuseridlink').value("https://matrixpro.vip/signup?referralid=" + result1.id);
             
-                        $('.currentuseridlinknew').val("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
+                        $('.currentuseridlinknew').value("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
             
                         $('.currentuseridlink').attr('data-url', "https://matrixpro.vip/signup?referralid=" + result1.id);
                         $('.currentuseridlinknew').attr('data-url', "https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
@@ -1560,8 +1560,8 @@ $(document).ready(function () {
                         <h3 class="mb-1">User ID : <span class="currentuserid"></span></h3>
 
                         
-                        <input class="currentuseridlink" type="text" id="myInput" style="opacity:0; height:0px;" />
-                        <input class="currentuseridlinknew" type="text" id="myInput" style="opacity:0; height:0px;"/>
+                        <input type="button" class="currentuseridlink" type="text" id="myInput" style="opacity:0; height:0px;" />
+                        <input type="button" class="currentuseridlinknew" type="text" id="myInput" style="opacity:0; height:0px;"/>
 
 
                         <p class="mb-0 fs-16">Referral link: <span class="currentuseridlink"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"><i class="fa fa-copy"></i></span></p>
