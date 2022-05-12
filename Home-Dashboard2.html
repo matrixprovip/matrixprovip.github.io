@@ -1869,7 +1869,29 @@ $('.logoutuser').click(function () {
 });
 });
 </script>
+<script>
+    function myFunction() {
+       var element = document.body;
+       element.classList.toggle("dark-mode");
+    }
+    </script>
 
+<style>
+    body {
+      padding: 25px;
+      background-color: white;
+      color: black;
+      font-size: 25px;
+    }
+    
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+    </style>
+
+    
+    <button onclick="myFunction()">Dark mode</button>
 <script>
 document.addEventListener("DOMContentLoaded", function (event) {
     socialjs.init({
