@@ -3,7 +3,7 @@
 I hereby claim:
 
   * I am matrixprovip on github.
-  * I am matrixpro (https://keybase.io/matrixpro) on keybase.
+  * I am matrixpro (https://keybase.io/matrixprovip) on keybase.
   * I have a public key ASAfzoOAZXBM4s2BY9KBr5br63lhCHCJkrC34yLbjloQWQo
 
 To claim this, I am signing this object:
@@ -16,7 +16,7 @@ To claim this, I am signing this object:
       "host": "keybase.io",
       "kid": "01201fce838065704ce2cd8163d281af96ebeb796108708992b0b7e322db8e5a10590a",
       "uid": "6c6658c669f66429ca3f37c0423b4519",
-      "username": "matrixpro"
+      "username": "matrixprovip"
     },
     "merkle_root": {
       "ctime": 1690045170,
@@ -44,7 +44,7 @@ To claim this, I am signing this object:
 }
 ```
 
-with the key [ASAfzoOAZXBM4s2BY9KBr5br63lhCHCJkrC34yLbjloQWQo](https://keybase.io/matrixpro), yielding the signature:
+with the key [ASAfzoOAZXBM4s2BY9KBr5br63lhCHCJkrC34yLbjloQWQo](https://keybase.io/matrixprovip), yielding the signature:
 
 ```
 hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgH86DgGVwTOLNgWPSga+W6+t5YQhwiZKwt+Mi245aEFkKp3BheWxvYWTESpcCBsQg0wNwn/4oUjls/LMoxB7dJxaLldIVcsnuXJzeRgIDiovEIH9Nv5UhQ0xLtRYu7bOFNnMtcS4P1RWp3Kl6aUQ31AsMAgHCo3NpZ8RAWksQr1gyvDf4lII5fiw6ttQb0OSPl3LkKlfufc/u10qNZWSoFRwK1jIUpbLIZfkMDg3BRtf8XSnvEWzdukrBBahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEINZiitLjcY1GK+LdoF5Owvd2/wZW+AQq1qPdbr9NldZ6o3RhZ80CAqd2ZXJzaW9uAQ==
@@ -55,7 +55,7 @@ And finally, I am proving ownership of the github account by posting this as a g
 
 ### My publicly-auditable identity:
 
-https://keybase.io/matrixpro
+https://keybase.io/matrixprovip
 
 ### From the command line:
 
@@ -63,5 +63,5 @@ Consider the [keybase command line program](https://keybase.io/download).
 
 ```bash
 # look me up
-keybase id matrixpro
+keybase id matrixprovip
 ```
