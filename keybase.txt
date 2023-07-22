@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/matrixprovip
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://matrixpro.vip
+  * I am matrixprovip (https://keybase.io/matrixprovip) on keybase.
+  * I have a public key ASB85aIwsCy9Ud8OhUEtggRrSmILNAOkpvOkrtZoTNE4EAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01207ce5a230b02cbd51df0e85412d82046b4a620b3403a4a6f3a4aed6684cd138100a",
+      "host": "keybase.io",
+      "kid": "01207ce5a230b02cbd51df0e85412d82046b4a620b3403a4a6f3a4aed6684cd138100a",
+      "uid": "f7694e7ba33b98335e79cc4a32e74f19",
+      "username": "matrixprovip"
+    },
+    "merkle_root": {
+      "ctime": 1690050052,
+      "hash": "de774606e260d0efd6f0b1619b59c0bae2111aacbf7e6837958842d5eeeda4c90b7f268653a8bc67c112e5b7f582d6a4f00bf01fcb9b385edc29857fa6b187c5",
+      "hash_meta": "72bca3b8b627e76a70ec93f09824911b02f762f856530171d8bab90e49833594",
+      "seqno": 24717202
+    },
+    "service": {
+      "entropy": "S8LbS7Qs9bziS8lMh9wPun0z",
+      "hostname": "matrixpro.vip",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.2.0"
+  },
+  "ctime": 1690050113,
+  "expire_in": 504576000,
+  "prev": "1e18951d3899ac6baf2f22ace81821685697b4ecaba29f89299d67023229a3cf",
+  "seqno": 4,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgfOWiMLAsvVHfDoVBLYIEa0piCzQDpKbzpK7WaEzROBAKp3BheWxvYWTESpcCBMQgHhiVHTiZrGuvLyKs6BghaFaXtOyrop+JKZ1nAjIpo8/EIDvTn6XOGLcrLuaud019HvNiKbglWnRDBFjmlxRTPMA0AgHCo3NpZ8RAKCnOqJf/4Q+AD9+2fClhyXNRgCv9IQR8y060SuFRuJvSchvIQHDltN2e743KCzmM1Ez4u4eH4UG9JPfQJkpRD6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIKupO+htzj8WrtCgBqZKH35K9lr9LzavyU/usuSJbe81o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/matrixprovip
+
+==================================================================
