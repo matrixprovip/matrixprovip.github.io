@@ -1213,9 +1213,9 @@ $(document).ready(function () {
                     <div class="col-xl-3 col-lg-3 col-md-3 text-right d-flex d-block">
                         <div class="socialjs">
 
-                    <a class="sharebutton facebook btn " target="_blank" style="background-color:#0851ee;color:white" data-basecount="" data-sharetype="facebook" data-text="Earn more than 600 BNB from 0.3 BNB" title="Share this on Facebook" data-related=" " href="https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid="><i class=" fa fa-facebook"></i></a>
+                    <a class="sharebutton facebook btn " target="_blank" style="background-color:#0851ee;color:white" data-basecount="" data-sharetype="facebook" data-text="Earn $1M from $1,000 simple, safe, decentralized. To join and earn more than 600 BNB from 3 BNB, you can follow 6 steps. 👇👇👇👇 #earnings " title="Share this on Facebook" data-related=" " href="https://matrixpro.vip/signup?referralid="><i class=" fa fa-facebook"></i></a>
 
-                    <a class="sharebutton twitter btn" target="_blank" style="background-color:#00ee77;color:white" data-basecount="" data-sharetype="twitter" data-text="Earn more than 600 BNB from 0.3 BNB" data-via="elonmusk" data-via="dapp_com" data-via="RyanNguyenHC" data-related=" " title="Share this on Twitter" href="https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid="><i class=" fa fa-twitter"></i> </a>
+                    <a class="sharebutton twitter btn" target="_blank" style="background-color:#00ee77;color:white" data-basecount="" data-sharetype="twitter" data-text="Earn $1M from $1,000 simple, safe, decentralized. To join and earn more than 600 BNB from 3 BNB, you can follow 6 steps. Open in Trust wallet 👇👇👇👇 #earnings" data-via="INHERIT38092481" title="Share this on X(Twitter)" href="https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid="><i class=" fa fa-twitter"></i> </a>
                      
                     
                 </div>
