@@ -13,3 +13,6 @@ Telegram Native Meme Coin
 2. $CATS https://t.me/catsgang_bot/join?startapp=jqH6Rzo1HBTh8YYWbnk0u
 3. $DUCKS https://t.me/duckscoop_bot/app?startapp=lUtZ1FQMow
 4. $PIGS https://t.me/PigshouseBot?start=218475598
+5. $PANDAS https://t.me/Pandas_HouseBot?start=218475598
+6. $HAMSTERS http://t.me/Hmstrs_Bot/join?startapp=66cf4103106504473369ba2f
+7. $CZPEPE https://t.me/czpepeBot?start=218475598 
