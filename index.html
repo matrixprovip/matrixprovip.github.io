@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Grok Bird – Viral Game</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  #game {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background: linear-gradient(#87CEEB, #E0F7FA);
+    border: 4px solid #1DA1F2;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(29,161,242,0.4);
+  }
+  canvas { display: block; }
+  #ui {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  }
+  #score {
+    position: absolute;
+    top: 20px;
+    font-size: 48px;
+    font-weight: 900;
+  }
+  #start, #gameover {
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    padding: 24px 32px;
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+  }
+  #start h1, #gameover h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    color: #1DA1F2;
+  }
+  #start p, #gameover p {
+    font-size: 16px;
+    opacity: 0.9;
+  }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div id="game">
+  <canvas id="c" width="400" height="600"></canvas>
+  <div id="ui">
+    <div id="score">0</div>
+    <div id="start">
+      <h1>GROK BIRD</h1>
+      <p>Nhấn Space / Click để bay<br>Khó như Flappy Bird thật</p>
+      <p style="margin-top:12px;font-size:14px;opacity:0.7">Viral game cho X Timeline</p>
+    </div>
+    <div id="gameover" class="hidden">
+      <h1>GAME OVER</h1>
+      <p id="finalScore">Điểm: 0</p>
+      <p style="margin-top:8px">Nhấn để chơi lại</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+const scoreEl = document.getElementById('score');
+const startEl = document.getElementById('start');
+const gameoverEl = document.getElementById('gameover');
+const finalScoreEl = document.getElementById('finalScore');
+
+// ===== ÂM THANH (Web Audio API) =====
+let audioCtx = null;
+
+function initAudio() {
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+}
+
+function playSound(type) {
+  if (!audioCtx) return;
+  
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+
+  const now = audioCtx.currentTime;
+
+  if (type === 'flap') {
+    // Tiếng đập cánh ngắn
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(400, now);
+    osc.frequency.exponentialRampToValueAtTime(200, now + 0.08);
+    gain.gain.setValueAtTime(0.25, now);
+    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
+    osc.start(now);
+    osc.stop(now + 0.08);
+  } 
+  else if (type === 'score') {
+    // Tiếng ghi điểm cao
+    osc.type = 'square';
+    osc.frequency.setValueAtTime(800, now);
+    osc.frequency.setValueAtTime(1200, now + 0.05);
+    gain.gain.setValueAtTime(0.15, now);
+    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.12);
+    osc.start(now);
+    osc.stop(now + 0.12);
+  } 
+  else if (type === 'die') {
+    // Tiếng chết trầm
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(180, now);
+    osc.frequency.exponentialRampToValueAtTime(40, now + 0.35);
+    gain.gain.setValueAtTime(0.3, now);
+    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
+    osc.start(now);
+    osc.stop(now + 0.35);
+  }
+}
+
+// ===== CẤU HÌNH KHÓ =====
+const GRAVITY = 0.45;
+const FLAP = -7.8;
+const PIPE_SPEED = 3.2;
+const PIPE_GAP = 118;
+const PIPE_WIDTH = 62;
+const PIPE_INTERVAL = 1600;
+const BIRD_SIZE = 28;
+
+let bird = { x: 80, y: 280, vy: 0, r: BIRD_SIZE/2 };
+let pipes = [];
+let score = 0;
+let highScore = localStorage.getItem('grokBirdHigh') || 0;
+let state = 'start';
+let lastPipe = 0;
+let frame = 0;
+
+function reset() {
+  bird = { x: 80, y: 280, vy: 0, r: BIRD_SIZE/2 };
+  pipes = [];
+  score = 0;
+  lastPipe = 0;
+  frame = 0;
+  scoreEl.textContent = '0';
+  state = 'play';
+  startEl.classList.add('hidden');
+  gameoverEl.classList.add('hidden');
+}
+
+function flap() {
+  initAudio(); // khởi tạo audio khi người dùng tương tác lần đầu
+  
+  if (state === 'start') {
+    reset();
+    playSound('flap');
+  } else if (state === 'play') {
+    bird.vy = FLAP;
+    playSound('flap');
+  } else if (state === 'over') {
+    reset();
+    playSound('flap');
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.code === 'Space') { e.preventDefault(); flap(); }
+});
+canvas.addEventListener('click', flap);
+canvas.addEventListener('touchstart', e => { e.preventDefault(); flap(); });
+
+function spawnPipe() {
+  const minH = 60;
+  const maxH = canvas.height - PIPE_GAP - 120;
+  const topH = Math.random() * (maxH - minH) + minH;
+  pipes.push({
+    x: canvas.width,
+    top: topH,
+    bottom: topH + PIPE_GAP,
+    passed: false
+  });
+}
+
+function update(dt) {
+  if (state !== 'play') return;
+
+  bird.vy += GRAVITY;
+  bird.y += bird.vy;
+
+  if (bird.y + bird.r > canvas.height - 40 || bird.y - bird.r < 0) {
+    die();
+  }
+
+  if (performance.now() - lastPipe > PIPE_INTERVAL) {
+    spawnPipe();
+    lastPipe = performance.now();
+  }
+
+  for (let i = pipes.length - 1; i >= 0; i--) {
+    const p = pipes[i];
+    p.x -= PIPE_SPEED;
+
+    if (bird.x + bird.r > p.x && bird.x - bird.r < p.x + PIPE_WIDTH) {
+      if (bird.y - bird.r < p.top || bird.y + bird.r > p.bottom) {
+        die();
+      }
+    }
+
+    if (!p.passed && p.x + PIPE_WIDTH < bird.x) {
+      p.passed = true;
+      score++;
+      scoreEl.textContent = score;
+      playSound('score');   // ← âm thanh ghi điểm
+    }
+
+    if (p.x + PIPE_WIDTH < 0) pipes.splice(i, 1);
+  }
+}
+
+function die() {
+  if (state === 'over') return;
+  state = 'over';
+  playSound('die');       // ← âm thanh chết
+  finalScoreEl.textContent = `Điểm: ${score}  |  Best: ${Math.max(score, highScore)}`;
+  if (score > highScore) {
+    highScore = score;
+    localStorage.setItem('grokBirdHigh', highScore);
+  }
+  gameoverEl.classList.remove('hidden');
+}
+
+function draw() {
+  ctx.fillStyle = '#87CEEB';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = 'rgba(255,255,255,0.7)';
+  ctx.beginPath();
+  ctx.arc(80 + (frame*0.2)%500, 80, 30, 0, Math.PI*2);
+  ctx.arc(120 + (frame*0.2)%500, 70, 40, 0, Math.PI*2);
+  ctx.arc(160 + (frame*0.2)%500, 85, 28, 0, Math.PI*2);
+  ctx.fill();
+
+  ctx.fillStyle = '#8B4513';
+  ctx.fillRect(0, canvas.height - 40, canvas.width, 40);
+  ctx.fillStyle = '#228B22';
+  ctx.fillRect(0, canvas.height - 40, canvas.width, 12);
+
+  pipes.forEach(p => {
+    ctx.fillStyle = '#1DA1F2';
+    ctx.fillRect(p.x, 0, PIPE_WIDTH, p.top);
+    ctx.fillStyle = '#0d8ddb';
+    ctx.fillRect(p.x - 4, p.top - 24, PIPE_WIDTH + 8, 24);
+
+    ctx.fillStyle = '#1DA1F2';
+    ctx.fillRect(p.x, p.bottom, PIPE_WIDTH, canvas.height - p.bottom - 40);
+    ctx.fillStyle = '#0d8ddb';
+    ctx.fillRect(p.x - 4, p.bottom, PIPE_WIDTH + 8, 24);
+  });
+
+  ctx.save();
+  ctx.translate(bird.x, bird.y);
+  const angle = Math.min(Math.max(bird.vy * 0.06, -0.6), 0.9);
+  ctx.rotate(angle);
+
+  ctx.fillStyle = '#1DA1F2';
+  ctx.beginPath();
+  ctx.arc(0, 0, bird.r, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.fillStyle = '#fff';
+  ctx.beginPath();
+  ctx.arc(8, -6, 7, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = '#000';
+  ctx.beginPath();
+  ctx.arc(10, -6, 3.5, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.fillStyle = '#FFD700';
+  ctx.beginPath();
+  ctx.moveTo(bird.r - 4, 0);
+  ctx.lineTo(bird.r + 12, -4);
+  ctx.lineTo(bird.r + 12, 4);
+  ctx.closePath();
+  ctx.fill();
+
+  ctx.fillStyle = '#0d8ddb';
+  ctx.beginPath();
+  ctx.ellipse(-6, 4, 12, 7, -0.4, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.restore();
+
+  if (state === 'play' || state === 'over') {
+    ctx.fillStyle = 'rgba(255,255,255,0.9)';
+    ctx.font = 'bold 14px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('𝕏', bird.x, bird.y + 5);
+  }
+}
+
+let last = performance.now();
+function loop(now) {
+  const dt = now - last;
+  last = now;
+  frame++;
+  update(dt);
+  draw();
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>
