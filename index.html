@@ -1,81 +1,192 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Grok Bird – Viral Game</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+  <title>Grok Bird – Game Flappy Bird Khó Nhất 2026 | Chơi Miễn Phí</title>
+  
+  <!-- SEO Meta -->
+  <meta name="description" content="Chơi Grok Bird – phiên bản Flappy Bird siêu khó, có âm thanh, bảng xếp hạng thành tích và đếm số người chơi. Game viral dành cho X Timeline. Chơi ngay miễn phí!">
+  <meta name="keywords" content="Grok Bird, Flappy Bird, game online, chơi game miễn phí, flappy bird khó, grok bird, game viral, matrixprovip">
+  <meta name="author" content="matrixprovip">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://matrixprovip.github.io/">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://matrixprovip.github.io/">
+  <meta property="og:title" content="Grok Bird – Flappy Bird siêu khó có bảng xếp hạng">
+  <meta property="og:description" content="Chơi ngay game Flappy Bird phiên bản khó nhất, có âm thanh sống động và bảng xếp hạng thành tích. Viral trên X!">
+  <meta property="og:image" content="https://matrixprovip.github.io/og-image.png">
+  <meta property="og:locale" content="vi_VN">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Grok Bird – Flappy Bird siêu khó">
+  <meta name="twitter:description" content="Game Flappy Bird khó nhất 2026, có bảng xếp hạng & đếm người chơi realtime.">
+  
+  <meta name="theme-color" content="#1DA1F2">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Grok Bird",
+    "description": "Phiên bản Flappy Bird siêu khó với âm thanh, bảng xếp hạng thành tích và đếm số người chơi.",
+    "url": "https://matrixprovip.github.io/",
+    "genre": "Arcade",
+    "gamePlatform": "Web Browser",
+    "author": {
+      "@type": "Person",
+      "name": "matrixprovip"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "VND"
+    }
   }
-  #game {
-    position: relative;
-    width: 400px;
-    height: 600px;
-    background: linear-gradient(#87CEEB, #E0F7FA);
-    border: 4px solid #1DA1F2;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 0 40px rgba(29,161,242,0.4);
-  }
-  canvas { display: block; }
-  #ui {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    pointer-events: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
-  }
-  #score {
-    position: absolute;
-    top: 20px;
-    font-size: 48px;
-    font-weight: 900;
-  }
-  #start, #gameover {
-    text-align: center;
-    background: rgba(0,0,0,0.6);
-    padding: 24px 32px;
-    border-radius: 16px;
-    backdrop-filter: blur(8px);
-  }
-  #start h1, #gameover h1 {
-    font-size: 32px;
-    margin-bottom: 8px;
-    color: #1DA1F2;
-  }
-  #start p, #gameover p {
-    font-size: 16px;
-    opacity: 0.9;
-  }
-  .hidden { display: none !important; }
-</style>
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0a0a0a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: white;
+    }
+    #game {
+      position: relative;
+      width: 400px;
+      height: 600px;
+      background: linear-gradient(#87CEEB, #E0F7FA);
+      border: 4px solid #1DA1F2;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 50px rgba(29,161,242,0.5);
+    }
+    canvas { display: block; }
+    #ui {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    }
+    #score {
+      position: absolute;
+      top: 18px;
+      font-size: 48px;
+      font-weight: 900;
+      z-index: 10;
+    }
+    #onlineBox {
+      position: absolute;
+      top: 70px;
+      font-size: 13px;
+      background: rgba(0,0,0,0.45);
+      padding: 4px 12px;
+      border-radius: 20px;
+      z-index: 10;
+    }
+    #start, #gameover, #leaderboard {
+      text-align: center;
+      background: rgba(0,0,0,0.72);
+      padding: 22px 28px;
+      border-radius: 18px;
+      backdrop-filter: blur(12px);
+      max-width: 90%;
+      pointer-events: auto;
+    }
+    #start h1, #gameover h1 {
+      font-size: 30px;
+      margin-bottom: 6px;
+      color: #1DA1F2;
+    }
+    #start p, #gameover p { font-size: 15px; opacity: 0.9; line-height: 1.4; }
+    .btn {
+      margin-top: 14px;
+      padding: 10px 22px;
+      background: #1DA1F2;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+    .btn:hover { background: #0d8ddb; }
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid #1DA1F2;
+      margin-left: 8px;
+    }
+    #leaderboard {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 320px;
+      max-height: 420px;
+      overflow-y: auto;
+      z-index: 20;
+      display: none;
+    }
+    #leaderboard h2 {
+      color: #1DA1F2;
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+    .lb-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      font-size: 14px;
+    }
+    .lb-rank { width: 28px; font-weight: 700; color: #FFD700; }
+    .lb-name { flex: 1; text-align: left; padding-left: 8px; }
+    .lb-score { font-weight: 700; color: #1DA1F2; }
+    .hidden { display: none !important; }
+  </style>
 </head>
 <body>
 <div id="game">
   <canvas id="c" width="400" height="600"></canvas>
   <div id="ui">
     <div id="score">0</div>
+    <div id="onlineBox">Tổng lượt chơi: <span id="playCount">...</span></div>
+    
     <div id="start">
       <h1>GROK BIRD</h1>
-      <p>Nhấn Space / Click để bay<br>Khó như Flappy Bird thật</p>
-      <p style="margin-top:12px;font-size:14px;opacity:0.7">Viral game cho X Timeline</p>
+      <p>Nhấn Space / Click / Touch để bay<br>Siêu khó như Flappy Bird gốc</p>
+      <p style="margin-top:10px;font-size:13px;opacity:0.75">Viral game cho X Timeline</p>
+      <button class="btn" onclick="flap()">Chơi ngay</button>
+      <button class="btn btn-secondary" onclick="showLeaderboard()">Bảng xếp hạng</button>
     </div>
+    
     <div id="gameover" class="hidden">
       <h1>GAME OVER</h1>
       <p id="finalScore">Điểm: 0</p>
-      <p style="margin-top:8px">Nhấn để chơi lại</p>
+      <p id="newRecord" class="hidden" style="color:#FFD700;margin-top:6px">🎉 Kỷ lục mới!</p>
+      <button class="btn" onclick="flap()">Chơi lại</button>
+      <button class="btn btn-secondary" onclick="showLeaderboard()">Bảng xếp hạng</button>
+    </div>
+    
+    <div id="leaderboard">
+      <h2>🏆 Top 10 Thành tích</h2>
+      <div id="lbList"></div>
+      <button class="btn" style="margin-top:16px" onclick="hideLeaderboard()">Đóng</button>
     </div>
   </div>
 </div>
@@ -87,62 +198,49 @@ const scoreEl = document.getElementById('score');
 const startEl = document.getElementById('start');
 const gameoverEl = document.getElementById('gameover');
 const finalScoreEl = document.getElementById('finalScore');
+const newRecordEl = document.getElementById('newRecord');
+const playCountEl = document.getElementById('playCount');
+const lbList = document.getElementById('lbList');
+const leaderboardEl = document.getElementById('leaderboard');
 
-// ===== ÂM THANH (Web Audio API) =====
+// ===== ÂM THANH =====
 let audioCtx = null;
-
 function initAudio() {
-  if (!audioCtx) {
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  }
-  if (audioCtx.state === 'suspended') {
-    audioCtx.resume();
-  }
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
 }
-
 function playSound(type) {
   if (!audioCtx) return;
-  
   const osc = audioCtx.createOscillator();
   const gain = audioCtx.createGain();
   osc.connect(gain);
   gain.connect(audioCtx.destination);
-
   const now = audioCtx.currentTime;
-
   if (type === 'flap') {
-    // Tiếng đập cánh ngắn
     osc.type = 'sine';
     osc.frequency.setValueAtTime(400, now);
     osc.frequency.exponentialRampToValueAtTime(200, now + 0.08);
     gain.gain.setValueAtTime(0.25, now);
     gain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
-    osc.start(now);
-    osc.stop(now + 0.08);
-  } 
-  else if (type === 'score') {
-    // Tiếng ghi điểm cao
+    osc.start(now); osc.stop(now + 0.08);
+  } else if (type === 'score') {
     osc.type = 'square';
     osc.frequency.setValueAtTime(800, now);
     osc.frequency.setValueAtTime(1200, now + 0.05);
     gain.gain.setValueAtTime(0.15, now);
     gain.gain.exponentialRampToValueAtTime(0.01, now + 0.12);
-    osc.start(now);
-    osc.stop(now + 0.12);
-  } 
-  else if (type === 'die') {
-    // Tiếng chết trầm
+    osc.start(now); osc.stop(now + 0.12);
+  } else if (type === 'die') {
     osc.type = 'sawtooth';
     osc.frequency.setValueAtTime(180, now);
     osc.frequency.exponentialRampToValueAtTime(40, now + 0.35);
     gain.gain.setValueAtTime(0.3, now);
     gain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
-    osc.start(now);
-    osc.stop(now + 0.35);
+    osc.start(now); osc.stop(now + 0.35);
   }
 }
 
-// ===== CẤU HÌNH KHÓ =====
+// ===== CẤU HÌNH =====
 const GRAVITY = 0.45;
 const FLAP = -7.8;
 const PIPE_SPEED = 3.2;
@@ -154,11 +252,61 @@ const BIRD_SIZE = 28;
 let bird = { x: 80, y: 280, vy: 0, r: BIRD_SIZE/2 };
 let pipes = [];
 let score = 0;
-let highScore = localStorage.getItem('grokBirdHigh') || 0;
+let highScore = parseInt(localStorage.getItem('grokBirdHigh') || '0');
 let state = 'start';
 let lastPipe = 0;
 let frame = 0;
 
+// ===== LEADERBOARD (local) =====
+function getLeaderboard() {
+  return JSON.parse(localStorage.getItem('grokBirdLB') || '[]');
+}
+function saveLeaderboard(list) {
+  localStorage.setItem('grokBirdLB', JSON.stringify(list));
+}
+function addScoreToLB(name, points) {
+  let list = getLeaderboard();
+  list.push({ name: name || 'Ẩn danh', score: points, date: new Date().toLocaleDateString('vi-VN') });
+  list.sort((a, b) => b.score - a.score);
+  list = list.slice(0, 10);
+  saveLeaderboard(list);
+  return list;
+}
+function renderLeaderboard() {
+  const list = getLeaderboard();
+  if (list.length === 0) {
+    lbList.innerHTML = '<p style="opacity:0.7">Chưa có thành tích nào.<br>Hãy chơi và phá kỷ lục!</p>';
+    return;
+  }
+  lbList.innerHTML = list.map((item, i) => `
+    <div class="lb-item">
+      <span class="lb-rank">#${i+1}</span>
+      <span class="lb-name">${item.name}</span>
+      <span class="lb-score">${item.score}</span>
+    </div>
+  `).join('');
+}
+function showLeaderboard() {
+  renderLeaderboard();
+  leaderboardEl.style.display = 'block';
+}
+function hideLeaderboard() {
+  leaderboardEl.style.display = 'none';
+}
+
+// ===== ĐẾM LƯỢT CHƠI (CountAPI) =====
+const COUNTER_KEY = 'grokbird-matrixprovip-2026';
+function updatePlayCount() {
+  fetch(`https://countapi.mileshilliard.com/api/v1/hit/${COUNTER_KEY}`)
+    .then(r => r.json())
+    .then(data => {
+      if (data && data.value) playCountEl.textContent = Number(data.value).toLocaleString('vi-VN');
+    })
+    .catch(() => playCountEl.textContent = '—');
+}
+updatePlayCount();
+
+// ===== GAME LOGIC =====
 function reset() {
   bird = { x: 80, y: 280, vy: 0, r: BIRD_SIZE/2 };
   pipes = [];
@@ -169,19 +317,17 @@ function reset() {
   state = 'play';
   startEl.classList.add('hidden');
   gameoverEl.classList.add('hidden');
+  newRecordEl.classList.add('hidden');
+  hideLeaderboard();
 }
 
 function flap() {
-  initAudio(); // khởi tạo audio khi người dùng tương tác lần đầu
-  
-  if (state === 'start') {
+  initAudio();
+  if (state === 'start' || state === 'over') {
     reset();
     playSound('flap');
   } else if (state === 'play') {
     bird.vy = FLAP;
-    playSound('flap');
-  } else if (state === 'over') {
-    reset();
     playSound('flap');
   }
 }
@@ -196,23 +342,15 @@ function spawnPipe() {
   const minH = 60;
   const maxH = canvas.height - PIPE_GAP - 120;
   const topH = Math.random() * (maxH - minH) + minH;
-  pipes.push({
-    x: canvas.width,
-    top: topH,
-    bottom: topH + PIPE_GAP,
-    passed: false
-  });
+  pipes.push({ x: canvas.width, top: topH, bottom: topH + PIPE_GAP, passed: false });
 }
 
-function update(dt) {
+function update() {
   if (state !== 'play') return;
-
   bird.vy += GRAVITY;
   bird.y += bird.vy;
 
-  if (bird.y + bird.r > canvas.height - 40 || bird.y - bird.r < 0) {
-    die();
-  }
+  if (bird.y + bird.r > canvas.height - 40 || bird.y - bird.r < 0) die();
 
   if (performance.now() - lastPipe > PIPE_INTERVAL) {
     spawnPipe();
@@ -224,18 +362,15 @@ function update(dt) {
     p.x -= PIPE_SPEED;
 
     if (bird.x + bird.r > p.x && bird.x - bird.r < p.x + PIPE_WIDTH) {
-      if (bird.y - bird.r < p.top || bird.y + bird.r > p.bottom) {
-        die();
-      }
+      if (bird.y - bird.r < p.top || bird.y + bird.r > p.bottom) die();
     }
 
     if (!p.passed && p.x + PIPE_WIDTH < bird.x) {
       p.passed = true;
       score++;
       scoreEl.textContent = score;
-      playSound('score');   // ← âm thanh ghi điểm
+      playSound('score');
     }
-
     if (p.x + PIPE_WIDTH < 0) pipes.splice(i, 1);
   }
 }
@@ -243,12 +378,28 @@ function update(dt) {
 function die() {
   if (state === 'over') return;
   state = 'over';
-  playSound('die');       // ← âm thanh chết
+  playSound('die');
+  
   finalScoreEl.textContent = `Điểm: ${score}  |  Best: ${Math.max(score, highScore)}`;
+  
   if (score > highScore) {
     highScore = score;
     localStorage.setItem('grokBirdHigh', highScore);
+    newRecordEl.classList.remove('hidden');
+    
+    // Hỏi tên để ghi vào bảng xếp hạng
+    setTimeout(() => {
+      const name = prompt('🎉 Kỷ lục mới! Nhập tên của bạn:', localStorage.getItem('grokBirdName') || '');
+      if (name !== null) {
+        localStorage.setItem('grokBirdName', name.trim() || 'Ẩn danh');
+        addScoreToLB(name.trim() || 'Ẩn danh', score);
+      }
+    }, 300);
+  } else if (score > 0) {
+    // Vẫn cho ghi điểm nếu muốn (tùy chọn)
+    // addScoreToLB(localStorage.getItem('grokBirdName') || 'Ẩn danh', score);
   }
+  
   gameoverEl.classList.remove('hidden');
 }
 
@@ -256,6 +407,7 @@ function draw() {
   ctx.fillStyle = '#87CEEB';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+  // mây
   ctx.fillStyle = 'rgba(255,255,255,0.7)';
   ctx.beginPath();
   ctx.arc(80 + (frame*0.2)%500, 80, 30, 0, Math.PI*2);
@@ -263,33 +415,33 @@ function draw() {
   ctx.arc(160 + (frame*0.2)%500, 85, 28, 0, Math.PI*2);
   ctx.fill();
 
+  // đất
   ctx.fillStyle = '#8B4513';
   ctx.fillRect(0, canvas.height - 40, canvas.width, 40);
   ctx.fillStyle = '#228B22';
   ctx.fillRect(0, canvas.height - 40, canvas.width, 12);
 
+  // ống
   pipes.forEach(p => {
     ctx.fillStyle = '#1DA1F2';
     ctx.fillRect(p.x, 0, PIPE_WIDTH, p.top);
     ctx.fillStyle = '#0d8ddb';
     ctx.fillRect(p.x - 4, p.top - 24, PIPE_WIDTH + 8, 24);
-
     ctx.fillStyle = '#1DA1F2';
     ctx.fillRect(p.x, p.bottom, PIPE_WIDTH, canvas.height - p.bottom - 40);
     ctx.fillStyle = '#0d8ddb';
     ctx.fillRect(p.x - 4, p.bottom, PIPE_WIDTH + 8, 24);
   });
 
+  // bird
   ctx.save();
   ctx.translate(bird.x, bird.y);
   const angle = Math.min(Math.max(bird.vy * 0.06, -0.6), 0.9);
   ctx.rotate(angle);
-
   ctx.fillStyle = '#1DA1F2';
   ctx.beginPath();
   ctx.arc(0, 0, bird.r, 0, Math.PI * 2);
   ctx.fill();
-
   ctx.fillStyle = '#fff';
   ctx.beginPath();
   ctx.arc(8, -6, 7, 0, Math.PI * 2);
@@ -298,7 +450,6 @@ function draw() {
   ctx.beginPath();
   ctx.arc(10, -6, 3.5, 0, Math.PI * 2);
   ctx.fill();
-
   ctx.fillStyle = '#FFD700';
   ctx.beginPath();
   ctx.moveTo(bird.r - 4, 0);
@@ -306,12 +457,10 @@ function draw() {
   ctx.lineTo(bird.r + 12, 4);
   ctx.closePath();
   ctx.fill();
-
   ctx.fillStyle = '#0d8ddb';
   ctx.beginPath();
   ctx.ellipse(-6, 4, 12, 7, -0.4, 0, Math.PI * 2);
   ctx.fill();
-
   ctx.restore();
 
   if (state === 'play' || state === 'over') {
@@ -322,12 +471,9 @@ function draw() {
   }
 }
 
-let last = performance.now();
-function loop(now) {
-  const dt = now - last;
-  last = now;
+function loop() {
   frame++;
-  update(dt);
+  update();
   draw();
   requestAnimationFrame(loop);
 }
