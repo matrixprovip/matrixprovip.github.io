@@ -158,6 +158,28 @@
     .lb-name { flex: 1; text-align: left; padding-left: 8px; }
     .lb-score { font-weight: 700; color: #1DA1F2; }
     .hidden { display: none !important; }
+
+    /* Nút bật/tắt nhạc nền */
+    #bgmToggle {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.55);
+      border: 2px solid #1DA1F2;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      pointer-events: auto;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(6px);
+    }
+    #bgmToggle:hover { background: rgba(29,161,242,0.3); }
   </style>
 </head>
 <body>
@@ -189,6 +211,9 @@
       <button class="btn" style="margin-top:16px" onclick="hideLeaderboard()">Đóng</button>
     </div>
   </div>
+
+  <!-- Nút bật/tắt nhạc nền -->
+  <button id="bgmToggle" onclick="toggleBGM()" title="Bật/Tắt nhạc nền">🔊</button>
 </div>
 
 <script>
@@ -202,13 +227,19 @@ const newRecordEl = document.getElementById('newRecord');
 const playCountEl = document.getElementById('playCount');
 const lbList = document.getElementById('lbList');
 const leaderboardEl = document.getElementById('leaderboard');
+const bgmToggleBtn = document.getElementById('bgmToggle');
 
 // ===== ÂM THANH =====
 let audioCtx = null;
+let bgmEnabled = true;          // trạng thái bật/tắt nhạc nền
+let bgmPlaying = false;
+let bgmNodes = [];              // lưu các oscillator/gain đang chạy để dừng được
+
 function initAudio() {
   if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   if (audioCtx.state === 'suspended') audioCtx.resume();
 }
+
 function playSound(type) {
   if (!audioCtx) return;
   const osc = audioCtx.createOscillator();
@@ -237,6 +268,87 @@ function playSound(type) {
     gain.gain.setValueAtTime(0.3, now);
     gain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
     osc.start(now); osc.stop(now + 0.35);
+  }
+}
+
+// ===== NHẠC NỀN (BGM) – Chiptune vui =====
+function playBGM() {
+  if (!audioCtx || bgmPlaying || !bgmEnabled) return;
+  bgmPlaying = true;
+  bgmNodes = [];
+
+  // Giai điệu đơn giản, vui, lặp lại (nốt tần số Hz)
+  const melody = [
+    {f: 523.25, d: 0.18}, // C5
+    {f: 659.25, d: 0.18}, // E5
+    {f: 783.99, d: 0.18}, // G5
+    {f: 659.25, d: 0.18}, // E5
+    {f: 587.33, d: 0.18}, // D5
+    {f: 523.25, d: 0.18}, // C5
+    {f: 440.00, d: 0.25}, // A4
+    {f: 0,     : 0.12},     // nghỉ
+    {f: 523.25, d: 0.18},
+    {f: 659.25, d: 0.18},
+    {f: 783.99, d: 0.18},
+    {f: 880.00, d: 0.28}, // A5
+    {f: 783.99, d: 0.18},
+    {f: 659.25, d: 0.25},
+    {f: 0,     : 0.15}
+  ];
+
+  let time = audioCtx.currentTime + 0.05;
+
+  function scheduleLoop() {
+    if (!bgmPlaying || !bgmEnabled) return;
+
+    melody.forEach(note => {
+      if (note.f === 0) {
+        time += note.d;
+        return;
+      }
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'square';          // âm chiptune
+      osc.frequency.value = note.f;
+      gain.gain.setValueAtTime(0.08, time);
+      gain.gain.exponentialRampToValueAtTime(0.001, time + note.d);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(time);
+      osc.stop(time + note.d + 0.05);
+      bgmNodes.push(osc, gain);
+      time += note.d;
+    });
+
+    // Lặp lại sau khi hết giai điệu
+    const totalDuration = melody.reduce((s, n) => s + n.d, 0);
+    setTimeout(() => {
+      if (bgmPlaying && bgmEnabled) {
+        time = audioCtx.currentTime + 0.02;
+        scheduleLoop();
+      }
+    }, totalDuration * 1000 - 50);
+  }
+
+  scheduleLoop();
+}
+
+function stopBGM() {
+  bgmPlaying = false;
+  // Dừng tất cả oscillator đang chạy
+  bgmNodes.forEach(node => {
+    try { node.stop && node.stop(); } catch(e) {}
+  });
+  bgmNodes = [];
+}
+
+function toggleBGM() {
+  bgmEnabled = !bgmEnabled;
+  bgmToggleBtn.textContent = bgmEnabled ? '🔊' : '🔇';
+  if (!bgmEnabled) {
+    stopBGM();
+  } else if (state === 'play') {
+    playBGM();
   }
 }
 
@@ -319,6 +431,9 @@ function reset() {
   gameoverEl.classList.add('hidden');
   newRecordEl.classList.add('hidden');
   hideLeaderboard();
+
+  // Bắt đầu nhạc nền
+  playBGM();
 }
 
 function flap() {
@@ -379,6 +494,7 @@ function die() {
   if (state === 'over') return;
   state = 'over';
   playSound('die');
+  stopBGM();   // Dừng nhạc nền khi chết
   
   finalScoreEl.textContent = `Điểm: ${score}  |  Best: ${Math.max(score, highScore)}`;
   
@@ -387,7 +503,6 @@ function die() {
     localStorage.setItem('grokBirdHigh', highScore);
     newRecordEl.classList.remove('hidden');
     
-    // Hỏi tên để ghi vào bảng xếp hạng
     setTimeout(() => {
       const name = prompt('🎉 Kỷ lục mới! Nhập tên của bạn:', localStorage.getItem('grokBirdName') || '');
       if (name !== null) {
@@ -395,9 +510,6 @@ function die() {
         addScoreToLB(name.trim() || 'Ẩn danh', score);
       }
     }, 300);
-  } else if (score > 0) {
-    // Vẫn cho ghi điểm nếu muốn (tùy chọn)
-    // addScoreToLB(localStorage.getItem('grokBirdName') || 'Ẩn danh', score);
   }
   
   gameoverEl.classList.remove('hidden');
@@ -480,4 +592,4 @@ function loop() {
 requestAnimationFrame(loop);
 </script>
 </body>
-</html>
+</html> 
